@@ -59,7 +59,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .bar.show{transform:none;opacity:1}
 .bar .line{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;padding-bottom:6px}
 .bar .line b{font-size:20px;letter-spacing:-.04em;color:var(--green)}
-.seg{display:flex;gap:22px;padding:0 20px;font-size:15px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line);position:relative}
+.seg{display:flex;gap:18px;padding:0 20px;font-size:15px;overflow-x:auto;scrollbar-width:none;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line);position:relative}
 .seg button{padding:14px 0 10px;position:relative;transition:color .25s}
 .seg button.on{color:var(--ink)}
 .seg .ind{position:absolute;bottom:-1px;height:2px;background:var(--ink);border-radius:2px;transition:left .35s var(--ease),width .35s var(--ease)}
@@ -81,7 +81,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 /* board */
 .stages{display:flex;background:var(--card-2);border-radius:14px;padding:4px;gap:4px;margin:14px 16px 12px}
-.stages button{flex:1;padding:9px 2px;border-radius:11px;font-size:14px;font-weight:600;color:var(--muted);transition:.2s;line-height:1.1}
+.stages button{flex:1;padding:9px 2px;border-radius:11px;font-size:13px;white-space:nowrap;font-weight:600;color:var(--muted);transition:.2s;line-height:1.1}
 .stages button em{display:block;font-style:normal;font-size:11px;font-weight:600;opacity:.7;margin-top:2px}
 .stages button.on{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
 .stages button.on em{color:var(--green);opacity:1}
@@ -184,7 +184,7 @@ input[type=range]{width:100%;accent-color:var(--green);height:30px;margin:4px 0}
 .tabbar{position:fixed;left:0;right:0;bottom:0;max-width:480px;margin:0 auto;z-index:9;height:calc(74px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);
   background:color-mix(in srgb,var(--card) 85%,transparent);backdrop-filter:saturate(1.8) blur(20px);-webkit-backdrop-filter:saturate(1.8) blur(20px);border-top:1px solid var(--line);
   display:flex;justify-content:space-around;align-items:center}
-.tabbar button{text-align:center;font-size:10px;color:var(--muted);width:72px;padding:6px 0;transition:color .2s,transform .2s var(--ease)}
+.tabbar button{text-align:center;font-size:10px;color:var(--muted);flex:1;max-width:80px;padding:6px 0;transition:color .2s,transform .2s var(--ease)}
 .tabbar button b{display:block;font-size:22px;font-weight:400;line-height:1.1;margin-bottom:2px}
 .tabbar button.on{color:var(--blue)}
 .tabbar button:active{transform:scale(.92)}
@@ -202,6 +202,7 @@ footer{padding:28px 20px 8px;text-align:center;color:var(--muted);font-size:12px
   <button data-v="weeks"><b>▤</b>Weeks</button>
   <button data-v="goal"><b>↗</b>Goal</button>
   <button data-v="items"><b>≡</b>Items</button>
+  <button data-v="kept"><b>⌂</b>Kept</button>
 </nav>
 <div class="sheet-bg" id="sheetbg"></div>
 <div class="sheet" id="sheet"></div>
@@ -238,7 +239,12 @@ function calc(d) {
   const est = d.estimate && { ...d.estimate, likely: t.stockAccept - t.stockCost - (d.estimate.fuel || 0), best: t.stockList - t.stockCost };
   const flip = d.items.filter(i => !i.own && (i.status === 'sold' || i.status === 'stock'));
   const pay = { owed: sum(flip, i => i.cost) + fuel, back: sum(sold.filter(i => i.paid === true), i => i.sold), waiting: sold.filter(i => i.paid === false) };
-  const board = { bought: stock.filter(i => !i.listed), listed: stock.filter(i => i.listed), sold: sold.filter(i => i.paid === false), paid: sold.filter(i => i.paid !== false) };
+  const board = {
+    collect: stock.filter(i => i.collected === false),
+    home: stock.filter(i => i.collected !== false && !i.listed),
+    listed: stock.filter(i => i.collected !== false && i.listed),
+    sold: sold.slice().sort((a, b) => (b.soldWeek || 0) - (a.soldWeek || 0))
+  };
   return { sold, stock, kept, disputed, t, weeks, est, pay, board };
 }
 /* days on shelf: exact if a date is given, else from the start of the week it was bought in */
@@ -281,28 +287,27 @@ function render() {
     <section class="view ${view === 'weeks' ? 'on' : ''}" data-v="weeks">${weeksView()}</section>
     <section class="view ${view === 'goal' ? 'on' : ''}" data-v="goal">${goalView()}</section>
     <section class="view ${view === 'items' ? 'on' : ''}" data-v="items">${itemsView()}</section>
+    <section class="view ${view === 'kept' ? 'on' : ''}" data-v="kept">${keptView()}</section>
   </div>
   <footer>Updated ${fmtD(D.updated, {day: 'numeric', month: 'short', year: 'numeric'})} · everything is worked out from data.json</footer>`;
   $('#bar').innerHTML = `<div class="line"><span class="muted">Profit</span><b>${$m(t.profit)}</b></div><div class="seg">${segBtns()}<i class="ind"></i></div>`;
   wire(); countUp($('#bigv'), t.profit); requestAnimationFrame(() => { $('#goalbar').style.width = goalPct + '%'; fireView(); moveInd(); });
 }
-const segBtns = () => [['board','Board'],['weeks','Weeks'],['goal','Goal'],['items','Items']].map(([k, l]) => `<button data-v="${k}" class="${view === k ? 'on' : ''}">${l}</button>`).join('');
+const segBtns = () => [['board','Board'],['weeks','Weeks'],['goal','Goal'],['items','Items'],['kept','Kept']].map(([k, l]) => `<button data-v="${k}" class="${view === k ? 'on' : ''}">${l}</button>`).join('');
 
 function card(i, kind) {
-  const d = D;
-  if (kind === 'paid') return `<button class="c" data-id="${i.id}"><span class="paid">PAID</span><div class="nm">${esc(i.name)}</div><div class="pr">${$m(i.sold)}<small>${$s(i.sold - i.cost)}</small></div></button>`;
-  if (kind === 'sold') return `<button class="c" data-id="${i.id}"><span class="age amber">waiting</span><div class="nm">${esc(i.name)}</div><div class="pr">${$m(i.sold)}<small>${$s(i.sold - i.cost)}</small></div></button>`;
-  const show = kind === 'bought' ? i.cost : i.list, sub = kind === 'bought' ? `list ${$m(i.list)}` : $s(i.list - i.cost);
-  return `<button class="c" data-id="${i.id}">${ageTag(i, d)}<div class="nm">${esc(i.name)}</div><div class="pr">${$m(show)}<small>${sub}</small></div></button>`;
+  if (kind === 'sold') {
+    const tag = i.paid === false ? `<span class="age amber">waiting</span>` : `<span class="paid">PAID</span>`;
+    return `<button class="c" data-id="${i.id}">${tag}<div class="nm">${esc(i.name)}</div><div class="pr">${$m(i.sold)}<small>${$s(i.sold - i.cost)}</small></div></button>`;
+  }
+  const show = kind === 'listed' ? i.list : i.cost, sub = kind === 'listed' ? $s(i.list - i.cost) : `list ${$m(i.list)}`;
+  return `<button class="c" data-id="${i.id}">${ageTag(i, D)}<div class="nm">${esc(i.name)}</div><div class="pr">${$m(show)}<small>${sub}</small></div></button>`;
 }
-let stage = 'listed';
-const STAGES = [['bought', 'Bought'], ['listed', 'Listed'], ['sold', 'Sold'], ['paid', 'Paid']];
+let stage = 'home';
+const STAGES = [['collect', 'To collect'], ['home', 'At home'], ['listed', 'Listed'], ['sold', 'Sold']];
 function stageCards() {
-  const b = C.board;
-  if (stage === 'paid') { const paid = b.paid.slice().sort((a, b) => (b.soldWeek || 0) - (a.soldWeek || 0)); return paid.map(i => card(i, 'paid')).join('') || `<div class="c ghost">Nothing paid yet</div>`; }
-  const arr = b[stage], ghost = { bought: 'Everything is listed', listed: 'Nothing listed', sold: 'All paid up' }[stage];
-  const tail = stage === 'sold' && arr.length ? `<div class="c ghost">Money not in yet</div>` : '';
-  return (arr.map(i => card(i, stage)).join('') || `<div class="c ghost">${ghost}</div>`) + tail;
+  const arr = C.board[stage], ghost = { collect: 'Nothing to pick up', home: 'Nothing waiting to be listed', listed: 'Nothing listed yet', sold: 'Nothing sold yet' }[stage];
+  return arr.map(i => card(i, stage)).join('') || `<div class="c ghost">${ghost}</div>`;
 }
 function boardView() {
   const b = C.board, t = C.t;
@@ -310,7 +315,7 @@ function boardView() {
     <div class="kpis">
       <div class="card kpi"><div class="k">On the shelf</div><div class="v">${$m(t.stockCost)}</div></div>
       <div class="card kpi"><div class="k">At list</div><div class="v pos">${$m(t.stockList)}</div></div>
-      <div class="card kpi"><div class="k">Waiting on</div><div class="v ${C.pay.waiting.length ? 'neg' : ''}">${$m(sum(C.pay.waiting, i => i.sold))}</div></div>
+      <div class="card kpi"><div class="k">To collect</div><div class="v ${b.collect.length ? 'neg' : ''}">${b.collect.length}</div></div>
     </div>
     <div class="stages" id="stages">${STAGES.map(([k, l]) => `<button data-stage="${k}" class="${stage === k ? 'on' : ''}">${l}<em>${b[k].length}</em></button>`).join('')}</div>
     <div class="stage-grid in" id="stagegrid">${stageCards()}</div>
@@ -327,7 +332,7 @@ function weekDetail(n) {
   const w = C.weeks.find(w => w.n === n); if (!w) return '';
   const rows = w.sold.map(i => `<div class="t" data-id="${i.id}"><div class="ic">${icon(i.name)}</div><div class="nm">${esc(i.name)}${flag(i, 'sold')}<small>${i.own ? 'Own' : 'Paid ' + $m(i.cost) + flag(i, 'cost')} · sold ${$m(i.sold)}${sellTime(i, D) && !i.own ? ' · ' + sellTime(i, D) : ''}</small></div><div class="amt pos">${$s(i.sold - i.cost)}</div></div>`).join('')
     + w.trips.map(x => `<div class="t"><div class="ic">⛽</div><div class="nm">Fuel<small>${esc(x.label || 'Trip ' + x.id)} · ${x.km} km</small></div><div class="amt neg">${$s(-x.fuel)}</div></div>`).join('');
-  const bought = w.bought.length ? `<div class="sect"><span>Bought to flip</span><span>${$m(sum(w.bought, i => i.cost))}</span></div><div class="card tx">${w.bought.map(i => `<div class="t" data-id="${i.id}"><div class="ic">${icon(i.name)}</div><div class="nm">${esc(i.name)}<small>${i.status === 'sold' ? 'Sold week ' + i.soldWeek : i.listed ? 'Listed' : 'Not listed yet'}</small></div><div class="amt">${$m(i.cost)}</div></div>`).join('')}</div>` : '';
+  const bought = w.bought.length ? `<div class="sect"><span>Bought to flip</span><span>${$m(sum(w.bought, i => i.cost))}</span></div><div class="card tx">${w.bought.map(i => `<div class="t" data-id="${i.id}"><div class="ic">${icon(i.name)}</div><div class="nm">${esc(i.name)}<small>${i.status === 'sold' ? 'Sold week ' + i.soldWeek : stockState(i)}</small></div><div class="amt">${$m(i.cost)}</div></div>`).join('')}</div>` : '';
   return `<div class="sect"><span>Week ${w.n} · ${esc(w.label)}</span><span class="${w.profit < 0 ? 'neg' : 'pos'}">${$s(w.profit)}</span></div><div class="card tx">${rows}</div>${bought}`;
 }
 function goalView() {
@@ -353,18 +358,31 @@ function goalView() {
         <ul class="lg">${parts.map(([k, v, col]) => `<li><span><i class="dot" style="background:${col}"></i>${k}</span><b>${$m(v)}</b></li>`).join('')}</ul></div>
     </div>`;
 }
+const stockState = i => i.collected === false ? 'paid, to collect' : i.listed ? 'listed' : 'at home, not listed';
 function itemsView() {
-  const counts = { all: D.items.length, sold: C.sold.length, stock: C.stock.length, kept: C.kept.length + C.disputed.length };
+  const flips = D.items.filter(i => i.status === 'sold' || i.status === 'stock');
+  const counts = { all: flips.length, sold: C.sold.length, stock: C.stock.length };
   const row = i => {
-    const g = i.status === 'disputed' ? 'kept' : i.status, col = { sold: 'var(--green)', stock: 'var(--blue)', kept: 'var(--kept)', disputed: 'var(--amber)' }[i.status];
+    const col = { sold: 'var(--green)', stock: 'var(--blue)' }[i.status];
     let meta, val;
     if (i.status === 'sold') { meta = [i.own ? 'Own' : `Paid ${$m(i.cost)}`, `sold wk ${i.soldWeek}`, !i.own && sellTime(i, D) ? sellTime(i, D) + ' to sell' : ''].filter(Boolean).join(' · '); val = `<div class="amt"><div>${$m(i.sold)}</div><small class="pos">${$s(i.sold - i.cost)}</small></div>`; }
-    else if (i.status === 'stock') { meta = `${i.own ? 'Own' : 'Paid ' + $m(i.cost)} · list ${$m(i.list)} · ${i.listed ? 'listed' : 'not listed'}`; val = `<div class="amt">${$m(i.list)}</div>`; }
-    else { meta = i.status === 'disputed' ? 'Refund in dispute · not counted' : 'Kept, not for sale'; val = `<div class="amt muted">${$m(i.cost)}</div>`; }
-    return `<div class="t" data-g="${g}" data-id="${i.id}"><i class="dot" style="background:${col}"></i><div class="nm">${esc(i.name)}<small>${meta}</small></div>${val}</div>`;
+    else { meta = `${i.own ? 'Own' : 'Paid ' + $m(i.cost)} · ${stockState(i)}`; val = `<div class="amt"><div>${$m(i.list)}</div><small class="muted">list</small></div>`; }
+    return `<div class="t" data-g="${i.status}" data-id="${i.id}"><i class="dot" style="background:${col}"></i><div class="nm">${esc(i.name)}<small>${meta}</small></div>${val}</div>`;
   };
-  return `<div class="filter" id="filter">${[['all','All'],['sold','Sold'],['stock','Stock'],['kept','Kept']].map(([k, l], n) => `<button data-f="${k}" class="${n ? '' : 'on'}">${l}<em>${counts[k]}</em></button>`).join('')}</div>
-    <div class="card list" id="list">${D.items.map(row).join('')}</div>`;
+  return `<div class="filter" id="filter">${[['all','All'],['sold','Sold'],['stock','Stock']].map(([k, l], n) => `<button data-f="${k}" class="${n ? '' : 'on'}">${l}<em>${counts[k]}</em></button>`).join('')}</div>
+    <div class="card list" id="list">${flips.map(row).join('')}</div>`;
+}
+function keptView() {
+  const row = i => `<div class="t" data-id="${i.id}"><div class="ic">${icon(i.name)}</div><div class="nm">${esc(i.name)}<small>${i.status === 'disputed' ? 'Refund in dispute · not counted' : (i.boughtWeek ? `Week ${i.boughtWeek}` : 'Kept for me')}</small></div><div class="amt ${i.status === 'disputed' ? 'muted' : ''}">${$m(i.cost)}</div></div>`;
+  return `
+    <div class="kpis" style="grid-template-columns:1fr 1fr">
+      <div class="card kpi"><div class="k">Kept, not for sale</div><div class="v">${$m(C.t.kept)}</div></div>
+      <div class="card kpi"><div class="k">In dispute</div><div class="v muted">${$m(sum(C.disputed, i => i.cost))}</div></div>
+    </div>
+    <div class="sect"><span>Things I'm keeping</span><span>${C.kept.length}</span></div>
+    <div class="card tx">${C.kept.map(row).join('')}</div>
+    ${C.disputed.length ? `<div class="sect"><span>Not counted anywhere</span></div><div class="card tx">${C.disputed.map(row).join('')}</div>` : ''}
+    <p class="muted" style="font-size:13px;margin:14px 20px 0">These don't count towards profit. They only show up in "where the money went".</p>`;
 }
 
 /* ---------- item sheet ---------- */
@@ -375,7 +393,7 @@ function openSheet(id) {
   if (i.status === 'stock') body = lv('List at', i.list) + lv('Accept down to', i.accept) + lv('Worst case', i.worst);
   else if (i.status === 'sold') body = `<div class="lv"><span class="muted">Sold for</span><span><b>${$m(i.sold)}</b>${flag(i, 'sold')}</span></div><div class="lv"><span class="muted">Profit</span><b class="pos">${$s(i.sold - i.cost)}</b></div><div class="lv"><span class="muted">Money in</span><b>${i.paid === false ? '<span class="neg">Not yet</span>' : 'Yes'}</b></div>`;
   else body = `<div class="lv"><span class="muted">Cost</span><b>${$m(i.cost)}</b></div>`;
-  const meta = [i.own ? 'My own' : i.cost ? `Paid ${$m(i.cost)}${flag(i, 'cost')}` : '', i.boughtWeek ? `week ${i.boughtWeek}` : '', h && i.status === 'stock' ? `${h.approx ? 'about ' : ''}${h.n} days on the shelf` : i.status === 'sold' && !i.own && sellTime(i, D) ? `sold in ${sellTime(i, D)}` : ''].filter(Boolean).join(' · ');
+  const meta = [i.own ? 'My own' : i.cost ? `Paid ${$m(i.cost)}${flag(i, 'cost')}` : '', i.boughtWeek ? `week ${i.boughtWeek}` : '', i.status === 'stock' ? stockState(i) : '', h && i.status === 'stock' ? `${h.approx ? 'about ' : ''}${h.n} days on the shelf` : i.status === 'sold' && !i.own && sellTime(i, D) ? `sold in ${sellTime(i, D)}` : ''].filter(Boolean).join(' · ');
   $('#sheet').innerHTML = `<div class="grab"></div><button class="x" id="sx">✕</button><h3>${esc(i.name)}</h3><div class="meta">${meta}</div>${body}${i.note ? `<p class="note">${esc(i.note)}</p>` : ''}`;
   $('#sheet').classList.add('on'); $('#sheetbg').classList.add('on');
   $('#sx').onclick = closeSheet;
@@ -384,7 +402,7 @@ const closeSheet = () => { $('#sheet').classList.remove('on'); $('#sheetbg').cla
 $('#sheetbg').onclick = closeSheet;
 
 /* ---------- wiring ---------- */
-const order = ['board', 'weeks', 'goal', 'items'];
+const order = ['board', 'weeks', 'goal', 'items', 'kept'];
 function setView(v) {
   if (v === view) return;
   const dir = order.indexOf(v) > order.indexOf(view) ? '24px' : '-24px'; view = v;
