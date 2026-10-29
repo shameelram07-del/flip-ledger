@@ -57,17 +57,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .bar{position:sticky;top:0;z-index:8;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:saturate(1.8) blur(18px);-webkit-backdrop-filter:saturate(1.8) blur(18px);
   padding:calc(8px + env(safe-area-inset-top)) 20px 0;transform:translateY(-100%);opacity:0;transition:transform .35s var(--ease),opacity .25s;position:fixed;left:0;right:0;max-width:480px;margin:0 auto}
 .bar.show{transform:none;opacity:1}
-.bar .line{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;padding-bottom:6px}
+.bar .line{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .bar .line b{font-size:20px;letter-spacing:-.04em;color:var(--green)}
-.seg{display:flex;gap:18px;padding:0 20px;font-size:15px;overflow-x:auto;scrollbar-width:none;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line);position:relative}
-.seg button{padding:14px 0 10px;position:relative;transition:color .25s}
-.seg button.on{color:var(--ink)}
-.seg .ind{position:absolute;bottom:-1px;height:2px;background:var(--ink);border-radius:2px;transition:left .35s var(--ease),width .35s var(--ease)}
-.bar .seg{border-bottom-color:transparent}
-.bar .seg button{padding:8px 0 10px}
 
 /* views */
-.views{position:relative;overflow:clip;width:100%}
+.views{position:relative;overflow:clip;width:100%;padding-top:6px}
 .view{display:none;animation:slide .4s var(--ease);min-width:0;width:100%}
 .view.on{display:block}
 @keyframes slide{from{opacity:0;transform:translateX(var(--dir,24px))}}
@@ -256,7 +250,7 @@ function calc(d) {
   });
   const est = d.estimate && { ...d.estimate, likely: t.stockAccept - t.stockCost - (d.estimate.fuel || 0), best: t.stockList - t.stockCost };
   const flip = d.items.filter(i => !i.own && (i.status === 'sold' || i.status === 'stock'));
-  const pay = { owed: sum(flip, i => i.cost) + fuel, back: sum(sold.filter(i => i.paid === true), i => i.sold), waiting: sold.filter(i => i.paid === false) };
+  const pay = { owed: sum(flip, i => i.cost) + fuel, back: sum(sold.filter(i => !i.own && i.paid !== false), i => i.sold), waiting: sold.filter(i => i.paid === false) };
   const board = {
     collect: stock.filter(i => i.collected === false),
     home: stock.filter(i => i.collected !== false && !i.listed),
@@ -299,7 +293,6 @@ function render() {
     <div class="goal"><i id="goalbar"></i></div>
     <div class="row"><span>${$m(D.goal)} goal</span><span>${goalPct.toFixed(0)}%</span></div>
   </header>
-  <div class="seg" id="seg">${segBtns()}<i class="ind"></i></div>
   <div class="views">
     <section class="view ${view === 'board' ? 'on' : ''}" data-v="board">${boardView()}</section>
     <section class="view ${view === 'weeks' ? 'on' : ''}" data-v="weeks">${weeksView()}</section>
@@ -309,10 +302,9 @@ function render() {
     <section class="view ${view === 'kept' ? 'on' : ''}" data-v="kept">${keptView()}</section>
   </div>
   <footer>Updated ${fmtD(D.updated, {day: 'numeric', month: 'short', year: 'numeric'})} · everything is worked out from data.json</footer>`;
-  $('#bar').innerHTML = `<div class="line"><span class="muted">Profit</span><b>${$m(t.profit)}</b></div><div class="seg">${segBtns()}<i class="ind"></i></div>`;
-  wire(); countUp($('#bigv'), t.profit); requestAnimationFrame(() => { $('#goalbar').style.width = goalPct + '%'; fireView(); moveInd(); });
+  $('#bar').innerHTML = `<div class="line"><span class="muted">Profit</span><b>${$m(t.profit)}</b></div>`;
+  wire(); countUp($('#bigv'), t.profit); requestAnimationFrame(() => { $('#goalbar').style.width = goalPct + '%'; fireView(); });
 }
-const segBtns = () => [['board','Board'],['stock','Stock'],['weeks','Weeks'],['goal','Goal'],['items','Items'],['kept','Kept']].map(([k, l]) => `<button data-v="${k}" class="${view === k ? 'on' : ''}">${l}</button>`).join('');
 
 function card(i, kind) {
   if (kind === 'sold') {
@@ -367,9 +359,9 @@ function goalView() {
       <div class="facts" id="facts"></div>
     </div>
     <div class="card pad">
-      <div class="rate"><b>Paying myself back</b><span class="muted" style="font-size:13px">${$m(p.back)} of ${$m(p.owed)}</span></div>
+      <div class="rate"><b>Paying myself back</b><span class="${p.back >= p.owed ? 'pos' : 'muted'}" style="font-size:13px">${p.back >= p.owed ? `Paid back · ${$m(p.back - p.owed)} clear` : `${$m(p.back)} of ${$m(p.owed)}`}</span></div>
       <div class="pb"><i data-w="${pct}"></i></div>
-      <p class="muted" style="font-size:13px;margin-top:10px">Owed = what I've spent on flip stock + fuel.${p.waiting.length ? ' Waiting on ' + p.waiting.map(i => `${$m(i.sold)} for the ${esc(i.name.split(' ').slice(0, 2).join(' '))}`).join(', ') + ' <span class="tag warn">not confirmed</span>' : ''}</p>
+      <p class="muted" style="font-size:13px;margin-top:10px">Spent ${$m(p.owed)} on flip stock + fuel, ${$m(p.back)} back from flip sales so far.${p.waiting.length ? ' Waiting on ' + p.waiting.map(i => `${$m(i.sold)} for the ${esc(i.name.split(' ').slice(0, 2).join(' '))}`).join(', ') + ' <span class="tag warn">not confirmed</span>' : ''}</p>
     </div>
     <div class="card pad">
       <div class="rate" style="margin-bottom:10px"><b>Where the money went</b><span class="muted" style="font-size:13px">${$m(total)}</span></div>
@@ -445,12 +437,9 @@ function setView(v) {
   if (v === view) return;
   const dir = order.indexOf(v) > order.indexOf(view) ? '24px' : '-24px'; view = v;
   $$('.view').forEach(s => { s.classList.toggle('on', s.dataset.v === v); s.style.setProperty('--dir', dir); });
-  $$('#seg button, #bar .seg button, #tabbar button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
-  if ($('#hero').getBoundingClientRect().bottom < 0) window.scrollTo({top: $('#seg').offsetTop - 60, behavior: reduce ? 'auto' : 'smooth'});
-  fireView(); moveInd();
-}
-function moveInd() {
-  $$('.seg').forEach(seg => { const b = $('button.on', seg), ind = $('.ind', seg); if (b && ind) { ind.style.left = b.offsetLeft + 'px'; ind.style.width = b.offsetWidth + 'px'; } });
+  $$('#tabbar button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  if ($('#hero').getBoundingClientRect().bottom < 0) window.scrollTo({top: $('.views').offsetTop - 56, behavior: reduce ? 'auto' : 'smooth'});
+  fireView();
 }
 function fireView() {
   const s = $(`.view[data-v="${view}"]`); if (!s) return;
@@ -471,7 +460,6 @@ function wire() {
   $('#filter')?.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; $$('#filter button').forEach(x => x.classList.toggle('on', x === b));
     $$('#list .t').forEach(r => { const show = b.dataset.f === 'all' || r.dataset.g === b.dataset.f; r.classList.toggle('hide', !show); if (show) { r.style.animation = 'none'; void r.offsetWidth; r.style.animation = ''; } }); });
   addEventListener('scroll', () => $('#bar').classList.toggle('show', $('#hero').getBoundingClientRect().bottom < 0), {passive: true});
-  addEventListener('resize', moveInd);
 }
 function wireProjection() {
   const t = C.t, start = new Date(D.updated), W = 340, H = 170, L = 34, R = 8, T = 10, B = 22, weeks = 52;
