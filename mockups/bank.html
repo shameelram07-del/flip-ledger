@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Design 1 — Bank app</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.bal{background:linear-gradient(160deg,#1c1c1e,#000);color:#fff;padding:26px 22px 22px;border-radius:0 0 34px 34px}
+.bal .k{font-size:13px;opacity:.6}
+.bal .v{font-size:56px;font-weight:700;letter-spacing:-.05em;line-height:1;margin:6px 0 4px}
+.bal .goal{height:6px;border-radius:99px;background:rgba(255,255,255,.15);margin-top:16px;overflow:hidden}
+.bal .goal i{display:block;height:100%;width:0;background:#30d158;border-radius:99px;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.in .bal .goal i{width:9.6%}
+.bal .row{display:flex;justify-content:space-between;font-size:12px;opacity:.7;margin-top:8px}
+.swipe{display:flex;gap:12px;overflow-x:auto;padding:18px 16px 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.swipe::-webkit-scrollbar{display:none}
+.wk{flex:none;width:200px;scroll-snap-align:start;border-radius:20px;padding:16px;background:#f5f5f7}
+.wk.est{background:#fff;border:1.5px dashed #c7c7cc}
+.wk small{font-size:12px;color:#6e6e73}
+.wk .p{font-size:30px;font-weight:700;letter-spacing:-.04em;color:#30a14e;margin-top:8px}
+.wk .m{font-size:12px;color:#6e6e73;margin-top:2px}
+.tx{padding:8px 16px 90px}
+.tx h4{font-size:13px;color:#6e6e73;font-weight:600;margin:14px 6px 6px}
+.t{display:flex;align-items:center;gap:12px;padding:11px 6px;border-bottom:1px solid #f0f0f2}
+.t .ic{width:38px;height:38px;border-radius:12px;background:#f5f5f7;display:grid;place-items:center;font-size:18px;flex:none}
+.t .nm{flex:1;min-width:0;font-size:15px;font-weight:500;line-height:1.25}
+.t .nm small{display:block;color:#6e6e73;font-size:12px;font-weight:400}
+.t .amt{font-weight:600;color:#30a14e}
+.t .amt.neg{color:#ff3b30}
+.tabbar{position:absolute;left:0;right:0;bottom:0;height:74px;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);border-top:1px solid #e5e5ea;display:flex;justify-content:space-around;align-items:center;padding-bottom:12px;font-size:10px;color:#8e8e93}
+.tabbar div{text-align:center}.tabbar div b{display:block;font-size:22px;font-weight:400}.tabbar .on{color:#0071e3}
+.stock{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px 90px}
+.sk{border-radius:18px;background:#f5f5f7;padding:14px;font-size:13px;font-weight:600;line-height:1.3;min-height:120px;display:flex;flex-direction:column}
+.sk .pr{margin-top:auto;font-size:26px;letter-spacing:-.04em}
+.sk .pr small{font-size:12px;color:#30a14e;font-weight:600;margin-left:4px}
+</style></head><body>
+<a class="back" href="index.html">‹ All designs</a>
+<div class="nav"><b>Flip Ledger</b><span>Design 1 · Bank app</span></div>
+
+<section class="panel dark">
+  <div class="eyebrow rv">Design 1</div>
+  <h1 class="rv d1">Your profit,<br>like a balance.</h1>
+  <p class="sub rv d2">Open it like a bank app. Glance, done.</p>
+  <div class="device rv d3"><div class="screen">
+    <div class="bal"><div class="k">Total profit</div><div class="v" data-count="480" data-pre="$">$0</div><div class="k">$240 a week · 2 weeks in</div>
+      <div class="goal"><i></i></div><div class="row"><span>$5,000 goal</span><span>10%</span></div></div>
+    <div class="swipe">
+      <div class="wk"><small>Week 1 · 19–26 Oct</small><div class="p">+$380</div><div class="m">6 sold · 1 trip</div></div>
+      <div class="wk"><small>Week 2 · 27–29 Oct</small><div class="p">+$100</div><div class="m">2 sold</div></div>
+      <div class="wk est"><small>Week 3 · estimate</small><div class="p" style="color:#8e8e93">+$268</div><div class="m">if stock sells</div></div>
+    </div>
+    <div class="tx"><h4>WEEK 2</h4>
+      <div class="t"><div class="ic">🌱</div><div class="nm">Bosch Easy Mower<small>Paid $51 · sold in 10 days</small></div><div class="amt">+$69</div></div>
+      <div class="t"><div class="ic">🏎️</div><div class="nm">Scalextric McLaren<small>Own · 8 bids</small></div><div class="amt">+$31</div></div>
+      <h4>WEEK 1</h4>
+      <div class="t"><div class="ic">🪚</div><div class="nm">Bosch GTS 10 J + stand<small>Paid $300 · not confirmed</small></div><div class="amt">+$200</div></div>
+      <div class="t"><div class="ic">⛽</div><div class="nm">Fuel, 216 km<small>Trip 1</small></div><div class="amt neg">−$59</div></div>
+    </div>
+    <div class="tabbar"><div class="on"><b>◉</b>Home</div><div><b>▤</b>Stock</div><div><b>↗</b>Goal</div><div><b>≡</b>All</div></div>
+  </div></div>
+</section>
+
+<section class="panel">
+  <div class="eyebrow rv">Weeks</div>
+  <h2 class="rv d1">Swipe through<br>your weeks.</h2>
+  <p class="sub rv d2">Each week is one card. Estimates are dashed, so they never look real.</p>
+</section>
+
+<section class="panel grey">
+  <div class="eyebrow rv">Stock tab</div>
+  <h2 class="rv d1">What's on the shelf.</h2>
+  <p class="sub rv d2">Price first. Tap for accept and worst case.</p>
+  <div class="device rv d3"><div class="screen">
+    <div class="bal" style="padding-bottom:18px"><div class="k">In stock · 6 items</div><div class="v" style="font-size:40px">$177 <span style="font-size:16px;opacity:.6;font-weight:500">cost</span></div><div class="k">$600 at list · $485 at accept</div></div>
+    <div class="stock">
+      <div class="sk">Ryobi table saw #1<div class="pr">$180<small>+$99</small></div></div>
+      <div class="sk">Ozito 254mm table saw<div class="pr">$120<small>+$90</small></div></div>
+      <div class="sk">Ozito cut-off saw<div class="pr">$100<small>+$60</small></div></div>
+      <div class="sk">Ryobi table saw #2<div class="pr">$80<small>+$55</small></div></div>
+      <div class="sk">Ozito drop saw<div class="pr">$80<small>+$79</small></div></div>
+      <div class="sk">GearUp compressor<div class="pr">$40<small>+$40</small></div></div>
+    </div>
+    <div class="tabbar"><div><b>◉</b>Home</div><div class="on"><b>▤</b>Stock</div><div><b>↗</b>Goal</div><div><b>≡</b>All</div></div>
+  </div></div>
+</section>
+
+<section class="panel dark">
+  <div class="eyebrow rv">Why this one</div>
+  <h2 class="rv d1">Zero learning curve.</h2>
+  <p class="sub rv d2">Everyone already knows how a bank app works.<br>Fastest to check at the kitchen bench.</p>
+  <div class="pills rv d3"><a class="pill" href="index.html">Back to all three</a><a class="pill ghost" href="scoreboard.html">Next design ›</a></div>
+</section>
+<script src="shared.js"></script></body></html>

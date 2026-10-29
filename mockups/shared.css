@@ -1,0 +1,27 @@
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:17px/1.47 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;color:#1d1d1f;background:#fff;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.panel{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:72px 20px;position:relative;overflow:hidden}
+.panel.dark{background:#000;color:#f5f5f7}
+.panel.grey{background:#f5f5f7}
+.eyebrow{font-size:15px;font-weight:600;letter-spacing:.02em;opacity:.65}
+h1{font-size:clamp(44px,12vw,96px);font-weight:700;letter-spacing:-.04em;line-height:1.02;margin:6px 0 10px}
+h2{font-size:clamp(34px,9vw,64px);font-weight:700;letter-spacing:-.035em;line-height:1.05;margin:6px 0 10px}
+.sub{font-size:clamp(19px,5vw,26px);font-weight:500;opacity:.8;letter-spacing:-.02em}
+.green{color:#30d158}.dark .green{color:#30d158}
+.blue{color:#0071e3}
+.red{color:#ff453a}
+.pills{display:flex;gap:12px;justify-content:center;margin-top:22px}
+.pill{border-radius:980px;padding:10px 20px;font-size:15px;font-weight:500;background:#0071e3;color:#fff;text-decoration:none;border:1px solid #0071e3}
+.pill.ghost{background:transparent;color:#0071e3}
+.dark .pill.ghost{color:#2997ff;border-color:#2997ff}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+.nav{position:sticky;top:0;z-index:9;height:48px;display:flex;align-items:center;justify-content:center;gap:28px;font-size:12px;background:rgba(0,0,0,.8);color:#f5f5f7;backdrop-filter:saturate(1.8) blur(20px);-webkit-backdrop-filter:saturate(1.8) blur(20px)}
+.nav b{font-size:14px;letter-spacing:-.02em}
+.nav span{opacity:.8}
+.back{position:fixed;left:14px;top:60px;z-index:10;font-size:13px;color:#2997ff;text-decoration:none;background:rgba(0,0,0,.5);padding:6px 12px;border-radius:980px;backdrop-filter:blur(10px)}
+.device{width:min(380px,92vw);margin:28px auto 0;border-radius:40px;background:#000;padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.screen{border-radius:30px;overflow:hidden;background:#fff;color:#1d1d1f;text-align:left;min-height:560px;position:relative}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}

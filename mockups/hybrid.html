@@ -1,0 +1,137 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Design 4 — Bank + Board</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.scr{background:#f5f5f7;min-height:640px;display:flex;flex-direction:column}
+.bal{background:linear-gradient(160deg,#1c1c1e,#000);color:#fff;padding:24px 20px 20px;border-radius:0 0 30px 30px}
+.bal .k{font-size:13px;opacity:.6}
+.bal .v{font-size:56px;font-weight:700;letter-spacing:-.05em;line-height:1;margin:6px 0 4px}
+.bal .goal{height:6px;border-radius:99px;background:rgba(255,255,255,.15);margin-top:14px;overflow:hidden}
+.bal .goal i{display:block;height:100%;width:0;background:#30d158;border-radius:99px;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.in .bal .goal i{width:9.6%}
+.bal .row{display:flex;justify-content:space-between;font-size:12px;opacity:.7;margin-top:8px}
+.seg{display:flex;gap:18px;padding:16px 20px 4px;font-size:14px;font-weight:600;color:#8e8e93}
+.seg .on{color:#1d1d1f;position:relative}
+.seg .on::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#1d1d1f;border-radius:2px}
+.cols{display:flex;gap:10px;overflow-x:auto;padding:14px 14px 90px;scroll-snap-type:x mandatory;flex:1;scrollbar-width:none}
+.cols::-webkit-scrollbar{display:none}
+.col{flex:none;width:168px;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
+.col h5{font-size:12px;font-weight:600;color:#6e6e73;padding:4px 6px;display:flex;justify-content:space-between}
+.col h5 b{color:#1d1d1f}
+.c{background:#fff;border-radius:16px;padding:12px;font-size:13px;font-weight:600;line-height:1.3;box-shadow:0 1px 3px rgba(0,0,0,.06);position:relative;transform:translateX(30px);opacity:0;transition:all .7s cubic-bezier(.2,.8,.2,1)}
+.in .c{transform:none;opacity:1}
+.in .c:nth-child(2){transition-delay:.05s}.in .c:nth-child(3){transition-delay:.1s}.in .c:nth-child(4){transition-delay:.15s}.in .c:nth-child(5){transition-delay:.2s}
+.c .pr{font-size:20px;letter-spacing:-.04em;margin-top:6px}
+.c .pr small{font-size:11px;color:#30a14e;margin-left:4px}
+.c .age{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;background:#e9f9ee;color:#1d8d3f}
+.c .age.amber{background:#fff3d6;color:#b06e00}
+.c .age.red{background:#ffe3e0;color:#c92a1d}
+.c.ghost{background:transparent;border:1.5px dashed #c7c7cc;box-shadow:none;color:#8e8e93;text-align:center;font-weight:500;padding:18px 12px}
+.c .paid{position:absolute;top:8px;right:10px;font-size:10px;font-weight:800;color:#30a14e;border:2px solid #30a14e;padding:1px 5px;border-radius:4px;transform:rotate(-8deg)}
+.swipe{display:flex;gap:12px;overflow-x:auto;padding:16px 16px 4px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.swipe::-webkit-scrollbar{display:none}
+.wk{flex:none;width:200px;scroll-snap-align:start;border-radius:20px;padding:16px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.wk.est{background:transparent;border:1.5px dashed #c7c7cc;box-shadow:none}
+.wk small{font-size:12px;color:#6e6e73}
+.wk .p{font-size:30px;font-weight:700;letter-spacing:-.04em;color:#30a14e;margin-top:8px}
+.wk .m{font-size:12px;color:#6e6e73;margin-top:2px}
+.tx{padding:8px 16px 90px}
+.tx h4{font-size:13px;color:#6e6e73;font-weight:600;margin:14px 6px 6px}
+.t{display:flex;align-items:center;gap:12px;padding:11px 6px;border-bottom:1px solid #e5e5ea}
+.t .ic{width:38px;height:38px;border-radius:12px;background:#fff;display:grid;place-items:center;font-size:18px;flex:none;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.t .nm{flex:1;min-width:0;font-size:15px;font-weight:500;line-height:1.25}
+.t .nm small{display:block;color:#6e6e73;font-size:12px;font-weight:400}
+.t .amt{font-weight:600;color:#30a14e}
+.t .amt.neg{color:#ff3b30}
+.tabbar{position:absolute;left:0;right:0;bottom:0;height:74px;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);border-top:1px solid #e5e5ea;display:flex;justify-content:space-around;align-items:center;padding-bottom:12px;font-size:10px;color:#8e8e93}
+.tabbar div{text-align:center}.tabbar div b{display:block;font-size:22px;font-weight:400}.tabbar .on{color:#0071e3}
+.legend{display:flex;gap:16px;justify-content:center;margin-top:22px;font-size:14px;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:50%}
+.two{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.two .device{margin:0;width:min(300px,90vw)}
+.two .screen{min-height:520px}
+.two .bal .v{font-size:44px}
+</style></head><body>
+<a class="back" href="index.html">‹ All designs</a>
+<div class="nav"><b>Flip Ledger</b><span>Design 4 · Bank + Board</span></div>
+
+<section class="panel dark">
+  <div class="eyebrow rv">Design 4</div>
+  <h1 class="rv d1">Bank up top.<br>Board underneath.</h1>
+  <p class="sub rv d2">The balance you glance at. The board you work from.</p>
+  <div class="device rv d3"><div class="screen scr">
+    <div class="bal"><div class="k">Total profit</div><div class="v" data-count="480" data-pre="$">$0</div><div class="k">$240 a week · 2 weeks in</div>
+      <div class="goal"><i></i></div><div class="row"><span>$5,000 goal</span><span>10%</span></div></div>
+    <div class="seg"><span class="on">Board</span><span>Weeks</span><span>Goal</span></div>
+    <div class="cols">
+      <div class="col"><h5>Bought <b>3</b></h5>
+        <div class="c"><span class="age">1 d</span>Ozito cut-off saw<div class="pr">$40 <small>list $100</small></div></div>
+        <div class="c"><span class="age">1 d</span>Ozito 254 table saw<div class="pr">$30 <small>list $120</small></div></div>
+        <div class="c"><span class="age">2 d</span>Ozito drop saw<div class="pr">$1 <small>list $80</small></div></div>
+        <div class="c ghost">+ Add a buy</div></div>
+      <div class="col"><h5>Listed <b>3</b></h5>
+        <div class="c"><span class="age amber">9 d</span>Ryobi table saw #1<div class="pr">$180 <small>+$99</small></div></div>
+        <div class="c"><span class="age red">11 d</span>Ryobi table saw #2<div class="pr">$80 <small>+$55</small></div></div>
+        <div class="c"><span class="age">3 d</span>GearUp compressor<div class="pr">$40 <small>+$40</small></div></div></div>
+      <div class="col"><h5>Sold <b>1</b></h5>
+        <div class="c"><span class="age">wait</span>Bosch GTS 10 J<div class="pr">$500 <small>+$200</small></div></div>
+        <div class="c ghost">Waiting on $500</div></div>
+      <div class="col"><h5>Paid <b>7</b></h5>
+        <div class="c"><span class="paid">PAID</span>Bosch Easy Mower<div class="pr">$120 <small>+$69</small></div></div>
+        <div class="c"><span class="paid">PAID</span>B+D BES720<div class="pr">$150 <small>+$89</small></div></div>
+        <div class="c"><span class="paid">PAID</span>Scalextric McLaren<div class="pr">$31 <small>+$31</small></div></div></div>
+    </div>
+    <div class="tabbar"><div class="on"><b>◉</b>Home</div><div><b>▤</b>Items</div><div><b>↗</b>Goal</div><div><b>+</b>Add</div></div>
+  </div></div>
+</section>
+
+<section class="panel">
+  <div class="eyebrow rv">How it fits</div>
+  <h2 class="rv d1">One header.<br>Three views under it.</h2>
+  <p class="sub rv d2">The balance never moves. Swipe the strip below it between Board, Weeks and Goal.</p>
+  <div class="two">
+    <div class="device rv d2"><div class="screen scr">
+      <div class="bal"><div class="k">Total profit</div><div class="v">$480</div><div class="goal"><i></i></div><div class="row"><span>$5,000 goal</span><span>10%</span></div></div>
+      <div class="seg"><span>Board</span><span class="on">Weeks</span><span>Goal</span></div>
+      <div class="swipe">
+        <div class="wk"><small>Week 2 · 27–29 Oct</small><div class="p">+$100</div><div class="m">2 sold</div></div>
+        <div class="wk est"><small>Week 3 · estimate</small><div class="p" style="color:#8e8e93">+$268</div><div class="m">if stock sells</div></div>
+      </div>
+      <div class="tx"><h4>WEEK 2</h4>
+        <div class="t"><div class="ic">🌱</div><div class="nm">Bosch Easy Mower<small>Paid $51 · 10 days</small></div><div class="amt">+$69</div></div>
+        <div class="t"><div class="ic">🏎️</div><div class="nm">Scalextric McLaren<small>Own · 8 bids</small></div><div class="amt">+$31</div></div>
+        <h4>WEEK 1</h4>
+        <div class="t"><div class="ic">⛽</div><div class="nm">Fuel, 216 km<small>Trip 1</small></div><div class="amt neg">−$59</div></div>
+      </div>
+      <div class="tabbar"><div class="on"><b>◉</b>Home</div><div><b>▤</b>Items</div><div><b>↗</b>Goal</div><div><b>+</b>Add</div></div>
+    </div></div>
+    <div class="device rv d3"><div class="screen scr" style="background:#000;color:#fff">
+      <div class="bal"><div class="k">Total profit</div><div class="v">$480</div><div class="goal"><i></i></div><div class="row"><span>$5,000 goal</span><span>10%</span></div></div>
+      <div class="seg" style="color:#6e6e73"><span>Board</span><span>Weeks</span><span class="on" style="color:#fff">Goal</span></div>
+      <div style="padding:26px 20px;text-align:center">
+        <div style="font-size:13px;opacity:.6">At $240 a week you hit $5,000 on</div>
+        <div style="font-size:44px;font-weight:700;letter-spacing:-.05em;margin:6px 0 18px">10 March</div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;opacity:.8;padding:10px 0;border-top:1px solid #2c2c2e"><span>By Christmas</span><b>$2,416</b></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px;opacity:.8;padding:10px 0;border-top:1px solid #2c2c2e"><span>By 1 April</span><b>$5,741</b></div>
+        <div style="margin-top:22px;height:6px;background:#2c2c2e;border-radius:99px;position:relative"><i style="position:absolute;left:0;top:0;height:100%;width:9.6%;background:#30d158;border-radius:99px"></i></div>
+        <div style="font-size:11px;opacity:.5;margin-top:8px">drag to change weekly pace</div>
+      </div>
+      <div class="tabbar" style="background:rgba(0,0,0,.8);border-color:#2c2c2e"><div class="on"><b>◉</b>Home</div><div><b>▤</b>Items</div><div><b>↗</b>Goal</div><div><b>+</b>Add</div></div>
+    </div></div>
+  </div>
+</section>
+
+<section class="panel grey">
+  <div class="eyebrow rv">The board</div>
+  <h2 class="rv d1">Stuck stock shows itself.</h2>
+  <p class="sub rv d2">Days on the shelf sit on every card. Green, amber, then red.<br>Red means drop the price.</p>
+  <div class="legend rv d3"><span><i style="background:#30d158"></i>under a week</span><span><i style="background:#ff9f0a"></i>7+ days</span><span><i style="background:#ff453a"></i>10+ days</span></div>
+</section>
+
+<section class="panel dark">
+  <div class="eyebrow rv">Why this one</div>
+  <h2 class="rv d1">Glance, then work.</h2>
+  <p class="sub rv d2">Bank-app feel for checking. Board for doing.<br>The + tab adds a buy or sale in two taps.</p>
+  <div class="pills rv d3"><a class="pill" href="index.html">Back to all designs</a><a class="pill ghost" href="board.html">Just the board ›</a></div>
+</section>
+<script src="shared.js"></script></body></html>

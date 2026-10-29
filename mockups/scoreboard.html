@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Design 2 — Scoreboard</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.board{background:#000;color:#fff;padding:22px 18px 20px;min-height:640px;display:flex;flex-direction:column}
+.board .top{text-align:center}
+.board .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.55}
+.board .v{font-size:76px;font-weight:700;letter-spacing:-.06em;line-height:1;margin:6px 0 2px;color:#30d158}
+.board .m{font-size:13px;opacity:.6}
+.race{margin:22px 0 6px;position:relative;height:38px}
+.race .track{position:absolute;left:0;right:0;top:16px;height:6px;background:#2c2c2e;border-radius:99px}
+.race .fill{position:absolute;left:0;top:16px;height:6px;width:0;background:#30d158;border-radius:99px;transition:width 1.8s cubic-bezier(.2,.8,.2,1)}
+.in .race .fill{width:9.6%}
+.race .me{position:absolute;top:4px;left:0;width:30px;height:30px;border-radius:50%;background:#30d158;display:grid;place-items:center;font-size:16px;transform:translateX(-50%);transition:left 1.8s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 0 6px rgba(48,209,88,.2)}
+.in .race .me{left:9.6%}
+.race .flag{position:absolute;right:0;top:0;font-size:22px}
+.race .lbl{position:absolute;top:30px;font-size:11px;opacity:.55}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px;flex:1}
+.tile{background:#1c1c1e;border-radius:22px;padding:16px 14px;display:flex;flex-direction:column;cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s}
+.tile:active{transform:scale(.96)}
+.tile .k{font-size:11px;opacity:.6;letter-spacing:.04em;text-transform:none}
+.tile .v{font-size:34px;color:#fff;margin:auto 0 2px;letter-spacing:-.05em}
+.tile .v.g{color:#30d158}.tile .v.o{color:#ff9f0a}
+.tile .m{font-size:11px;opacity:.55}
+.streak{display:flex;justify-content:center;gap:6px;margin-top:16px;font-size:12px;opacity:.8}
+.streak i{display:inline-block;width:10px;height:10px;border-radius:50%;background:#30d158;margin-left:2px}
+.streak i.off{background:#2c2c2e}
+.expanded{background:#000;color:#fff;padding:28px 22px;min-height:640px;display:flex;flex-direction:column}
+.expanded .x{align-self:flex-end;width:30px;height:30px;border-radius:50%;background:#2c2c2e;display:grid;place-items:center;font-size:14px}
+.expanded .k{font-size:13px;opacity:.6}
+.expanded .v{font-size:64px;font-weight:700;letter-spacing:-.06em;line-height:1;margin:4px 0 20px;color:#30d158}
+.line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #2c2c2e;font-size:15px}
+.line b{color:#30d158}
+.bars{margin-top:20px;display:flex;align-items:flex-end;gap:8px;height:120px}
+.bars div{flex:1;background:#30d158;border-radius:8px 8px 3px 3px;position:relative;transform-origin:bottom;transform:scaleY(0);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.in .bars div{transform:none}
+.bars div.est{background:#2c2c2e}
+.bars span{position:absolute;bottom:100%;left:0;right:0;text-align:center;font-size:12px;padding-bottom:4px}
+</style></head><body>
+<a class="back" href="index.html">‹ All designs</a>
+<div class="nav"><b>Flip Ledger</b><span>Design 2 · Scoreboard</span></div>
+
+<section class="panel dark">
+  <div class="eyebrow rv">Design 2</div>
+  <h1 class="rv d1">One screen.<br>No scrolling.</h1>
+  <p class="sub rv d2">Everything that matters, in one glance.</p>
+  <div class="device rv d3" style="padding:10px"><div class="screen board">
+    <div class="top"><div class="k">Profit</div><div class="v" data-count="480" data-pre="$">$0</div><div class="m">$240/week · 10% of $5k</div></div>
+    <div class="race"><div class="track"></div><div class="fill"></div><div class="me">🔧</div><div class="flag">🏁</div><span class="lbl" style="left:0">$0</span><span class="lbl" style="right:0">$5,000</span></div>
+    <div class="tiles">
+      <div class="tile"><div class="k">This week</div><div class="v g">+$100</div><div class="m">2 sold · no fuel</div></div>
+      <div class="tile"><div class="k">In stock</div><div class="v">6</div><div class="m">$177 in · $600 at list</div></div>
+      <div class="tile"><div class="k">Owed to me</div><div class="v o">$368</div><div class="m">$280 of $648 back</div></div>
+      <div class="tile"><div class="k">Goal by</div><div class="v">10 Mar</div><div class="m">19 weeks at this pace</div></div>
+    </div>
+    <div class="streak">2-week streak <span><i></i><i></i><i class="off"></i><i class="off"></i></span></div>
+  </div></div>
+</section>
+
+<section class="panel">
+  <div class="eyebrow rv">Tap a tile</div>
+  <h2 class="rv d1">It opens.<br>Full screen.</h2>
+  <p class="sub rv d2">The tile grows into the detail. Swipe down to close. No pages, no menus.</p>
+  <div class="device rv d3" style="padding:10px"><div class="screen expanded">
+    <div class="x">✕</div>
+    <div class="k">This week · 27–29 Oct</div>
+    <div class="v" data-count="100" data-pre="+$">+$0</div>
+    <div class="line"><span>Bosch Easy Mower</span><b>+$69</b></div>
+    <div class="line"><span>Scalextric McLaren F1</span><b>+$31</b></div>
+    <div class="line" style="opacity:.5"><span>Fuel</span><span>none</span></div>
+    <div class="bars"><div style="height:100%"><span>Wk 1</span></div><div style="height:26%"><span>Wk 2</span></div><div class="est" style="height:70%"><span style="opacity:.6">Wk 3?</span></div><div class="est" style="height:4%"></div></div>
+  </div></div>
+</section>
+
+<section class="panel grey">
+  <div class="eyebrow rv">Little wins</div>
+  <h2 class="rv d1">It celebrates with you.</h2>
+  <p class="sub rv d2">The wrench slides along the track every time a sale lands.<br>A small burst of confetti when a week closes in profit.</p>
+</section>
+
+<section class="panel dark">
+  <div class="eyebrow rv">Why this one</div>
+  <h2 class="rv d1">Feels like a game.</h2>
+  <p class="sub rv d2">Keeps you motivated. Best if you check it every day.</p>
+  <div class="pills rv d3"><a class="pill" href="index.html">Back to all three</a><a class="pill ghost" href="board.html">Next design ›</a></div>
+</section>
+<script src="shared.js"></script></body></html>

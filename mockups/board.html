@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Design 3 — The board</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.hero-num{font-size:clamp(96px,28vw,220px);font-weight:700;letter-spacing:-.07em;line-height:.95;color:#30d158}
+.kb{background:#f5f5f7;color:#1d1d1f;min-height:640px;display:flex;flex-direction:column}
+.kb .head{padding:18px 18px 10px}
+.kb .head .k{font-size:12px;color:#6e6e73}
+.kb .head .v{font-size:38px;font-weight:700;letter-spacing:-.05em;color:#30a14e;line-height:1}
+.cols{display:flex;gap:10px;overflow-x:auto;padding:4px 14px 20px;scroll-snap-type:x mandatory;flex:1;scrollbar-width:none}
+.cols::-webkit-scrollbar{display:none}
+.col{flex:none;width:168px;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
+.col h5{font-size:12px;font-weight:600;color:#6e6e73;padding:4px 6px;display:flex;justify-content:space-between}
+.col h5 b{color:#1d1d1f}
+.c{background:#fff;border-radius:16px;padding:12px;font-size:13px;font-weight:600;line-height:1.3;box-shadow:0 1px 3px rgba(0,0,0,.06);position:relative;transform:translateX(30px);opacity:0;transition:all .7s cubic-bezier(.2,.8,.2,1)}
+.in .c{transform:none;opacity:1}
+.in .c:nth-child(2){transition-delay:.05s}.in .c:nth-child(3){transition-delay:.1s}.in .c:nth-child(4){transition-delay:.15s}.in .c:nth-child(5){transition-delay:.2s}
+.c .pr{font-size:20px;letter-spacing:-.04em;margin-top:6px}
+.c .pr small{font-size:11px;color:#30a14e;margin-left:4px}
+.c .age{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;background:#e9f9ee;color:#1d8d3f}
+.c .age.amber{background:#fff3d6;color:#b06e00}
+.c .age.red{background:#ffe3e0;color:#c92a1d}
+.c.ghost{background:transparent;border:1.5px dashed #c7c7cc;box-shadow:none;color:#8e8e93;text-align:center;font-weight:500;padding:18px 12px}
+.c .paid{position:absolute;top:8px;right:10px;font-size:10px;font-weight:800;color:#30a14e;border:2px solid #30a14e;padding:1px 5px;border-radius:4px;transform:rotate(-8deg)}
+.mv{position:relative;width:min(380px,92vw);margin:30px auto 0;height:110px}
+.mv .c{position:absolute;left:0;top:20px;width:170px;opacity:1;transform:none;animation:slide 3.2s cubic-bezier(.4,0,.2,1) infinite}
+.mv .lane{position:absolute;top:0;width:170px;height:110px;border-radius:18px;border:1.5px dashed rgba(255,255,255,.25);font-size:11px;color:rgba(255,255,255,.6);padding:6px 10px;text-align:left}
+@keyframes slide{0%,20%{transform:translateX(0) rotate(0)}45%,70%{transform:translateX(210px) rotate(0)}48%{transform:translateX(205px) rotate(-2deg)}100%{transform:translateX(210px)}}
+.legend{display:flex;gap:16px;justify-content:center;margin-top:22px;font-size:14px}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:50%}
+</style></head><body>
+<a class="back" href="index.html">‹ All designs</a>
+<div class="nav"><b>Flip Ledger</b><span>Design 3 · The board</span></div>
+
+<section class="panel dark">
+  <div class="eyebrow rv">Design 3</div>
+  <div class="hero-num rv d1" data-count="480" data-pre="$">$0</div>
+  <p class="sub rv d2">profit · 2 weeks · 10% of the way</p>
+  <h2 class="rv d3" style="margin-top:34px">Then the board.</h2>
+  <p class="sub rv d4" style="font-size:19px">Bought → Listed → Sold → Paid. Every tool is a card that moves.</p>
+</section>
+
+<section class="panel grey">
+  <div class="eyebrow rv">The board</div>
+  <h2 class="rv d1">Swipe across.<br>See where everything is.</h2>
+  <div class="device rv d2" style="padding:10px"><div class="screen kb">
+    <div class="head"><div class="k">Profit</div><div class="v">$480</div></div>
+    <div class="cols">
+      <div class="col"><h5>Bought <b>3</b></h5>
+        <div class="c"><span class="age">1 d</span>Ozito cut-off saw<div class="pr">$40 <small>list $100</small></div></div>
+        <div class="c"><span class="age">1 d</span>Ozito 254 table saw<div class="pr">$30 <small>list $120</small></div></div>
+        <div class="c"><span class="age">2 d</span>Ozito drop saw<div class="pr">$1 <small>list $80</small></div></div>
+        <div class="c ghost">+ Add a buy</div></div>
+      <div class="col"><h5>Listed <b>3</b></h5>
+        <div class="c"><span class="age amber">9 d</span>Ryobi table saw #1<div class="pr">$180 <small>+$99</small></div></div>
+        <div class="c"><span class="age red">11 d</span>Ryobi table saw #2<div class="pr">$80 <small>+$55</small></div></div>
+        <div class="c"><span class="age">3 d</span>GearUp compressor<div class="pr">$40 <small>+$40</small></div></div></div>
+      <div class="col"><h5>Sold <b>1</b></h5>
+        <div class="c"><span class="age">wait</span>Bosch GTS 10 J<div class="pr">$500 <small>+$200</small></div></div>
+        <div class="c ghost">Waiting on $500</div></div>
+      <div class="col"><h5>Paid <b>7</b></h5>
+        <div class="c"><span class="paid">PAID</span>Bosch Easy Mower<div class="pr">$120 <small>+$69</small></div></div>
+        <div class="c"><span class="paid">PAID</span>B+D BES720<div class="pr">$150 <small>+$89</small></div></div>
+        <div class="c"><span class="paid">PAID</span>Scalextric McLaren<div class="pr">$31 <small>+$31</small></div></div>
+        <div class="c"><span class="paid">PAID</span>Makita drill kit<div class="pr">$50 <small>+$50</small></div></div></div>
+    </div>
+  </div></div>
+  <div class="legend rv d3"><span><i style="background:#30d158"></i>under a week</span><span><i style="background:#ff9f0a"></i>7+ days</span><span><i style="background:#ff453a"></i>10+ days, drop the price</span></div>
+</section>
+
+<section class="panel dark">
+  <div class="eyebrow rv">Moving a card</div>
+  <h2 class="rv d1">Sold it? Drag it.</h2>
+  <p class="sub rv d2">The card slides to Sold, the profit number ticks up, the shelf gets lighter.</p>
+  <div class="mv rv d3">
+    <div class="lane" style="left:0">Listed</div><div class="lane" style="left:210px">Sold</div>
+    <div class="c"><span class="age amber">9 d</span>Ryobi table saw #1<div class="pr">$150 <small>+$69</small></div></div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="eyebrow rv">Why this one</div>
+  <h2 class="rv d1">It matches how you work.</h2>
+  <p class="sub rv d2">You buy, list, sell, get paid. The board shows the stuck ones<br>so you price to move. Fast turnover, visible.</p>
+  <div class="pills rv d3"><a class="pill" href="index.html">Back to all three</a><a class="pill ghost" href="bank.html">Design 1 ›</a></div>
+</section>
+<script src="shared.js"></script></body></html>

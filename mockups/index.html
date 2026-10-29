@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flip Ledger — 3 designs</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.cards{display:grid;gap:18px;width:min(960px,100%);margin-top:30px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{display:block;text-decoration:none;color:inherit;background:#fff;border-radius:28px;padding:28px 24px 26px;text-align:left;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 18px 50px rgba(0,0,0,.12)}
+.card .n{font-size:13px;font-weight:600;color:#0071e3}
+.card h3{font-size:28px;letter-spacing:-.03em;margin:6px 0 8px}
+.card p{font-size:15px;color:#6e6e73;line-height:1.4}
+.card .go{display:inline-block;margin-top:16px;color:#0071e3;font-size:15px}
+.pick{font-size:12px;background:#30d158;color:#000;border-radius:980px;padding:3px 9px;margin-left:8px;font-weight:600;vertical-align:2px}
+</style></head><body>
+<section class="panel grey" style="min-height:100svh">
+  <div class="eyebrow rv">Flip Ledger</div>
+  <h1 class="rv d1" style="font-size:clamp(40px,9vw,80px)">Four ways to see it.</h1>
+  <p class="sub rv d2">Same numbers. Four different pages. Tap one.</p>
+  <div class="cards">
+    <a class="card rv d2" href="bank.html"><div class="n">Design 1</div><h3>Bank app</h3><p>Your profit is a balance. Weeks are cards you swipe. Every sale is a transaction line.</p><span class="go">See it ›</span></a>
+    <a class="card rv d3" href="scoreboard.html"><div class="n">Design 2</div><h3>Scoreboard</h3><p>One screen, no scrolling. A race bar to $5k and four tiles that open full-screen.</p><span class="go">See it ›</span></a>
+    <a class="card rv d4" href="hybrid.html"><div class="n">Design 4 <span class="pick">hybrid</span></div><h3>Bank + Board</h3><p>Bank-style balance up top. Swipe between Board, Weeks and Goal underneath.</p><span class="go">See it ›</span></a>
+    <a class="card rv d4" href="board.html"><div class="n">Design 3</div><h3>The board</h3><p>Bought → Listed → Sold → Paid. Tools are cards that move. Slow stock turns amber, then red.</p><span class="go">See it ›</span></a>
+  </div>
+</section>
+<script src="shared.js"></script></body></html>
