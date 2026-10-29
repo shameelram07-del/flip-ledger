@@ -121,6 +121,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .srow .prices b{display:block;font-size:18px;letter-spacing:-.03em;line-height:1.2}
 .srow .prices em{display:block;font-style:normal;font-size:11px;font-weight:600}
 
+.tot{width:100%;border-collapse:collapse;font-size:15px}
+.tot th{font-size:12px;font-weight:600;color:var(--muted);text-align:right;padding:12px 14px 6px}
+.tot th:first-child,.tot td:first-child{text-align:left;color:var(--muted);font-weight:500}
+.tot td{text-align:right;padding:9px 14px;border-top:1px solid var(--line);font-weight:600}
+.tot .sum td{font-size:18px;letter-spacing:-.03em;font-weight:700;padding:12px 14px 14px;background:var(--card-2)}
+.tot .sum td:first-child{color:var(--ink);font-size:15px}
+
 /* sheet */
 .sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:20}
 .sheet-bg.on{opacity:1;pointer-events:auto}
@@ -399,7 +406,18 @@ function stockView() {
   return `
     <div class="kpis">${tile('At list', t.stockList, 'pos')}${tile('If I accept', t.stockAccept, 'pos')}${tile('Worst case', worst, worst - t.stockCost >= 0 ? '' : 'neg')}</div>
     <p class="muted" style="font-size:13px;margin:10px 20px 0">${stock.length} items left · paid ${$m(t.stockCost)} for them</p>
-    ${group('To collect', b.collect)}${group('At home, not listed', b.home)}${group('Listed', b.listed)}`;
+    ${group('To collect', b.collect)}${group('At home, not listed', b.home)}${group('Listed', b.listed)}
+    <div class="sect"><span>Totals</span><span>${stock.length} items</span></div>
+    <div class="card" style="margin:0 16px;overflow:hidden">
+      <table class="tot">
+        <thead><tr><th></th><th>List</th><th>Accept</th><th>Worst</th></tr></thead>
+        <tbody>
+          <tr><td>Sells for</td><td>${$m(t.stockList)}</td><td>${$m(t.stockAccept)}</td><td>${$m(worst)}</td></tr>
+          <tr><td>Paid</td><td class="muted">−${$m(t.stockCost)}</td><td class="muted">−${$m(t.stockCost)}</td><td class="muted">−${$m(t.stockCost)}</td></tr>
+          <tr class="sum"><td>Profit</td><td class="pos">${$s(t.stockList - t.stockCost)}</td><td class="pos">${$s(t.stockAccept - t.stockCost)}</td><td class="${worst - t.stockCost >= 0 ? 'pos' : 'neg'}">${$s(worst - t.stockCost)}</td></tr>
+        </tbody>
+      </table>
+    </div>`;
 }
 function keptView() {
   const row = i => `<div class="t" data-id="${i.id}"><div class="ic">${icon(i.name)}</div><div class="nm">${esc(i.name)}<small>${i.status === 'disputed' ? 'Refund in dispute · not counted' : (i.boughtWeek ? `Week ${i.boughtWeek}` : 'Kept for me')}</small></div><div class="amt ${i.status === 'disputed' ? 'muted' : ''}">${$m(i.cost)}</div></div>`;
