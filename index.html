@@ -80,11 +80,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .sect{font-size:13px;color:var(--muted);font-weight:600;margin:18px 20px 8px;display:flex;justify-content:space-between}
 
 /* board */
-.cols{display:flex;gap:10px;overflow-x:auto;padding:14px 16px 10px;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-padding:16px}
-.cols::-webkit-scrollbar{display:none}
-.col{flex:none;width:176px;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
-.col h5{font-size:12px;font-weight:600;color:var(--muted);padding:4px 6px;display:flex;justify-content:space-between}
-.col h5 b{color:var(--ink)}
+.stages{display:flex;background:var(--card-2);border-radius:14px;padding:4px;gap:4px;margin:14px 16px 12px}
+.stages button{flex:1;padding:9px 2px;border-radius:11px;font-size:14px;font-weight:600;color:var(--muted);transition:.2s;line-height:1.1}
+.stages button em{display:block;font-style:normal;font-size:11px;font-weight:600;opacity:.7;margin-top:2px}
+.stages button.on{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+.stages button.on em{color:var(--green);opacity:1}
+.stage-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px}
+.stage-grid .ghost,.stage-grid .more{grid-column:1/-1}
 .c{background:var(--card);border-radius:16px;padding:12px;font-size:13px;font-weight:600;line-height:1.3;box-shadow:var(--shadow);position:relative;text-align:left;width:100%;
   transform:translateX(24px);opacity:0;transition:transform .6s var(--ease),opacity .6s}
 .in .c{transform:none;opacity:1}
@@ -293,22 +295,25 @@ function card(i, kind) {
   const show = kind === 'bought' ? i.cost : i.list, sub = kind === 'bought' ? `list ${$m(i.list)}` : $s(i.list - i.cost);
   return `<button class="c" data-id="${i.id}">${ageTag(i, d)}<div class="nm">${esc(i.name)}</div><div class="pr">${$m(show)}<small>${sub}</small></div></button>`;
 }
+let stage = 'listed';
+const STAGES = [['bought', 'Bought'], ['listed', 'Listed'], ['sold', 'Sold'], ['paid', 'Paid']];
+function stageCards() {
+  const b = C.board;
+  if (stage === 'paid') { const paid = b.paid.slice().sort((a, b) => (b.soldWeek || 0) - (a.soldWeek || 0)); return paid.map(i => card(i, 'paid')).join('') || `<div class="c ghost">Nothing paid yet</div>`; }
+  const arr = b[stage], ghost = { bought: 'Everything is listed', listed: 'Nothing listed', sold: 'All paid up' }[stage];
+  const tail = stage === 'sold' && arr.length ? `<div class="c ghost">Money not in yet</div>` : '';
+  return (arr.map(i => card(i, stage)).join('') || `<div class="c ghost">${ghost}</div>`) + tail;
+}
 function boardView() {
-  const b = C.board, t = C.t, col = (title, arr, kind, ghost) => `
-    <div class="col"><h5>${title} <b>${arr.length}</b></h5>${arr.map(i => card(i, kind)).join('')}${ghost || ''}</div>`;
-  const paid = b.paid.slice().sort((a, b) => (b.soldWeek || 0) - (a.soldWeek || 0));
+  const b = C.board, t = C.t;
   return `
     <div class="kpis">
       <div class="card kpi"><div class="k">On the shelf</div><div class="v">${$m(t.stockCost)}</div></div>
       <div class="card kpi"><div class="k">At list</div><div class="v pos">${$m(t.stockList)}</div></div>
       <div class="card kpi"><div class="k">Waiting on</div><div class="v ${C.pay.waiting.length ? 'neg' : ''}">${$m(sum(C.pay.waiting, i => i.sold))}</div></div>
     </div>
-    <div class="cols" id="cols">
-      ${col('Bought', b.bought, 'bought', `<div class="c ghost">Not listed yet</div>`)}
-      ${col('Listed', b.listed, 'listed', b.listed.length ? '' : `<div class="c ghost">Nothing listed</div>`)}
-      ${col('Sold', b.sold, 'sold', b.sold.length ? `<div class="c ghost">Money not in yet</div>` : `<div class="c ghost">All paid up</div>`)}
-      ${col('Paid', paid.slice(0, 5), 'paid', paid.length > 5 ? `<div class="c more">+${paid.length - 5} more in Items</div>` : '')}
-    </div>
+    <div class="stages" id="stages">${STAGES.map(([k, l]) => `<button data-stage="${k}" class="${stage === k ? 'on' : ''}">${l}<em>${b[k].length}</em></button>`).join('')}</div>
+    <div class="stage-grid in" id="stagegrid">${stageCards()}</div>
     <div class="legend"><span><i style="background:var(--green)"></i>under a week</span><span><i style="background:var(--amber)"></i>7+ days</span><span><i style="background:var(--red)"></i>10+ days, drop the price</span></div>`;
 }
 function weeksView() {
@@ -403,6 +408,9 @@ function wire() {
   }, {once: false});
   $('#theme').onclick = () => { const dark = document.documentElement.dataset.theme ? document.documentElement.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
     document.documentElement.dataset.theme = dark ? 'light' : 'dark'; store.set('fl-theme', document.documentElement.dataset.theme); };
+  $('#stages')?.addEventListener('click', e => { const b = e.target.closest('[data-stage]'); if (!b) return; stage = b.dataset.stage;
+    $$('#stages button').forEach(x => x.classList.toggle('on', x === b));
+    const g = $('#stagegrid'); g.classList.remove('in'); g.innerHTML = stageCards(); requestAnimationFrame(() => g.classList.add('in')); });
   $('#swipe')?.addEventListener('click', e => { const b = e.target.closest('[data-wk]'); if (!b) return; wkSel = +b.dataset.wk; $$('#swipe .wk').forEach(x => x.classList.toggle('on', x === b)); $('#wkdetail').innerHTML = weekDetail(wkSel); });
   $('#filter')?.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; $$('#filter button').forEach(x => x.classList.toggle('on', x === b));
     $$('#list .t').forEach(r => { const show = b.dataset.f === 'all' || r.dataset.g === b.dataset.f; r.classList.toggle('hide', !show); if (show) { r.style.animation = 'none'; void r.offsetWidth; r.style.animation = ''; } }); });
