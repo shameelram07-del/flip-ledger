@@ -313,8 +313,8 @@ function boardView() {
   const b = C.board, t = C.t;
   return `
     <div class="kpis">
-      <div class="card kpi"><div class="k">On the shelf</div><div class="v">${$m(t.stockCost)}</div></div>
-      <div class="card kpi"><div class="k">At list</div><div class="v pos">${$m(t.stockList)}</div></div>
+      <div class="card kpi"><div class="k">Potential profit</div><div class="v pos">${$s(t.stockList - t.stockCost)}</div></div>
+      <div class="card kpi"><div class="k">At list</div><div class="v">${$m(t.stockList)}</div></div>
       <div class="card kpi"><div class="k">To collect</div><div class="v ${b.collect.length ? 'neg' : ''}">${b.collect.length}</div></div>
     </div>
     <div class="stages" id="stages">${STAGES.map(([k, l]) => `<button data-stage="${k}" class="${stage === k ? 'on' : ''}">${l}<em>${b[k].length}</em></button>`).join('')}</div>
