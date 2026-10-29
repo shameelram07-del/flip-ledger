@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "goal": 5000,
   "fuelPrice": 3.41,
   "litresPer100km": 8,
@@ -10,7 +10,7 @@
   ],
   "estimate": { "week": 3, "fuel": 40 },
   "items": [
-    { "id": "bosch-gts10j", "name": "Bosch GTS 10 J table saw + GTA 600 stand", "status": "sold", "cost": 300, "sold": 500, "own": false, "boughtWeek": 1, "soldWeek": 1, "bought": null, "soldDate": null, "trip": 1, "paid": false, "unconfirmed": ["sold"], "note": "$500 not yet confirmed as deposited" },
+    { "id": "bosch-gts10j", "name": "Bosch GTS 10 J table saw + GTA 600 stand", "status": "sold", "cost": 300, "sold": 500, "own": false, "boughtWeek": 1, "soldWeek": 1, "bought": null, "soldDate": null, "trip": 1, "paid": true, "note": "" },
     { "id": "bd-bes720", "name": "Black+Decker BES720 table saw", "status": "sold", "cost": 61, "sold": 150, "own": false, "boughtWeek": 1, "soldWeek": 1, "bought": null, "soldDate": null, "trip": 1, "paid": true, "unconfirmed": ["cost"], "note": "Cost $40 or $60.99, using $61" },
     { "id": "makita-8444d", "name": "Makita 8444D drill kit", "status": "sold", "cost": 0, "sold": 50, "own": true, "boughtWeek": null, "soldWeek": 1, "bought": null, "soldDate": null, "trip": null, "note": "" },
     { "id": "ozito-jigsaw", "name": "Ozito 18V jigsaw", "status": "sold", "cost": 0, "sold": 50, "own": true, "boughtWeek": null, "soldWeek": 1, "bought": null, "soldDate": null, "trip": null, "note": "" },
