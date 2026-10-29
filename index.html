@@ -110,6 +110,23 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .kpi .k{font-size:11px;color:var(--muted)}
 .kpi .v{font-size:20px;font-weight:700;letter-spacing:-.04em;margin-top:2px}
 
+/* stock tab */
+.kpi .k + .v + .k{margin-top:2px}
+.srows{display:grid;gap:10px;padding:0 16px}
+.srow{display:block;width:100%;text-align:left;padding:14px}
+.srow .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.srow .nm{font-weight:600;font-size:15px;line-height:1.3}
+.srow .age{position:static;font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;background:var(--green-soft);color:var(--green);flex:none}
+.srow .age.amber{background:var(--amber-soft);color:var(--amber)}
+.srow .age.red{background:var(--red-soft);color:var(--red)}
+.srow .age.grey{background:var(--card-2);color:var(--muted)}
+.srow .meta{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.35}
+.srow .prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.srow .prices div{background:var(--card-2);border-radius:12px;padding:8px 10px}
+.srow .prices small{display:block;font-size:11px;color:var(--muted)}
+.srow .prices b{display:block;font-size:18px;letter-spacing:-.03em;line-height:1.2}
+.srow .prices em{display:block;font-style:normal;font-size:11px;font-weight:600}
+
 /* sheet */
 .sheet-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .3s;z-index:20}
 .sheet-bg.on{opacity:1;pointer-events:auto}
@@ -199,6 +216,7 @@ footer{padding:28px 20px 8px;text-align:center;color:var(--muted);font-size:12px
 <div class="bar" id="bar"></div>
 <nav class="tabbar" id="tabbar">
   <button data-v="board" class="on"><b>▦</b>Board</button>
+  <button data-v="stock"><b>▣</b>Stock</button>
   <button data-v="weeks"><b>▤</b>Weeks</button>
   <button data-v="goal"><b>↗</b>Goal</button>
   <button data-v="items"><b>≡</b>Items</button>
@@ -287,13 +305,14 @@ function render() {
     <section class="view ${view === 'weeks' ? 'on' : ''}" data-v="weeks">${weeksView()}</section>
     <section class="view ${view === 'goal' ? 'on' : ''}" data-v="goal">${goalView()}</section>
     <section class="view ${view === 'items' ? 'on' : ''}" data-v="items">${itemsView()}</section>
+    <section class="view ${view === 'stock' ? 'on' : ''}" data-v="stock">${stockView()}</section>
     <section class="view ${view === 'kept' ? 'on' : ''}" data-v="kept">${keptView()}</section>
   </div>
   <footer>Updated ${fmtD(D.updated, {day: 'numeric', month: 'short', year: 'numeric'})} · everything is worked out from data.json</footer>`;
   $('#bar').innerHTML = `<div class="line"><span class="muted">Profit</span><b>${$m(t.profit)}</b></div><div class="seg">${segBtns()}<i class="ind"></i></div>`;
   wire(); countUp($('#bigv'), t.profit); requestAnimationFrame(() => { $('#goalbar').style.width = goalPct + '%'; fireView(); moveInd(); });
 }
-const segBtns = () => [['board','Board'],['weeks','Weeks'],['goal','Goal'],['items','Items'],['kept','Kept']].map(([k, l]) => `<button data-v="${k}" class="${view === k ? 'on' : ''}">${l}</button>`).join('');
+const segBtns = () => [['board','Board'],['stock','Stock'],['weeks','Weeks'],['goal','Goal'],['items','Items'],['kept','Kept']].map(([k, l]) => `<button data-v="${k}" class="${view === k ? 'on' : ''}">${l}</button>`).join('');
 
 function card(i, kind) {
   if (kind === 'sold') {
@@ -372,6 +391,25 @@ function itemsView() {
   return `<div class="filter" id="filter">${[['all','All'],['sold','Sold'],['stock','Stock']].map(([k, l], n) => `<button data-f="${k}" class="${n ? '' : 'on'}">${l}<em>${counts[k]}</em></button>`).join('')}</div>
     <div class="card list" id="list">${flips.map(row).join('')}</div>`;
 }
+function stockView() {
+  const t = C.t, b = C.board, stock = C.stock;
+  const worst = sum(stock, i => i.worst), tile = (k, sale, cls) => `<div class="card kpi"><div class="k">${k}</div><div class="v ${cls}">${$s(sale - t.stockCost)}</div><div class="k">sells for ${$m(sale)}</div></div>`;
+  const row = i => `
+    <button class="card srow" data-id="${i.id}">
+      <div class="top"><div class="nm">${esc(i.name)}</div>${ageTag(i, D)}</div>
+      <div class="meta">${i.own ? 'Own' : 'Paid ' + $m(i.cost)} · ${stockState(i)}${i.note ? ' · ' + esc(i.note) : ''}</div>
+      <div class="prices">
+        <div><small>List</small><b>${$m(i.list)}</b><em class="pos">${$s(i.list - i.cost)}</em></div>
+        <div><small>Accept</small><b>${$m(i.accept)}</b><em class="pos">${$s(i.accept - i.cost)}</em></div>
+        <div><small>Worst</small><b>${$m(i.worst)}</b><em class="${i.worst - i.cost >= 0 ? 'pos' : 'neg'}">${$s(i.worst - i.cost)}</em></div>
+      </div>
+    </button>`;
+  const group = (title, arr) => arr.length ? `<div class="sect"><span>${title}</span><span>${arr.length}</span></div><div class="srows">${arr.map(row).join('')}</div>` : '';
+  return `
+    <div class="kpis">${tile('At list', t.stockList, 'pos')}${tile('If I accept', t.stockAccept, 'pos')}${tile('Worst case', worst, worst - t.stockCost >= 0 ? '' : 'neg')}</div>
+    <p class="muted" style="font-size:13px;margin:10px 20px 0">${stock.length} items left · paid ${$m(t.stockCost)} for them</p>
+    ${group('To collect', b.collect)}${group('At home, not listed', b.home)}${group('Listed', b.listed)}`;
+}
 function keptView() {
   const row = i => `<div class="t" data-id="${i.id}"><div class="ic">${icon(i.name)}</div><div class="nm">${esc(i.name)}<small>${i.status === 'disputed' ? 'Refund in dispute · not counted' : (i.boughtWeek ? `Week ${i.boughtWeek}` : 'Kept for me')}</small></div><div class="amt ${i.status === 'disputed' ? 'muted' : ''}">${$m(i.cost)}</div></div>`;
   return `
@@ -402,7 +440,7 @@ const closeSheet = () => { $('#sheet').classList.remove('on'); $('#sheetbg').cla
 $('#sheetbg').onclick = closeSheet;
 
 /* ---------- wiring ---------- */
-const order = ['board', 'weeks', 'goal', 'items', 'kept'];
+const order = ['board', 'stock', 'weeks', 'goal', 'items', 'kept'];
 function setView(v) {
   if (v === view) return;
   const dir = order.indexOf(v) > order.indexOf(view) ? '24px' : '-24px'; view = v;
