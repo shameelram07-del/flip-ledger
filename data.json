@@ -25,6 +25,7 @@
     { "id": "ozito-ts254", "name": "Ozito 254mm table saw + stand", "status": "stock", "collected": false, "listed": false, "cost": 30, "list": 120, "accept": 100, "worst": 70, "own": false, "boughtWeek": 2, "bought": null, "trip": null, "note": "North Shore pick-up. Dusty, untested" },
     { "id": "ozito-slide-drop", "name": "Ozito sliding drop saw", "status": "stock", "collected": false, "listed": false, "cost": 1, "list": 80, "accept": 60, "worst": 20, "own": false, "boughtWeek": 2, "bought": null, "trip": null, "note": "Blockhouse Bay. Strange noise, rust" },
     { "id": "gearup-compressor", "name": "GearUp 12V tyre compressor", "status": "stock", "listed": false, "cost": 0, "list": 40, "accept": 30, "worst": 20, "own": true, "boughtWeek": null, "bought": null, "trip": null, "note": "Untested" },
+    { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "stock", "collected": true, "listed": false, "cost": 500, "list": 750, "accept": 650, "worst": 550, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "note": "Surface rust on bed, cleaning before listing" },
 
     { "id": "keter-shed", "name": "Keter shed 1150L", "status": "kept", "cost": 100, "boughtWeek": null, "note": "" },
     { "id": "bosch-mitre", "name": "Bosch sliding mitre saw + stand", "status": "kept", "cost": 61, "boughtWeek": null, "note": "" },
