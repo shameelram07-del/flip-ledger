@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-01",
   "goal": 5000,
   "fuelPrice": 3.41,
   "litresPer100km": 8,
@@ -18,12 +18,12 @@
     { "id": "scalextric-007", "name": "Micro Scalextric 007 set", "status": "sold", "cost": 0, "sold": 10, "own": true, "boughtWeek": null, "soldWeek": 1, "bought": null, "soldDate": null, "trip": null, "paid": true, "note": "" },
     { "id": "bosch-easymower", "name": "Bosch Easy Mower 18V-32-200", "status": "sold", "cost": 51, "sold": 120, "own": false, "boughtWeek": 1, "soldWeek": 2, "bought": null, "soldDate": null, "trip": 1, "paid": true, "note": "Sold in about 10 days" },
     { "id": "scalextric-mclaren", "name": "Micro Scalextric Vodafone McLaren F1 set", "status": "sold", "cost": 0, "sold": 31, "own": true, "boughtWeek": null, "soldWeek": 2, "bought": null, "soldDate": null, "trip": null, "note": "Auction, 8 bids" },
+    { "id": "stanley-sockets", "name": "Stanley socket set", "status": "sold", "cost": 0, "own": true, "sold": 20, "paid": true, "boughtWeek": null, "soldWeek": 3, "bought": null, "soldDate": "2026-10-31", "trip": null, "note": "Missing a few sockets" },
+    { "id": "ryobi-ts-1", "name": "Ryobi table saw #1 (RTS1526RG)", "status": "sold", "cost": 81, "sold": 140, "own": false, "boughtWeek": 1, "soldWeek": 3, "bought": null, "soldDate": "2026-10-31", "trip": 1, "paid": true, "note": "Rusty table and blade, spare fence" },
+    { "id": "ozito-mcs2355", "name": "Ozito MCS-2355 2300W cut-off saw", "status": "sold", "cost": 40, "sold": 100, "own": false, "boughtWeek": 2, "soldWeek": 3, "bought": null, "soldDate": "2026-11-01", "trip": 2, "paid": true, "note": "2023 model, used blade, vice clamp present. $215 new" },
 
-    { "id": "ryobi-ts-1", "name": "Ryobi table saw #1 (RTS1526RG)", "status": "stock", "listed": false, "cost": 81, "list": 180, "accept": 150, "worst": 150, "own": false, "boughtWeek": 1, "bought": null, "trip": 1, "note": "Rusty table and blade, spare fence" },
-    { "id": "ryobi-ts-2", "name": "Ryobi table saw #2", "status": "stock", "listed": false, "cost": 25, "list": 80, "accept": 60, "worst": 60, "own": false, "boughtWeek": 1, "bought": null, "trip": 1, "note": "Blade stuck at full height, has trolley" },
-    { "id": "ozito-mcs2355", "name": "Ozito MCS-2355 2300W cut-off saw", "status": "stock", "collected": false, "listed": false, "cost": 40, "list": 100, "accept": 85, "worst": 70, "own": false, "boughtWeek": 2, "bought": null, "trip": null, "note": "Rodney pick-up. Check vice clamp. $215 new" },
-    { "id": "ozito-ts254", "name": "Ozito 254mm table saw + stand", "status": "stock", "collected": false, "listed": false, "cost": 30, "list": 120, "accept": 100, "worst": 70, "own": false, "boughtWeek": 2, "bought": null, "trip": null, "note": "North Shore pick-up. Dusty, untested" },
-    { "id": "ozito-slide-drop", "name": "Ozito sliding drop saw", "status": "stock", "collected": false, "listed": false, "cost": 1, "list": 80, "accept": 60, "worst": 20, "own": false, "boughtWeek": 2, "bought": null, "trip": null, "note": "Blockhouse Bay. Strange noise, rust" },
+    { "id": "ryobi-ts-2", "name": "Ryobi table saw #2 (RTS1825RG)", "status": "stock", "listed": false, "cost": 25, "list": 150, "accept": 120, "worst": 100, "own": false, "boughtWeek": 1, "bought": null, "trip": 1, "note": "2015, 1800W. Blade height stuck at full height. Has rip fence, mitre gauge, push stick, wheeled stand" },
+    { "id": "ozito-ts254", "name": "Ozito 254mm table saw + stand", "status": "stock", "collected": true, "listed": false, "cost": 30, "list": 100, "accept": 80, "worst": 70, "own": false, "boughtWeek": 2, "bought": null, "trip": 2, "note": "Tested, runs. No blade guard or rip fence, mitre gauge only. Glue marks on table" },
     { "id": "gearup-compressor", "name": "GearUp 12V tyre compressor", "status": "stock", "listed": false, "cost": 0, "list": 40, "accept": 30, "worst": 20, "own": true, "boughtWeek": null, "bought": null, "trip": null, "note": "Untested" },
     { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "stock", "collected": true, "listed": false, "cost": 500, "list": 750, "accept": 650, "worst": 550, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "note": "Surface rust on bed, cleaning before listing" },
 
@@ -31,10 +31,10 @@
     { "id": "bosch-mitre", "name": "Bosch sliding mitre saw + stand", "status": "kept", "cost": 61, "boughtWeek": null, "note": "" },
     { "id": "pullup-bar", "name": "Pull-up bar", "status": "kept", "cost": 51, "boughtWeek": null, "note": "" },
     { "id": "toolpro-sockets", "name": "ToolPro socket set", "status": "kept", "cost": 30, "boughtWeek": 2, "note": "" },
-    { "id": "window-locks", "name": "Window locks", "status": "kept", "cost": 5.5, "boughtWeek": null, "note": "" },
-    { "id": "bosch-gsb18ve", "name": "Bosch GSB 18VE-2-LI drill kit", "status": "disputed", "cost": 86, "boughtWeek": null, "note": "Refund in dispute, not counted" }
+    { "id": "window-locks", "name": "Window locks", "status": "kept", "cost": 5.5, "boughtWeek": null, "note": "" }
   ],
   "trips": [
-    { "id": 1, "week": 1, "km": 216, "fuel": 59, "label": "Trip 1" }
+    { "id": 1, "week": 1, "km": 216, "fuel": 59, "label": "Trip 1" },
+    { "id": 2, "week": 3, "km": 113, "fuel": 31, "label": "Trip 2" }
   ]
 }

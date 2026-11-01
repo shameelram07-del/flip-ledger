@@ -85,7 +85,7 @@ Add an item with `status: "stock"`, `cost`, `boughtWeek`, `collected: false` if 
 
 ## What the page shows (don't change unless asked)
 
-Black balance header (profit, pace, goal bar), then a bottom tab bar only:
+Black balance header (profit, pace, goal bar, and **Account should hold**: paid sales minus everything bought, kept items included, minus fuel), then a bottom tab bar only:
 **Board** (To collect / At home / Listed / Sold) · **Stock** (list/accept/worst per item, totals table) · **Weeks** · **Goal** (projection slider, pay-back, where the money went) · **Items** (sold + stock) · **Kept**.
 
 ## Reference

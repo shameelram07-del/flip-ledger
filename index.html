@@ -51,6 +51,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hero .m{font-size:13px;opacity:.7}
 .goal{height:6px;border-radius:99px;background:rgba(255,255,255,.14);margin-top:18px;overflow:hidden}
 .goal i{display:block;height:100%;width:0;background:var(--hero-green);border-radius:99px;transition:width 1.6s var(--ease)}
+.hero .acct{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:14px}
+.hero .acct small{display:block;font-size:12px;opacity:.6;margin-top:2px}
+.hero .acct b{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.hero .acct b.neg{color:#ff6961}
 .hero .row{display:flex;justify-content:space-between;font-size:12px;opacity:.7;margin-top:8px}
 
 /* compact sticky bar */
@@ -248,6 +252,9 @@ function calc(d) {
   const t = { sold: sum(sold, i => i.sold), cost: sum(sold, i => i.cost), fuel,
     stockCost: sum(stock, i => i.cost), stockList: sum(stock, i => i.list), stockAccept: sum(stock, i => i.accept), kept: sum(kept, i => i.cost) };
   t.profit = t.sold - t.cost - fuel;
+  t.cashIn = sum(sold.filter(i => i.paid !== false), i => i.sold);
+  t.spent = sum(d.items.filter(i => !i.own && i.status !== 'disputed'), i => i.cost) + fuel;
+  t.account = t.cashIn - t.spent;
   t.weeksDone = Math.max(0, ...sold.map(i => i.soldWeek || 0), ...d.trips.map(x => x.week || 0));
   t.pace = t.weeksDone ? t.profit / t.weeksDone : 0;
   const weeks = d.weeks.map(w => {
@@ -299,6 +306,7 @@ function render() {
     <div class="m">${$m(Math.round(t.pace))} a week · ${t.weeksDone} week${t.weeksDone === 1 ? '' : 's'} in · ${t.cost ? Math.round(t.profit / t.cost * 100) : 0}% return on cost</div>
     <div class="goal"><i id="goalbar"></i></div>
     <div class="row"><span>${$m(D.goal)} goal</span><span>${goalPct.toFixed(0)}%</span></div>
+    <div class="acct"><span>Account should hold<small>${$m(t.cashIn)} in · ${$m(t.spent)} out</small></span><b class="${t.account < 0 ? 'neg' : ''}">${$m(t.account)}</b></div>
   </header>
   <div class="views">
     <section class="view ${view === 'board' ? 'on' : ''}" data-v="board">${boardView()}</section>
