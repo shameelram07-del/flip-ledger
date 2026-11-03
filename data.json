@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "goal": 5000,
   "fuelPrice": 3.41,
   "litresPer100km": 8,
@@ -31,7 +31,8 @@
     { "id": "bosch-mitre", "name": "Bosch sliding mitre saw + stand", "status": "kept", "cost": 61, "boughtWeek": null, "note": "" },
     { "id": "pullup-bar", "name": "Pull-up bar", "status": "kept", "cost": 51, "boughtWeek": null, "note": "" },
     { "id": "toolpro-sockets", "name": "ToolPro socket set", "status": "kept", "cost": 30, "boughtWeek": 2, "note": "" },
-    { "id": "window-locks", "name": "Window locks", "status": "kept", "cost": 5.5, "boughtWeek": null, "note": "" }
+    { "id": "window-locks", "name": "Window locks", "status": "kept", "cost": 5.5, "boughtWeek": null, "note": "" },
+    { "id": "ryobi-batteries", "name": "Ryobi One+ batteries (5.0Ah + 2× 1.4Ah), charger and bag", "status": "kept", "cost": 45.99, "boughtWeek": 3, "note": "Might sell later" }
   ],
   "trips": [
     { "id": 1, "week": 1, "km": 216, "fuel": 59, "label": "Trip 1" },
