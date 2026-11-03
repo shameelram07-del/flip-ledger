@@ -50,6 +50,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hero .theme{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.12);font-size:14px;display:grid;place-items:center}
 .hero .k{font-size:13px;opacity:.6;margin-top:18px}
 .hero .v{font-size:64px;font-weight:700;letter-spacing:-.055em;line-height:1;margin:4px 0 6px;color:var(--hero-green)}
+.hero .note{font-size:12px;opacity:.55;line-height:1.35;margin:2px 0 10px;max-width:34ch}
 .hero .m{font-size:13px;opacity:.7}
 .goal{height:6px;border-radius:99px;background:rgba(255,255,255,.14);margin-top:18px;overflow:hidden}
 .goal i{display:block;height:100%;width:0;background:var(--hero-green);border-radius:99px;transition:width 1.6s var(--ease)}
@@ -57,6 +58,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hero .acct small{display:block;font-size:12px;opacity:.6;margin-top:2px}
 .hero .acct b{font-size:22px;font-weight:700;letter-spacing:-.02em}
 .hero .acct b.neg{color:#ff6961}
+.hero .acct b small{display:inline;font-size:12px;font-weight:500;opacity:.6}
+.hero .acct + .acct{margin-top:10px;padding-top:10px}
 .hero .row{display:flex;justify-content:space-between;font-size:12px;opacity:.7;margin-top:8px}
 
 /* compact sticky bar */
@@ -257,6 +260,9 @@ function calc(d) {
   t.cashIn = sum(sold.filter(i => i.paid !== false), i => i.sold);
   t.spent = sum(d.items.filter(i => !i.own && i.status !== 'disputed'), i => i.cost) + fuel;
   t.account = t.cashIn - t.spent;
+  t.joint = sum(d.items.filter(i => i.paidFrom === 'joint' && (i.status === 'sold' || i.status === 'stock')), i => i.cost) - sum(d.repaid || [], x => x.amount);
+  /* money made: paid sales minus everything bought to flip (sold or not) and fuel; kept items left out */
+  t.flipCash = t.cashIn - sum(d.items.filter(i => !i.own && (i.status === 'sold' || i.status === 'stock')), i => i.cost) - fuel;
   t.weeksDone = Math.max(0, ...sold.map(i => i.soldWeek || 0), ...d.trips.map(x => x.week || 0));
   t.pace = t.weeksDone ? t.profit / t.weeksDone : 0;
   const weeks = d.weeks.map(w => {
@@ -303,12 +309,13 @@ function render() {
   $('#app').innerHTML = `
   <header class="hero" id="hero">
     <div class="top"><b>Flip Ledger</b><button class="theme" id="theme" aria-label="Light or dark">◐</button></div>
-    <div class="k">Total profit</div>
+    <div class="k">Money made so far</div>
     <div class="v" id="bigv">$0</div>
-    <div class="m">${$m(Math.round(t.pace))} a week · ${t.weeksDone} week${t.weeksDone === 1 ? '' : 's'} in · ${t.cost ? Math.round(t.profit / t.cost * 100) : 0}% return on cost</div>
+    <div class="note">Money from sales, minus everything we bought to sell and fuel.</div>
     <div class="goal"><i id="goalbar"></i></div>
-    <div class="row"><span>${$m(D.goal)} goal</span><span>${goalPct.toFixed(0)}%</span></div>
-    <div class="acct"><span>Account should hold<small>${$m(t.cashIn)} in · ${$m(t.spent)} out</small></span><b class="${t.account < 0 ? 'neg' : ''}">${$m(t.account)}</b></div>
+    <div class="row"><span>Profit on items sold ${$m(t.profit)} · goal ${$m(D.goal)}</span><span>${goalPct.toFixed(0)}%</span></div>
+    <div class="acct"><span>Still to sell<small>${C.stock.length} items · could bring in ${$m(t.stockAccept)}</small></span><b>${$m(t.stockCost)} <small>paid</small></b></div>
+    <div class="acct"><span>Owed back to joint account<small>it paid for the big buys</small></span><b class="${t.joint > 0 ? 'neg' : ''}">${$m(t.joint)}</b></div>
   </header>
   <div class="views">
     <section class="view ${view === 'board' ? 'on' : ''}" data-v="board">${boardView()}</section>
@@ -319,8 +326,8 @@ function render() {
     <section class="view ${view === 'kept' ? 'on' : ''}" data-v="kept">${keptView()}</section>
   </div>
   <footer>Updated ${fmtD(D.updated, {day: 'numeric', month: 'short', year: 'numeric'})} · everything is worked out from data.json</footer>`;
-  $('#bar').innerHTML = `<div class="line"><span class="muted">Profit</span><b>${$m(t.profit)}</b></div>`;
-  wire(); countUp($('#bigv'), t.profit); requestAnimationFrame(() => { $('#goalbar').style.width = goalPct + '%'; fireView(); });
+  $('#bar').innerHTML = `<div class="line"><span class="muted">Money made</span><b>${$m(t.flipCash)}</b></div>`;
+  wire(); countUp($('#bigv'), t.flipCash); requestAnimationFrame(() => { $('#goalbar').style.width = goalPct + '%'; fireView(); });
 }
 
 function card(i, kind) {

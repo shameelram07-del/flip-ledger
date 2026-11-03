@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "goal": 5000,
   "fuelPrice": 3.41,
   "litresPer100km": 8,
@@ -10,7 +10,7 @@
   ],
   "estimate": { "week": 3, "fuel": 40 },
   "items": [
-    { "id": "bosch-gts10j", "name": "Bosch GTS 10 J table saw + GTA 600 stand", "status": "sold", "cost": 300, "sold": 500, "own": false, "boughtWeek": 1, "soldWeek": 1, "bought": null, "soldDate": null, "trip": 1, "paid": true, "note": "" },
+    { "id": "bosch-gts10j", "name": "Bosch GTS 10 J table saw + GTA 600 stand", "status": "sold", "cost": 300, "sold": 500, "own": false, "boughtWeek": 1, "soldWeek": 1, "bought": null, "soldDate": null, "trip": 1, "paid": true, "paidFrom": "joint", "note": "" },
     { "id": "bd-bes720", "name": "Black+Decker BES720 table saw", "status": "sold", "cost": 61, "sold": 150, "own": false, "boughtWeek": 1, "soldWeek": 1, "bought": null, "soldDate": null, "trip": 1, "paid": true, "unconfirmed": ["cost"], "note": "Cost $40 or $60.99, using $61" },
     { "id": "makita-8444d", "name": "Makita 8444D drill kit", "status": "sold", "cost": 0, "sold": 50, "own": true, "boughtWeek": null, "soldWeek": 1, "bought": null, "soldDate": null, "trip": null, "note": "" },
     { "id": "ozito-jigsaw", "name": "Ozito 18V jigsaw", "status": "sold", "cost": 0, "sold": 50, "own": true, "boughtWeek": null, "soldWeek": 1, "bought": null, "soldDate": null, "trip": null, "note": "" },
@@ -25,7 +25,7 @@
 
     { "id": "ryobi-ts-2", "name": "Ryobi table saw #2 (RTS1825RG)", "status": "stock", "listed": true, "cost": 25, "list": 180, "accept": 120, "worst": 100, "own": false, "boughtWeek": 1, "bought": null, "trip": 1, "note": "2015, 1800W. Blade height stuck at full height. Has rip fence, mitre gauge, push stick, wheeled stand" },
     { "id": "gearup-compressor", "name": "GearUp 12V tyre compressor", "status": "stock", "listed": false, "cost": 0, "list": 40, "accept": 30, "worst": 20, "own": true, "boughtWeek": null, "bought": null, "trip": null, "note": "Untested" },
-    { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "stock", "collected": true, "listed": false, "cost": 500, "list": 750, "accept": 650, "worst": 550, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "note": "Surface rust on bed, cleaning before listing" },
+    { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "stock", "collected": true, "listed": false, "cost": 500, "list": 750, "accept": 650, "worst": 550, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "paidFrom": "joint", "note": "Surface rust on bed, cleaning before listing" },
 
     { "id": "keter-shed", "name": "Keter shed 1150L", "status": "kept", "cost": 100, "boughtWeek": null, "note": "" },
     { "id": "bosch-mitre", "name": "Bosch sliding mitre saw + stand", "status": "kept", "cost": 61, "boughtWeek": null, "note": "" },

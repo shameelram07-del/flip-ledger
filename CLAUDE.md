@@ -82,10 +82,12 @@ Add an item with `status: "stock"`, `cost`, `boughtWeek`, `collected: false` if 
 **Money came in** → `paid: true`.
 **Fuel / pick-up trip** → add to `trips` with `km` and `fuel` (dollars, positive number; the page shows it as negative). Fuel ≈ km × 8 / 100 × 3.41.
 **Keeping something** → `status: "kept"`, `cost` only.
+**Paid from the joint account** → add "paidFrom": "joint" to the item.
+**Paid the joint account back** → add { "date": "YYYY-MM-DD", "amount": N } to a top-level "repaid" list.
 
 ## What the page shows (don't change unless asked)
 
-Black balance header (profit, pace, goal bar, and **Account should hold**: paid sales minus everything bought, kept items included, minus fuel), then a bottom tab bar only:
+Black balance header: Money made so far (paid sales minus everything bought to flip, sold or not, minus fuel; kept items left out) with a one-line plain note, goal bar labelled with profit on items sold, then Still to sell and Owed back to joint account. Keep it plain English for a non-accountant. Then a bottom tab bar only:
 **Board** (To collect / At home / Listed / Sold) · **Stock** (list/accept/worst per item, totals table) · **Weeks** · **Goal** (projection slider, pay-back, where the money went) · **Items** (sold + stock) · **Kept**.
 
 ## Reference
