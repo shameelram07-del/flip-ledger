@@ -87,7 +87,7 @@ Add an item with `status: "stock"`, `cost`, `boughtWeek`, `collected: false` if 
 
 ## What the page shows (don't change unless asked)
 
-Black balance header: Money made so far (paid sales minus everything bought to flip, sold or not, minus fuel; kept items left out) with a one-line plain note, goal bar labelled with profit on items sold, then Still to sell and Owed back to joint account. Keep it plain English for a non-accountant. Then a bottom tab bar only:
+Black balance header: Money made so far (paid sales minus everything bought to flip, sold or not, minus fuel; kept items left out) with a one-line plain note, goal bar ($5k car goal, counted from Money made so far; Goal tab projections start from it too), a small "Profit on items sold" line, then Still to sell and Owed back to joint account. Keep it plain English for a non-accountant. Then a bottom tab bar only:
 **Board** (To collect / At home / Listed / Sold) · **Stock** (list/accept/worst per item, totals table) · **Weeks** · **Goal** (projection slider, pay-back, where the money went) · **Items** (sold + stock) · **Kept**.
 
 ## Reference
