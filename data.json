@@ -25,7 +25,7 @@
 
     { "id": "ryobi-ts-2", "name": "Ryobi table saw #2 (RTS1825RG)", "status": "stock", "listed": true, "cost": 25, "list": 180, "accept": 120, "worst": 100, "own": false, "boughtWeek": 1, "bought": null, "trip": 1, "note": "2015, 1800W. Blade height stuck at full height. Has rip fence, mitre gauge, push stick, wheeled stand" },
     { "id": "gearup-compressor", "name": "GearUp 12V tyre compressor", "status": "stock", "listed": false, "cost": 0, "list": 40, "accept": 30, "worst": 20, "own": true, "boughtWeek": null, "bought": null, "trip": null, "note": "Untested" },
-    { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "stock", "collected": true, "listed": false, "cost": 500, "list": 750, "accept": 650, "worst": 550, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "paidFrom": "joint", "note": "Surface rust on bed, cleaning before listing" },
+    { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "stock", "collected": true, "listed": false, "cost": 500, "list": 900, "accept": 800, "worst": 700, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "paidFrom": "joint", "note": "Surface rust on bed, cleaning before listing. $1,494 new at Bunnings" },
 
     { "id": "keter-shed", "name": "Keter shed 1150L", "status": "kept", "cost": 100.99, "boughtWeek": null, "paidFrom": "cash", "note": "" },
     { "id": "bosch-mitre", "name": "Bosch sliding mitre saw + stand", "status": "kept", "cost": 61, "boughtWeek": null, "paidFrom": "cash", "note": "" },
