@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-03",
   "goal": 5000,
   "fuelPrice": 3.41,
   "litresPer100km": 8,
@@ -27,12 +27,20 @@
     { "id": "gearup-compressor", "name": "GearUp 12V tyre compressor", "status": "stock", "listed": false, "cost": 0, "list": 40, "accept": 30, "worst": 20, "own": true, "boughtWeek": null, "bought": null, "trip": null, "note": "Untested" },
     { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "stock", "collected": true, "listed": false, "cost": 500, "list": 750, "accept": 650, "worst": 550, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "paidFrom": "joint", "note": "Surface rust on bed, cleaning before listing" },
 
-    { "id": "keter-shed", "name": "Keter shed 1150L", "status": "kept", "cost": 100, "boughtWeek": null, "note": "" },
-    { "id": "bosch-mitre", "name": "Bosch sliding mitre saw + stand", "status": "kept", "cost": 61, "boughtWeek": null, "note": "" },
-    { "id": "pullup-bar", "name": "Pull-up bar", "status": "kept", "cost": 51, "boughtWeek": null, "note": "" },
-    { "id": "toolpro-sockets", "name": "ToolPro socket set", "status": "kept", "cost": 30, "boughtWeek": 2, "note": "" },
-    { "id": "window-locks", "name": "Window locks", "status": "kept", "cost": 5.5, "boughtWeek": null, "note": "" },
-    { "id": "ryobi-batteries", "name": "Ryobi One+ batteries (5.0Ah + 2× 1.4Ah), charger and bag", "status": "kept", "cost": 45.99, "boughtWeek": 3, "note": "Might sell later" }
+    { "id": "keter-shed", "name": "Keter shed 1150L", "status": "kept", "cost": 100.99, "boughtWeek": null, "paidFrom": "cash", "note": "" },
+    { "id": "bosch-mitre", "name": "Bosch sliding mitre saw + stand", "status": "kept", "cost": 61, "boughtWeek": null, "paidFrom": "cash", "note": "" },
+    { "id": "pullup-bar", "name": "Pull-up bar", "status": "kept", "cost": 50.99, "boughtWeek": null, "paidFrom": "cash", "note": "" },
+    { "id": "toolpro-sockets", "name": "ToolPro socket set", "status": "kept", "cost": 30.99, "boughtWeek": 2, "paidFrom": "cash", "note": "" },
+    { "id": "window-locks", "name": "Window locks", "status": "kept", "cost": 5.5, "boughtWeek": null, "paidFrom": "cash", "note": "" },
+    { "id": "ryobi-batteries", "name": "Ryobi One+ batteries (5.0Ah + 2× 1.4Ah), charger and bag", "status": "kept", "cost": 45.99, "boughtWeek": 3, "paidFrom": "cash", "note": "Might sell later" },
+    { "id": "kincrome-knife", "name": "Kincrome knife", "status": "kept", "cost": 8.5, "boughtWeek": 3, "bought": "2026-11-01", "paidFrom": "cash" },
+    { "id": "garden-lights", "name": "Garden lights kit", "status": "kept", "cost": 35, "boughtWeek": 3, "bought": "2026-10-31", "paidFrom": "cash", "note": "$20 + $15 shipping" },
+    { "id": "walking-pad", "name": "Treadmill / walking pad", "status": "kept", "cost": 50.99, "boughtWeek": 3, "bought": "2026-10-31", "paidFrom": "cash" },
+    { "id": "screwdriver-set", "name": "Screwdriver set", "status": "kept", "cost": 5, "boughtWeek": 3, "bought": "2026-10-30", "paidFrom": "cash" },
+    { "id": "pendant-light", "name": "LED swirl pendant light", "status": "kept", "cost": 85, "boughtWeek": 1, "bought": "2026-10-23", "paidFrom": "cash" },
+    { "id": "lenovo-led", "name": "Lenovo LED lights 10M", "status": "kept", "cost": 26.5, "boughtWeek": 1, "bought": "2026-10-23", "paidFrom": "cash" },
+    { "id": "garage-remotes", "name": "Garage door remotes x4", "status": "kept", "cost": 29.51, "boughtWeek": 1, "bought": "2026-10-22", "paidFrom": "cash", "note": "$23.96 + $5.55 shipping" },
+    { "id": "gate-remote", "name": "Gate remote", "status": "kept", "cost": 12.3, "boughtWeek": 1, "bought": "2026-10-20", "paidFrom": "cash", "note": "$5.50 + $6.80 shipping" }
   ],
   "trips": [
     { "id": 1, "week": 1, "km": 216, "fuel": 59, "label": "Trip 1" },
