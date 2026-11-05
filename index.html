@@ -151,6 +151,11 @@ button:active{transform:scale(.97)}
 @keyframes ptUpBlur{60%{filter:blur(1px)}to{transform:none;filter:none}}
 @keyframes ptLine{to{transform:scaleX(1)}}
 @keyframes ptFade{to{opacity:1;transform:none}}
+.storyl{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:28px 0 8px;padding:18px;border-radius:18px;text-decoration:none;color:var(--ink);
+  background:linear-gradient(120deg,rgba(var(--acc-rgb),.22),var(--panel) 60%);border:1px solid var(--line2)}
+.storyl span{font:400 26px/1 'Instrument Serif',serif}
+.storyl small{display:block;font:600 11px Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:6px}
+.storyl b{font:600 13px Inter;color:var(--mut);white-space:nowrap}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .7s var(--ease);animation:none!important}
 .rv.in{opacity:1;transform:none}
 .rowp{display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-top:8px;min-height:44px}
@@ -428,6 +433,7 @@ const chip = (tag, cls) => `<span class="chip ${cls}">${esc(tag)}</span>`;
 let D, C;
 const state = { tab: 'board', stage: 'listed', week: null, filter: 'all', q: '', rate: null };
 const TABS = ['board', 'stock', 'weeks', 'goal', 'items', 'deals'];
+{ const q = new URLSearchParams(location.search).get('tab'); if (TABS.includes(q)) state.tab = q; }
 let DEALS = null;
 
 function render() {
@@ -513,7 +519,8 @@ function boardView() {
       </button>`; }).join('')}
     </div></section>
     <section class="say" id="say"><div class="sstage"><p class="sayp" id="sayp"><span>Less</span> <span>rush.</span><br><span><i>More</i></span> <span class="hl2">profit.</span>
-      <small id="saysm">${flips.length} flips so far. Fast turnover beats big margins.</small></p></div></section>` : ''}`;
+      <small id="saysm">${flips.length} flips so far. Fast turnover beats big margins.</small></p></div></section>` : ''}
+    <a class="storyl" href="story.html"><span><small>Watch</small>How a flip works</span><b>Find · Fix · Flip →</b></a>`;
 }
 function stageList() {
   const st = state.stage, arr = C.board[st];

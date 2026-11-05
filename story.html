@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#120B0A">
+<title>How a Flip Works</title>
+<link rel="icon" href="icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#120B0A; --ink:#F6EEE8; --mut:#B3A49C; --acc:#FF7A2F; --panel:#1E1412; --line:#2E201C;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%}
+body{background:var(--bg);font-family:Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+
+/* top bar */
+.nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;
+  padding:calc(14px + env(safe-area-inset-top)) 16px 12px;font:600 13px/1 Inter;letter-spacing:.14em;text-transform:uppercase;
+  background:linear-gradient(var(--bg),rgba(18,11,10,0))}
+.nav a{text-decoration:none}
+.nav .back{letter-spacing:0;text-transform:none;font-weight:500;font-size:14px;padding:8px 12px;border:1px solid var(--line);border-radius:99px;background:rgba(30,20,18,.7)}
+.prog{position:fixed;left:0;top:0;height:2px;background:var(--acc);width:0;z-index:21}
+
+/* intro */
+.intro{min-height:100svh;display:grid;place-content:center;text-align:center;padding:0 16px}
+.intro small{color:var(--acc);font:600 12px Inter;letter-spacing:.2em;text-transform:uppercase}
+.intro h1{font:400 clamp(54px,16vw,120px)/.92 'Instrument Serif',serif;margin-top:14px}
+.intro h1 i{color:var(--acc)}
+.intro p{color:var(--mut);margin:16px auto 0;max-width:30ch;font-size:15px;line-height:1.45}
+.cue{margin-top:40px;color:var(--mut);font-size:12px;letter-spacing:.16em;text-transform:uppercase;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+
+/* chapters: a tall section with a sticky stage; scroll moves the word and the tool */
+.ch{height:320vh;position:relative}
+.stage{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;place-items:center}
+.glow{position:absolute;inset:-10%;background:radial-gradient(60% 45% at 50% 55%,var(--c),transparent 70%);opacity:.32;transition:opacity .4s}
+.lab{position:absolute;left:16px;top:calc(76px + env(safe-area-inset-top));z-index:6}
+.lab b{display:block;font:800 clamp(40px,11vw,72px)/.9 'Bricolage Grotesque';color:var(--acc)}
+.lab span{display:block;font:600 13px Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-top:6px}
+.word{position:absolute;left:50%;top:40%;white-space:nowrap;font:800 var(--fs,200px)/.8 'Bricolage Grotesque';letter-spacing:-.05em;
+  color:#F6EEE8;will-change:transform;transform:translate(calc(-50% + var(--x,0px)),-50%) scale(var(--s,1))}
+.tool{position:relative;z-index:3;width:min(80vw,520px);max-height:50svh;margin-top:14svh;object-fit:contain;will-change:transform;
+  filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
+.card{position:absolute;left:16px;right:16px;bottom:calc(22px + env(safe-area-inset-bottom));z-index:6;max-width:520px;margin:0 auto;
+  background:rgba(30,20,18,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;padding:14px 16px;
+  opacity:0;transform:translateY(20px);transition:opacity .5s,transform .6s var(--ease)}
+.card.on{opacity:1;transform:none}
+.card h3{font:500 15px Inter;line-height:1.35}
+.card .row{display:flex;gap:18px;margin-top:10px}
+.card .row div{font-size:12px;color:var(--mut)}
+.card .row b{display:block;font:800 22px 'Bricolage Grotesque';color:var(--ink);margin-top:2px}
+.card .row b.acc{color:var(--acc)}
+
+/* ending */
+.end{min-height:100svh;display:grid;place-content:center;text-align:center;padding:60px 16px;position:relative;overflow:hidden}
+.end h2{font:800 clamp(62px,19vw,170px)/.84 'Bricolage Grotesque';letter-spacing:-.04em}
+.end h2 i{font-style:normal;color:var(--acc)}
+.end p{color:var(--mut);margin-top:18px;font-size:15px}
+.end .big{font:800 clamp(48px,14vw,96px)/1 'Bricolage Grotesque';color:var(--acc);margin-top:6px}
+.btns{display:flex;gap:10px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.btns a{text-decoration:none;font:600 15px Inter;padding:14px 20px;border-radius:99px;min-height:44px}
+.btns .p{background:var(--acc);color:#120B0A}
+.btns .s{border:1px solid var(--line);background:var(--panel)}
+.end .w2{display:inline-block;opacity:0;transform:translateY(40%) rotate(3deg);transition:opacity .6s,transform .9s var(--ease)}
+.end.in .w2{opacity:1;transform:none}
+.end.in .w2:nth-child(2){transition-delay:.08s}.end.in .w2:nth-child(3){transition-delay:.16s}.end.in .w2:nth-child(4){transition-delay:.24s}
+
+@media (prefers-reduced-motion:reduce){
+  .ch{height:auto}.stage{position:relative;height:auto;min-height:100svh;padding:120px 0 160px}
+  .word{transform:translate(-8%,-50%)}.card{opacity:1;transform:none}.end .w2{opacity:1;transform:none}.cue{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<nav class="nav"><span>Flip Ledger</span><a class="back" href="./">← Ledger</a></nav>
+
+<section class="intro">
+  <small>How a flip works</small>
+  <h1>Find it. Fix it.<br><i>Flip it.</i></h1>
+  <p>Three real tools from this ledger, start to finish.</p>
+  <div class="cue">Scroll ↓</div>
+</section>
+
+<div id="chapters"></div>
+
+<section class="end" id="end">
+  <h2><span class="w2">Find</span> <span class="w2">your</span><br><span class="w2">next</span> <span class="w2"><i>flip</i></span></h2>
+  <p>Money made so far</p>
+  <div class="big" id="made">$0</div>
+  <div class="btns"><a class="p" href="./?tab=deals">Today's deals</a><a class="s" href="./">Back to the ledger</a></div>
+</section>
+
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const money = n => (n < 0 ? '−$' : '$') + Math.abs(Math.round(n)).toLocaleString('en-NZ');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+
+/* three chapters, each tied to a real item in data.json so the numbers stay live */
+const CH = [
+  { n: '1.', word: 'FIND', lab: 'Find', id: 'ozito-ts254', img: 'story/ozito.webp', c: 'rgba(255,122,47,.9)',
+    say: i => `Ozito 254mm table saw. A "$30 quick sale" on Trade Me.` },
+  { n: '2.', word: 'FIX', lab: 'Fix', id: 'dewalt-dw735', img: 'story/planer.webp', c: 'rgba(255,196,0,.85)',
+    say: i => `DeWalt DW735 planer. Rust off the bed, clean photos, honest listing.` },
+  { n: '3.', word: 'FLIP', lab: 'Flip', id: 'ryobi-ts-2', img: 'story/ryobi.webp', c: 'rgba(198,244,50,.75)',
+    say: i => `Ryobi table saw. Blade stuck at full height, sold anyway.` }
+];
+
+function stats(i) {
+  if (!i) return '';
+  if (i.status === 'sold') return `<div>Bought<b>${money(i.cost)}</b></div><div>Sold<b>${money(i.sold)}</b></div><div>Profit<b class="acc">+${money(i.sold - i.cost)}</b></div>`;
+  const bid = /bid \$(\d+)/i.exec(i.note || '');
+  return `<div>Bought<b>${money(i.cost)}</b></div>${bid ? `<div>Top bid<b>${money(+bid[1])}</b></div>` : `<div>List at<b>${money(i.list)}</b></div>`}<div>Aiming for<b class="acc">${money(i.accept)}</b></div>`;
+}
+
+/* size each word so it spans the screen, like a poster */
+function fit() {
+  $$('.word').forEach(w => { w.style.setProperty('--fs', '200px'); w.style.setProperty('--fs', Math.min(560, 200 * innerWidth * .94 / w.offsetWidth) + 'px'); });
+}
+function build(D) {
+  const items = Object.fromEntries(D.items.map(i => [i.id, i]));
+  $('#chapters').innerHTML = CH.map((c, k) => {
+    const i = items[c.id];
+    return `<section class="ch" data-k="${k}"><div class="stage" style="--c:${c.c}">
+      <div class="glow"></div>
+      <div class="lab"><b>${c.n}</b><span>${c.lab}</span></div>
+      <div class="word back">${c.word}</div>
+      <img class="tool" src="${c.img}" alt="${esc(i ? i.name : c.lab)}" loading="${k ? 'lazy' : 'eager'}">
+      <div class="card"><h3>${esc(c.say(i))}</h3><div class="row">${stats(i)}</div></div>
+    </div></section>`;
+  }).join('');
+
+  /* money made: paid sales minus everything bought to flip and fuel (same as the ledger hero) */
+  const sold = D.items.filter(i => i.status === 'sold');
+  const cashIn = sold.filter(i => i.paid !== false).reduce((s, i) => s + i.sold, 0);
+  const out = D.items.filter(i => !i.own && (i.status === 'sold' || i.status === 'stock')).reduce((s, i) => s + i.cost, 0);
+  const fuel = D.trips.reduce((s, t) => s + t.fuel, 0);
+  $('#made').dataset.to = cashIn - out - fuel;
+  $('#made').textContent = money(cashIn - out - fuel);
+  document.fonts.ready.then(() => { fit(); onScroll(); });
+  fit(); onScroll();
+}
+
+let counted = false;
+function onScroll() {
+  const H = document.documentElement.scrollHeight - innerHeight;
+  $('#prog').style.width = (scrollY / Math.max(1, H) * 100) + '%';
+  $$('.ch').forEach(ch => {
+    const r = ch.getBoundingClientRect(), p = clamp(-r.top / Math.max(1, r.height - innerHeight));
+    const stage = ch.querySelector('.stage');
+    if (!reduce) {
+      /* word slides right-to-left across the screen; tool rises and settles; the card shows once it lands */
+      const w = ch.querySelector('.word');
+      w.style.setProperty('--x', ((.5 - p) * innerWidth * .22) + 'px');
+      w.style.setProperty('--s', 1.08 - p * .12);
+      w.style.opacity = clamp(p / .12) * (1 - clamp((p - .9) / .1));
+      const t = clamp(p / .45), ease = 1 - Math.pow(1 - t, 3);
+      ch.querySelector('.tool').style.transform = `translateY(${(1 - ease) * 22}svh) scale(${.72 + ease * .28}) rotate(${(1 - ease) * -6}deg)`;
+      stage.querySelector('.glow').style.opacity = .12 + ease * .3;
+    }
+    ch.querySelector('.card').classList.toggle('on', reduce || (p > .38 && p < .98));
+  });
+  const end = $('#end'), er = end.getBoundingClientRect();
+  if (er.top < innerHeight * .7) {
+    end.classList.add('in');
+    if (!counted) { counted = true; countUp($('#made'), +$('#made').dataset.to || 0); }
+  }
+}
+function countUp(el, to) {
+  if (reduce) return el.textContent = money(to);
+  const t0 = performance.now(), dur = 1400;
+  const step = now => { const p = Math.min(1, (now - t0) / dur); el.textContent = money(to * (1 - Math.pow(1 - p, 4))); if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+addEventListener('scroll', onScroll, { passive: true });
+addEventListener('resize', () => { fit(); onScroll(); });
+fetch('data.json', { cache: 'no-store' }).then(r => r.json()).then(build)
+  .catch(() => { $('#chapters').innerHTML = '<p style="text-align:center;color:var(--mut);padding:40px">Couldn’t load the ledger data.</p>'; });
+</script>
+</body>
+</html>
