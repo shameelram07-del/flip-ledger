@@ -91,7 +91,7 @@ Dark 'Night Shift' page in a scroll-flow style (60/30/10 'Sunset' palette: near-
 
 ## deals.json (morning Trade Me deals)
 
-A scheduled check rewrites `deals.json` every morning (~8:42am NZ) and pushes it. It never touches `data.json`. Shape: `{"updated": "<text>", "sections": [{"id", "name", "rule", "items": [{"title", "url", "price", "ptype", "location", "closes", "verdict": "good"|"watch"|"skip", "note"}], "footnote"?, "empty"?}]}`. Section ids: `table-saws`, `mitre-saws`, `nail-guns`, `power-tools`, `tool-sets`, `wood-stain`, `sewing-machines`, `home-gym`, `treadmills`, `fish-tanks`, `keter`. Auckland only, used, Buy Now or offers.
+A scheduled Trade Me check runs hourly (8:57am–10:57pm NZ); about 20 minutes later a second scheduled task in the main Claude session copies its result into `deals.json` and pushes it (scheduled check sessions can't push to GitHub themselves). It never touches `data.json`. Shape: `{"updated": "<text>", "sections": [{"id", "name", "rule", "items": [{"title", "url", "price", "ptype", "location", "closes", "verdict": "good"|"watch"|"skip", "note"}], "footnote"?, "empty"?}]}`. Section ids: `table-saws`, `mitre-saws`, `nail-guns`, `power-tools`, `tool-sets`, `wood-stain`, `sewing-machines`, `home-gym`, `treadmills`, `fish-tanks`, `keter`. Auckland only, used, Buy Now or offers.
 
 ## Reference
 
