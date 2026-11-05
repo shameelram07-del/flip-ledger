@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Flip Ledger</title>
 <meta name="description" content="Tool flipping: money made, board, weeks and the road to $5k.">
-<meta name="theme-color" content="#0B0D10">
+<meta name="theme-color" content="#08080C">
 <meta name="color-scheme" content="dark">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,13 +16,14 @@
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0B0D10; --panel:#151A20; --line:#1F262E; --track:#1C232B; --ink:#EDF1F5; --mut:#96A0AC; --dim:#7F8A97;
+  --bg:#08080C; --panel:#151A20; --line:#1F262E; --track:#1C232B; --ink:#EDF1F5; --mut:#96A0AC; --dim:#7F8A97;
   --lime:#C6F432; --lime-2:#8DB324; --red:#FF7A6B; --amber:#FFC14D; --grey:#5B6670;
   --ease:cubic-bezier(.2,.8,.2,1);
   --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
   --display:"Space Grotesk",Inter,-apple-system,"Segoe UI",system-ui,sans-serif;
   color-scheme:dark;
 }
@@ -42,6 +43,9 @@ button:active{transform:scale(.97)}
 .lime{color:var(--lime)}.red{color:var(--red)}.amber{color:var(--amber)}.mut{color:var(--mut)}.white{color:var(--ink)}
 .sh{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .sh .h{font-size:17px}
+.sh .num.h{font-family:var(--serif);font-weight:400;font-size:30px;letter-spacing:-.01em;line-height:1}
+.sh .num.h i{color:var(--lime)}
+.serif{font-family:var(--serif);font-weight:400}
 .loading{padding:80px 22px;text-align:center;color:var(--mut)}
 
 /* top bar + hero */
@@ -49,11 +53,68 @@ button:active{transform:scale(.97)}
 .wordmark{font-size:13px;letter-spacing:.14em;text-transform:uppercase}
 .pill{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--mut);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:5px 11px 5px 9px}
 .live{width:7px;height:7px;border-radius:50%;background:var(--lime);display:inline-block}
-.hero{padding:14px 22px 0}
-.gsvg{width:100%;height:auto;display:block;overflow:visible}
-.hero .cap{text-align:center;margin-top:10px}
-.hero .cap b{display:block;font-size:13px;font-weight:500}
-.hero .cap span{display:block;font-size:12px;color:var(--mut);margin-top:3px;line-height:1.45}
+.hero{position:relative;height:150svh;margin-top:-64px}
+.hstage{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;place-items:center;padding:0 22px}
+.hglow{position:absolute;inset:-20%;pointer-events:none;background:radial-gradient(42% 34% at 50% 60%,rgba(198,244,50,.5),rgba(198,244,50,.07) 55%,transparent 75%)}
+.hrays{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 2px,transparent 2px 14px);mask-image:linear-gradient(to top,#000 10%,transparent 70%);-webkit-mask-image:linear-gradient(to top,#000 10%,transparent 70%)}
+.hin{position:relative;text-align:center;will-change:transform,opacity;width:100%}
+.hin .up{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.bigv{font-size:clamp(84px,27vw,150px);font-weight:700;line-height:.9;margin-top:10px;letter-spacing:-.05em}
+.tag{font-size:clamp(32px,9.5vw,50px);line-height:1.05;margin-top:14px}
+.tag i{color:var(--lime)}
+.gline{max-width:300px;margin:26px auto 0}
+.gline .gl{height:6px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden}
+.gline .gl b{display:block;height:100%;border-radius:99px;background:var(--lime);box-shadow:0 0 14px rgba(198,244,50,.7);transform-origin:left;animation:growx 1.4s var(--ease) .3s backwards}
+.gline span{display:block;font-size:12px;color:var(--mut);margin-top:8px}
+.cue{position:absolute;bottom:calc(110px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;font-size:11px;color:var(--mut);letter-spacing:.14em;text-transform:uppercase}
+.cue i{display:block;width:1px;height:30px;margin:10px auto 0;background:linear-gradient(var(--mut),transparent);animation:drip 1.8s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.amb{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(70% 38% at 0% 0%,var(--amb1,rgba(198,244,50,.16)),transparent 70%),radial-gradient(70% 38% at 100% 100%,var(--amb2,rgba(198,244,50,.12)),transparent 70%);transition:opacity .6s}
+.app{z-index:1}
+.top{position:relative;z-index:3}
+
+/* flips reel: one sold tool takes the screen per scroll step */
+.reel{position:relative;margin:30px -22px 0}
+.rstage{position:sticky;top:0;height:100svh;overflow:hidden}
+.rglow{position:absolute;inset:-20%;pointer-events:none;transition:background .6s ease}
+.bword{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:700 clamp(110px,40vw,210px)/1 var(--display);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.10);white-space:nowrap;pointer-events:none}
+.rcount{position:absolute;top:calc(70px + env(safe-area-inset-top));right:22px;font:500 12px/1 var(--display);color:var(--mut);z-index:2}
+.rdots{position:absolute;right:10px;top:50%;transform:translateY(-50%);display:grid;gap:7px;z-index:2}
+.rdots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.25);transition:all .3s}
+.rdots i.on{background:#fff;height:16px;border-radius:99px}
+.flip{position:absolute;inset:0;width:100%;display:grid;grid-template-rows:auto 1fr auto;padding:calc(70px + env(safe-area-inset-top)) 28px calc(118px + env(safe-area-inset-bottom)) 22px;opacity:0;transform:translateY(40px) scale(.96);transition:opacity .55s ease,transform .7s var(--ease);pointer-events:none}
+.flip.on{opacity:1;transform:none;pointer-events:auto}
+.flip .brand{font:700 12px/1 var(--display);letter-spacing:.18em;text-transform:uppercase}
+.flip h3{font-family:var(--serif);font-weight:400;font-size:clamp(34px,10vw,52px);line-height:1;margin-top:10px;max-width:14ch;text-wrap:balance}
+.flip .fic{display:grid;place-items:center}
+.flip .fic svg{width:min(52vw,250px);height:auto;transform:rotate(-8deg);filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+.flip .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.flip .money{font-size:13px;color:var(--mut)}
+.flip .money b{display:block;font:700 18px/1.2 var(--display);color:var(--ink);margin-top:2px}
+.flip .pr{text-align:right}
+.flip .pr .num{font-size:clamp(48px,15vw,80px);line-height:.9}
+.flip .pr small{display:block;font-size:12px;color:var(--mut);margin-top:6px}
+
+/* statement */
+.say{position:relative;height:170svh;margin:0 -22px}
+.sstage{position:sticky;top:0;height:100svh;display:grid;place-items:center;background:#F4F5F7;color:#08080C;padding:0 22px}
+.sayp{font-family:var(--serif);font-size:clamp(46px,14vw,84px);line-height:1;text-align:center}
+.sayp span{display:inline-block;opacity:.12;transition:opacity .35s}
+.sayp span.lit{opacity:1}
+.sayp .hl2{background:linear-gradient(transparent 62%,var(--lime) 62%)}
+.sayp small{display:block;font:500 14px/1.4 var(--sans);color:#5B6670;margin-top:22px;opacity:0;transition:opacity .5s}
+.sayp small.lit{opacity:1}
+
+/* road to the car */
+.road{position:relative;height:10px;border-radius:99px;background:var(--track);margin:22px 4px 10px}
+.road b{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--lime);box-shadow:0 0 22px rgba(198,244,50,.6);transform-origin:left;animation:growx 1.4s var(--ease) .2s backwards}
+.road em{position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:var(--bg);border:3px solid var(--lime);transform:translate(-50%,-50%)}
+.road-l{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.cg{position:absolute;pointer-events:none;inset:auto -30% -75% -30%;height:120%;opacity:.55}
+.sp{position:relative;overflow:hidden}
+.sp > *:not(.cg){position:relative}
+.sglow{position:absolute;left:0;right:0;top:0;height:240px;pointer-events:none;border-radius:24px 24px 0 0}
+.sheet > *:not(.sglow){position:relative}
 .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:18px 22px 0}
 .tiles .v{font-size:26px;margin-top:4px;white-space:nowrap}
 .tiles .k + .v + .k{margin-top:2px}
@@ -226,6 +287,7 @@ footer{padding:26px 22px 0;font-size:11px;color:var(--grey);text-align:center}
 </style>
 </head>
 <body>
+<div class="amb" id="amb" aria-hidden="true"></div>
 <div class="app" id="app"><div class="loading">Loading…</div></div>
 <div class="bar" id="bar" aria-hidden="true"></div>
 <nav class="tabbar" id="tabbar" aria-label="Sections">
@@ -350,15 +412,16 @@ function render() {
     <div class="num wordmark">Flip Ledger</div>
     <div class="pill"><span class="live"></span>Updated ${fmtD(D.updated)}</div>
   </header>
-  <section class="hero" id="hero">
-    <svg class="gsvg" viewBox="0 0 346 186" role="img" aria-label="Progress to the car goal">
-      <path d="M 25 170 A 148 148 0 0 1 321 170" fill="none" stroke="#1C232B" stroke-width="14" stroke-linecap="round"/>
-      <path class="gauge" d="M 25 170 A 148 148 0 0 1 321 170" fill="none" stroke="#C6F432" stroke-width="14" stroke-linecap="round" stroke-dasharray="${(goalPct / 100 * ARC).toFixed(1)} 2000"/>
-      <text id="bigv" x="173" y="128" text-anchor="middle" font-family="Space Grotesk, Inter, sans-serif" font-weight="700" font-size="58" fill="#EDF1F5" letter-spacing="-2">$0</text>
-      <text x="173" y="158" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#96A0AC">of ${$m(D.goal)} car goal · ${goalPct.toFixed(0)}%</text>
-    </svg>
-    <div class="cap"><b>Money made so far</b><span>Money from sales, minus everything we bought to sell and fuel.</span></div>
-  </section>
+  <section class="hero" id="hero"><div class="hstage">
+    <div class="hglow"></div><div class="hrays"></div>
+    <div class="hin" id="hin">
+      <div class="up">Money made so far</div>
+      <div class="num bigv" id="bigv">$0</div>
+      <div class="serif tag">Buy it cheap.<br><i>Sell it fast.</i></div>
+      <div class="gline"><div class="gl"><b style="width:${goalPct.toFixed(1)}%"></b></div><span>${goalPct.toFixed(0)}% of the ${$m(D.goal)} car goal · sales minus everything bought and fuel</span></div>
+    </div>
+    <div class="cue" id="cue">Scroll<i></i></div>
+  </div></section>
   <section class="tiles">
     ${tile(0, 'Profit on items sold', '<span id="profv">$0</span>', `${C.sold.length} items sold`, 'lime')}
     ${tile(1, 'Pace per week', `${$m(Math.round(t.pace))}<span class="u"> /wk</span>`, `over ${t.weeksDone} week${t.weeksDone === 1 ? '' : 's'}`)}
@@ -378,6 +441,7 @@ function showView() {
   $$('#tabbar .tb').forEach(b => b.classList.toggle('on', b.dataset.tab === v));
   $('#ind').style.left = `calc(${TABS.indexOf(v) * 100 / TABS.length}% + 6px)`;
   if (v === 'goal') drawChart(false);
+  reelCur = -1; requestAnimationFrame(onScroll);
 }
 
 /* board */
@@ -406,7 +470,20 @@ function boardView() {
       <span><i style="width:8px;height:8px;background:var(--lime)"></i>under a week</span>
       <span><i style="width:8px;height:8px;background:var(--amber)"></i>7+ days</span>
       <span><i style="width:8px;height:8px;background:var(--red)"></i>10+ days, drop the price</span>
-    </div>`;
+    </div>
+    ${flips.length ? `<div class="sh" style="margin-top:34px"><span class="num h">Every <i>flip</i></span><span class="k">keep scrolling</span></div>
+    <section class="reel" id="reel" style="height:${flips.length * 75 + 30}svh"><div class="rstage">
+      <div class="rglow" id="rglow"></div><div class="bword" id="bword"></div><div class="rcount" id="rcount"></div>
+      <div class="rdots" id="rdots">${flips.map(() => '<i></i>').join('')}</div>
+      ${flips.map((i, n) => { const v = vis(i), p = i.sold - i.cost; return `<button class="flip" data-act="item" data-id="${esc(i.id)}" data-n="${n}" aria-label="${esc(i.name)}">
+        <div><div class="brand" style="color:${v.color}">${esc(v.brand || 'Flip ' + (n + 1))}</div><h3>${esc(i.name.replace(/\s*\(.*?\)/g, ''))}</h3></div>
+        <div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="${v.color}" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${v.icon}"/></svg></div>
+        <div class="foot"><div class="money">Paid<b>${$m(i.cost)}${unc(i, 'cost')}</b><span style="display:block;margin-top:8px">Sold<b>${$m(i.sold)}</b></span></div>
+          <div class="pr"><div class="num" style="color:${p >= 0 ? v.color : 'var(--red)'}">${$s(p)}</div><small>week ${i.soldWeek}${i === best ? ' · best flip' : ''}${!i.own && sellTime(i, D) ? ' · ' + sellTime(i, D) : ''}</small></div></div>
+      </button>`; }).join('')}
+    </div></section>
+    <section class="say" id="say"><div class="sstage"><p class="sayp" id="sayp"><span>Less</span> <span>rush.</span><br><span><i>More</i></span> <span class="hl2">profit.</span>
+      <small id="saysm">${flips.length} flips so far. Fast turnover beats big margins.</small></p></div></section>` : ''}`;
 }
 function stageList() {
   const st = state.stage, arr = C.board[st];
@@ -431,7 +508,7 @@ function stockView() {
   const tl = (n, k, sale, cls) => `<div class="tile it" style="animation-delay:${60 + n * 60}ms"><div class="k">${k}</div><div class="num v ${cls}">${$s(sale - t.stockCost)}</div><div class="k">sells ${$m(sale)}</div></div>`;
   const ld = (k, v, i, col, d) => `<div class="ld"><span class="k">${k}</span><div class="track"><div class="fill" style="background:${col};width:${pct(v, maxList)}%;animation-delay:${d}s"></div></div><span class="num">${$m(v)}</span><span class="${v - i.cost >= 0 ? 'lime' : 'red'}">${$s(v - i.cost)}</span></div>`;
   const rows = C.stock.map((i, n) => { const v = vis(i), a = ageTag(i); return `
-    <button class="panel sp it" style="animation-delay:${200 + n * 90}ms" data-act="item" data-id="${esc(i.id)}">
+    <button class="panel sp it" style="animation-delay:${200 + n * 90}ms" data-act="item" data-id="${esc(i.id)}"><span class="cg" style="background:radial-gradient(closest-side, ${tint(v.color, .45)}, transparent)"></span>
       <div class="hd">${icoTile(v)}<div class="grow">
         <div class="card-top" style="align-items:flex-start"><div class="nm" style="font-size:15px;font-weight:500;line-height:1.3">${esc(i.name)}</div>${chip(a.tag, a.cls)}</div>
         <div class="meta">${v.brand ? `<span style="font-weight:700;color:${v.color}">${v.brand}</span> ` : ''}${i.own ? 'Own' : 'Paid ' + $m(i.cost) + unc(i, 'cost')} · ${stockState(i)}</div>
@@ -489,7 +566,11 @@ function goalView() {
   const parts = [['Cost of sold', t.cost, '#C6F432'], ['On the shelf', t.stockCost, '#EDF1F5'], ['Kept', t.kept, '#5B6670'], ['Fuel', t.fuel, '#FF7A6B']];
   const total = sum(parts, x => x[1]), CIRC = 2 * Math.PI * 46; let off = 0;
   const rings = parts.map(([, v, col], n) => { const len = v / (total || 1) * CIRC, s = `<circle class="ring" r="46" cx="60" cy="60" fill="none" stroke-width="14" stroke="${col}" stroke-dasharray="${len.toFixed(2)} 999" stroke-dashoffset="${(-off).toFixed(2)}" style="animation-delay:${n * .25}s"/>`; off += len; return s; }).join('');
+  const gPct = Math.max(0, Math.min(100, t.flipCash / D.goal * 100));
   return `
+    <div class="sh"><span class="num h">The road to the <i>car</i></span><span class="k">${$m(Math.max(0, D.goal - t.flipCash))} to go</span></div>
+    <div class="road it"><b style="width:${gPct.toFixed(1)}%"></b><em style="left:${gPct.toFixed(1)}%"></em></div>
+    <div class="road-l" style="margin-bottom:18px"><span>${$m(t.flipCash)} made · ${gPct.toFixed(0)}%</span><span>${$m(D.goal)} goal</span></div>
     <div class="panel gp it">
       <div class="sh"><span class="k" style="font-size:13px">If I make, each week</span><span class="num lime" style="font-size:30px" id="rateV"></span></div>
       <input type="range" id="rate" min="50" max="800" step="10" value="${state.rate}" aria-label="Weekly profit">
@@ -601,6 +682,7 @@ function openSheet(id) {
   $('#sheet').innerHTML = `<div class="sw">
     <button class="dim" data-act="close" aria-label="Close"></button>
     <div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(i.name)}">
+      <div class="sglow" style="background:radial-gradient(70% 90% at 50% 0%, ${tint(v.color, .32)}, transparent)"></div>
       <div class="grab"></div>
       <div class="sh-top">
         <span class="ico" style="background:${v.tileBg};color:${v.color}">${svgI(v.icon, 30)}</span>
@@ -619,7 +701,7 @@ const closeSheet = () => { $('#sheet').innerHTML = ''; };
 function setTab(v) {
   if (v === state.tab) return;
   state.tab = v; showView();
-  if ($('#hero').getBoundingClientRect().bottom < 0) window.scrollTo({ top: $('#view').offsetTop - 60, behavior: reduce ? 'auto' : 'smooth' });
+  window.scrollTo({ top: $('#view').offsetTop - 60, behavior: reduce ? 'auto' : 'smooth' });
 }
 document.addEventListener('click', e => {
   const a = e.target.closest('[data-act]'); if (!a) return;
@@ -636,7 +718,39 @@ document.addEventListener('input', e => {
   else if (e.target.id === 'rate') { state.rate = +e.target.value; drawChart(true); }
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#sheet').innerHTML) closeSheet(); });
-addEventListener('scroll', () => { const h = $('#hero'); if (h) $('#bar').classList.toggle('show', h.getBoundingClientRect().bottom < 0); }, { passive: true });
+/* scroll engine: hero shrinks away, the flips reel swaps one tool per step, the statement lights word by word */
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+const prog = el => { const r = el.getBoundingClientRect(); return clamp(-r.top / Math.max(1, r.height - innerHeight)); };
+let reelCur = -1;
+function onScroll() {
+  const h = $('#hero'); if (!h) return;
+  $('#bar').classList.toggle('show', h.getBoundingClientRect().bottom < 0);
+  const p = prog(h), hin = $('#hin'), cue = $('#cue');
+  if (hin && !reduce) { hin.style.transform = `translateY(${-p * 12}svh) scale(${1 - p * .3})`; hin.style.opacity = 1 - clamp((p - .45) / .55); }
+  if (cue) cue.style.opacity = 1 - clamp(p / .12);
+  let amb = '#C6F432';
+  const reel = $('#reel');
+  if (reel) {
+    const flips = $$('#reel .flip'), n = Math.min(flips.length - 1, Math.floor(prog(reel) * flips.length * 1.0001));
+    if (n !== reelCur) {
+      reelCur = n;
+      flips.forEach((el, k) => el.classList.toggle('on', k === n));
+      $$('#rdots i').forEach((d, k) => d.classList.toggle('on', k === n));
+      const it = D.items.find(x => x.id === flips[n].dataset.id), v = vis(it);
+      $('#rglow').style.background = `radial-gradient(55% 45% at 50% 52%, ${tint(v.color, .5)}, ${tint(v.color, .12)} 55%, transparent 75%)`;
+      $('#bword').textContent = (v.brand || 'Flip').toUpperCase();
+      $('#rcount').textContent = `${n + 1} / ${flips.length}`;
+    }
+    const r = reel.getBoundingClientRect();
+    if (r.top < innerHeight / 2 && r.bottom > innerHeight / 2) amb = vis(D.items.find(x => x.id === $$('#reel .flip')[reelCur].dataset.id)).color;
+  }
+  const say = $('#say');
+  if (say) { const sp = prog(say); $$('#sayp span').forEach((w, k) => w.classList.toggle('lit', reduce || sp > .1 + k * .15)); $('#saysm').classList.toggle('lit', reduce || sp > .75); }
+  const a = $('#amb'); a.style.setProperty('--amb1', tint(amb, .16)); a.style.setProperty('--amb2', tint(amb, .12));
+}
+let ticking = false;
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; onScroll(); }); } }, { passive: true });
+addEventListener('resize', onScroll);
 
 function countUp(el, to) {
   if (!el) return;
