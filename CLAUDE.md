@@ -87,7 +87,11 @@ Add an item with `status: "stock"`, `cost`, `boughtWeek`, `collected: false` if 
 
 ## What the page shows (don't change unless asked)
 
-Dark 'Night Shift' page. Top: semicircle gauge with Money made so far (paid sales minus everything bought to flip, sold or not, minus fuel; kept items left out) against the $5k car goal, a plain one-line note, then four tiles: Profit on items sold, Pace per week, Still to sell, Owed back to joint account. Keep it plain English for a non-accountant. Bottom tab bar: Board (Highlights, then To collect / At home / Listed / Sold) · Stock (list/accept/worst ladders, totals table) · Weeks (bar chart, week rows) · Goal (projection slider, pay-back, where the money went) · Items (search, All / Sold / Stock / Kept).
+Dark 'Night Shift' page. Top: semicircle gauge with Money made so far (paid sales minus everything bought to flip, sold or not, minus fuel; kept items left out) against the $5k car goal, a plain one-line note, then four tiles: Profit on items sold, Pace per week, Still to sell, Owed back to joint account. Keep it plain English for a non-accountant. Bottom tab bar: Board (Highlights, then To collect / At home / Listed / Sold) · Stock (list/accept/worst ladders, totals table) · Weeks (bar chart, week rows) · Goal (projection slider, pay-back, where the money went) · Items (search, All / Sold / Stock / Kept) · Deals (today's used Trade Me deals from `deals.json`).
+
+## deals.json (morning Trade Me deals)
+
+A scheduled check rewrites `deals.json` every morning (~8:42am NZ) and pushes it. It never touches `data.json`. Shape: `{"updated": "<text>", "sections": [{"id", "name", "rule", "items": [{"title", "url", "price", "ptype", "location", "closes", "verdict": "good"|"watch"|"skip", "note"}], "footnote"?, "empty"?}]}`. Section ids: `table-saws`, `mitre-saws`, `nail-guns`, `power-tools`, `tool-sets`, `wood-stain`, `sewing-machines`, `home-gym`, `treadmills`, `fish-tanks`, `keter`. Auckland only, used, Buy Now or offers.
 
 ## Reference
 

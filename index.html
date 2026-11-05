@@ -177,10 +177,16 @@ input[type=range]{width:100%;accent-color:var(--lime);height:30px;margin:6px 0}
 /* tab bar */
 .tabbar{position:fixed;left:0;right:0;bottom:0;max-width:480px;margin:0 auto;z-index:9;height:calc(84px + env(safe-area-inset-bottom));padding:0 0 calc(10px + env(safe-area-inset-bottom));
   display:flex;align-items:stretch;background:rgba(21,26,32,.88);backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);border-top:1px solid var(--line)}
-.ind{position:absolute;top:8px;height:58px;width:calc(20% - 12px);border-radius:16px;background:rgba(198,244,50,.10);transition:left .4s var(--ease)}
+.ind{position:absolute;top:8px;height:58px;width:calc(100% / 6 - 12px);border-radius:16px;background:rgba(198,244,50,.10);transition:left .4s var(--ease)}
 .tb{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 0 8px;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);min-height:44px;position:relative;z-index:1;transition:color .3s;text-align:center}
 .tb.on{color:var(--lime)}
 .tb.on svg{animation:pop .4s var(--ease)}
+
+/* deals */
+a.rowp{color:inherit;text-decoration:none}
+.deal{align-items:flex-start}
+.dnote{font-size:12px;color:var(--mut);margin-top:7px;line-height:1.45}
+.dfoot{font-size:12px;color:var(--mut);margin-top:8px;line-height:1.45}
 
 /* item sheet */
 .sw{position:fixed;inset:0;z-index:30;max-width:480px;margin:0 auto;display:flex;flex-direction:column;justify-content:flex-end}
@@ -229,6 +235,7 @@ footer{padding:26px 22px 0;font-size:11px;color:var(--grey);text-align:center}
   <button class="tb" data-act="tab" data-tab="weeks"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>Weeks</button>
   <button class="tb" data-act="tab" data-tab="goal"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>Goal</button>
   <button class="tb" data-act="tab" data-tab="items"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Items</button>
+  <button class="tb" data-act="tab" data-tab="deals"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Deals</button>
 </nav>
 <div id="sheet"></div>
 
@@ -332,7 +339,8 @@ const chip = (tag, cls) => `<span class="chip ${cls}">${esc(tag)}</span>`;
 /* ---------- render ---------- */
 let D, C;
 const state = { tab: 'board', stage: 'listed', week: null, filter: 'all', q: '', rate: null };
-const TABS = ['board', 'stock', 'weeks', 'goal', 'items'];
+const TABS = ['board', 'stock', 'weeks', 'goal', 'items', 'deals'];
+let DEALS = null;
 
 function render() {
   const t = C.t, goalPct = Math.max(0, Math.min(100, t.flipCash / D.goal * 100)), ARC = Math.PI * 148;
@@ -366,9 +374,9 @@ function render() {
 
 function showView() {
   const v = state.tab, el = $('#view');
-  el.innerHTML = `<div class="view rise">${{ board: boardView, stock: stockView, weeks: weeksView, goal: goalView, items: itemsView }[v]()}</div>`;
+  el.innerHTML = `<div class="view rise">${{ board: boardView, stock: stockView, weeks: weeksView, goal: goalView, items: itemsView, deals: dealsView }[v]()}</div>`;
   $$('#tabbar .tb').forEach(b => b.classList.toggle('on', b.dataset.tab === v));
-  $('#ind').style.left = `calc(${TABS.indexOf(v) * 20}% + 6px)`;
+  $('#ind').style.left = `calc(${TABS.indexOf(v) * 100 / TABS.length}% + 6px)`;
   if (v === 'goal') drawChart(false);
 }
 
@@ -558,6 +566,27 @@ function itemList() {
   }).join('');
 }
 
+/* deals: deals.json is rewritten every morning by the Trade Me check */
+function dealsView() {
+  const head = `<div class="sh"><span class="num h">Deals to buy</span><span class="k">${DEALS && DEALS.updated ? 'checked ' + esc(DEALS.updated) : ''}</span></div>`;
+  if (!DEALS || !Array.isArray(DEALS.sections)) return head + '<div class="empty">No deals yet. The morning Trade Me check adds them at about 8:42am.</div>';
+  const V = { good: ['good deal', 'green'], watch: ['watch', 'amber'], skip: ['skip', 'grey'] };
+  let n = 0;
+  return head + '<p class="dfoot">Used items on Trade Me, checked every morning. Tap one to open it on Trade Me.</p>' + DEALS.sections.map(s => {
+    const items = Array.isArray(s.items) ? s.items : [];
+    const rows = items.length ? items.map(it => {
+      const v = vis({ name: String(it.title || '') }), [tag, cls] = V[it.verdict] || ['', 'grey'];
+      const url = /^https:\/\/www\.trademe\.co\.nz\//.test(String(it.url || '')) ? it.url : '';
+      const sub = [it.location, it.closes ? 'closes ' + it.closes : ''].filter(Boolean).join(' · '), note = [it.ptype, it.note].filter(Boolean).join('. ');
+      return `<a class="rowp deal it" style="animation-delay:${delay(n++)}ms"${url ? ` href="${esc(url)}" target="_blank" rel="noopener"` : ''}>${icoTile(v, 1)}
+        <div class="grow"><div class="card-top"><div class="nm">${esc(it.title)}</div><div class="num p">${esc(it.price)}</div></div>
+        <div class="card-mid">${tag ? chip(tag, cls) : ''}<span class="sub ell">${esc(sub)}</span></div>
+        ${note ? `<div class="dnote">${esc(note)}</div>` : ''}</div></a>`;
+    }).join('') : `<div class="empty">${esc(s.empty || 'Nothing today')}</div>`;
+    return `<div class="sh" style="margin-top:22px"><span class="num h">${esc(s.name)}</span><span class="k">${esc(s.rule || '')}</span></div>${rows}${s.footnote ? `<p class="dfoot">${esc(s.footnote)}</p>` : ''}`;
+  }).join('');
+}
+
 /* ---------- item sheet ---------- */
 function openSheet(id) {
   const i = D.items.find(x => x.id === id); if (!i) return;
@@ -621,6 +650,8 @@ function countUp(el, to) {
 fetch('data.json', {cache: 'no-store'}).then(r => { if (!r.ok) throw r.status; return r.json(); })
   .then(d => { D = d; C = calc(d); render(); })
   .catch(e => $('#app').innerHTML = `<div class="loading">Couldn't load data.json (${esc(e)}).</div>`);
+fetch('deals.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null)
+  .then(x => { DEALS = x; if (C && state.tab === 'deals') showView(); }).catch(() => {});
 })();
 </script>
 </body>
