@@ -139,6 +139,18 @@ button:active{transform:scale(.97)}
 .ptitle h1{font-size:clamp(46px,14vw,64px);line-height:.95;letter-spacing:-.01em}
 .ptitle h1 i{color:var(--lime)}
 .ptitle p{color:var(--mut);margin-top:10px;font-size:14px;max-width:36ch}
+/* tab titles: words rise out of a mask, the accent word blurs in and gets an underline swash, the line under fades up */
+.ptitle{will-change:transform,opacity}
+.ptitle h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .04em .12em;margin:0 -.04em -.12em}
+.ptitle h1 .w>span{display:inline-block;transform:translateY(110%) rotate(4deg);transform-origin:0 100%;animation:ptUp .95s var(--ease) forwards;animation-delay:calc(var(--k) * 90ms + 80ms)}
+.ptitle h1 i{position:relative;display:inline-block}
+.ptitle h1 i .w>span{filter:blur(8px);animation-name:ptUpBlur}
+.ptitle h1 i::after{content:"";position:absolute;left:.06em;right:.12em;bottom:.02em;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--lime),rgba(var(--acc-rgb),.15));transform:scaleX(0);transform-origin:left;animation:ptLine .9s var(--ease) forwards;animation-delay:calc(var(--n) * 90ms + 420ms)}
+.ptitle p{opacity:0;transform:translateY(12px);animation:ptFade .8s var(--ease) forwards;animation-delay:calc(var(--n) * 90ms + 300ms)}
+@keyframes ptUp{to{transform:none}}
+@keyframes ptUpBlur{60%{filter:blur(1px)}to{transform:none;filter:none}}
+@keyframes ptLine{to{transform:scaleX(1)}}
+@keyframes ptFade{to{opacity:1;transform:none}}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .7s var(--ease);animation:none!important}
 .rv.in{opacity:1;transform:none}
 .rowp{display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-top:8px;min-height:44px}
@@ -457,6 +469,7 @@ function showView() {
   if (v === 'goal') drawChart(false);
   const onBoard = v === 'board';
   $('#hero').hidden = !onBoard; $('#tiles').hidden = !onBoard;
+  splitTitle();
   reveal();
   reelCur = -1; requestAnimationFrame(onScroll);
 }
@@ -736,9 +749,28 @@ document.addEventListener('input', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#sheet').innerHTML) closeSheet(); });
 const rio = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -6% 0px' }) : null;
+/* wrap each title word so it can rise out of its own mask */
+function splitTitle() {
+  const h = $('.view .ptitle h1'); if (!h || reduce) return;
+  let k = 0;
+  const wrap = node => [...node.childNodes].forEach(c => {
+    if (c.nodeType === 3) {
+      const f = document.createDocumentFragment();
+      c.textContent.split(/(\s+)/).forEach(part => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) return f.append(part);
+        const w = document.createElement('span'); w.className = 'w';
+        w.innerHTML = `<span style="--k:${k++}">${esc(part)}</span>`; f.append(w);
+      });
+      c.replaceWith(f);
+    } else wrap(c);
+  });
+  wrap(h);
+  h.closest('.ptitle').style.setProperty('--n', k);
+}
 function reveal() {
   if (reduce || !rio) return;
-  $$('.view .ptitle, .view .sh, .view .rowp, .view .panel, .view .hl, .view .tile, .view .segs, .view .road, .view .road-l, .view .empty, .view .legend, .view .dfoot').forEach((el, k) => {
+  $$('.view .sh, .view .rowp, .view .panel, .view .hl, .view .tile, .view .segs, .view .road, .view .road-l, .view .empty, .view .legend, .view .dfoot').forEach((el, k) => {
     if (el.closest('.reel, .say')) return;
     el.classList.add('rv'); el.style.transitionDelay = Math.min(240, (k % 6) * 40) + 'ms'; rio.observe(el);
   });
@@ -753,6 +785,8 @@ function onScroll() {
   const p = prog(h), hin = $('#hin'), cue = $('#cue');
   if (hin && !reduce) { hin.style.transform = `translateY(${-p * 12}svh) scale(${1 - p * .3})`; hin.style.opacity = 1 - clamp((p - .45) / .55); }
   if (cue) cue.style.opacity = 1 - clamp(p / .12);
+  const pt = $('.view .ptitle');
+  if (pt && !reduce) { const y = Math.max(0, scrollY); pt.style.transform = `translateY(${-y * .18}px)`; pt.style.opacity = 1 - clamp(y / 420) * .65; }
   let amb = state.tab === 'stock' && C.stock.length ? vis(C.stock.slice().sort((a, b) => b.list - a.list)[0]).color : state.tab === 'items' ? cv('--mut') : cv('--lime');
   const reel = $('#reel');
   if (reel) {
