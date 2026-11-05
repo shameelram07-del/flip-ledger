@@ -1,14 +1,15 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "goal": 5000,
   "fuelPrice": 3.41,
   "litresPer100km": 8,
   "weeks": [
     { "n": 1, "label": "19–26 Oct", "start": "2026-10-19" },
     { "n": 2, "label": "27–29 Oct", "start": "2026-10-27" },
-    { "n": 3, "label": "30 Oct–5 Nov", "start": "2026-10-30" }
+    { "n": 3, "label": "30 Oct–5 Nov", "start": "2026-10-30" },
+    { "n": 4, "label": "6–12 Nov", "start": "2026-11-06" }
   ],
-  "estimate": { "week": 3, "fuel": 40 },
+  "estimate": { "week": 4, "fuel": 40 },
   "items": [
     { "id": "bosch-gts10j", "name": "Bosch GTS 10 J table saw + GTA 600 stand", "status": "sold", "cost": 300, "sold": 500, "own": false, "boughtWeek": 1, "soldWeek": 1, "bought": null, "soldDate": null, "trip": 1, "paid": true, "paidFrom": "joint", "note": "" },
     { "id": "bd-bes720", "name": "Black+Decker BES720 table saw", "status": "sold", "cost": 61, "sold": 150, "own": false, "boughtWeek": 1, "soldWeek": 1, "bought": null, "soldDate": null, "trip": 1, "paid": true, "unconfirmed": ["cost"], "note": "Cost $40 or $60.99, using $61" },
@@ -26,6 +27,7 @@
 
     { "id": "gearup-compressor", "name": "GearUp 12V tyre compressor", "status": "stock", "listed": false, "cost": 0, "list": 40, "accept": 30, "worst": 20, "own": true, "boughtWeek": null, "bought": null, "trip": null, "note": "Untested" },
     { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "stock", "collected": true, "listed": true, "cost": 500, "list": 900, "accept": 800, "worst": 550, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "paidFrom": "joint", "note": "Trade Me auction, started $500, reserve met, bid $550. Closes Sun 8 Nov 8:30pm. $1,494 new at Bunnings" },
+    { "id": "ryobi-blower-vac", "name": "Ryobi 18V brushless blower vac (skin only)", "status": "stock", "collected": false, "listed": false, "cost": 55, "list": 110, "accept": 90, "worst": 75, "own": false, "boughtWeek": 4, "bought": "2026-11-06", "trip": null, "paidFrom": "cash", "note": "No battery. Near-new. Might keep if the planer sells well" },
     { "id": "ozito-drop-saw", "name": "Ozito sliding drop saw", "status": "stock", "collected": false, "listed": false, "cost": 1, "list": 50, "accept": 40, "worst": 20, "own": false, "boughtWeek": 2, "bought": "2026-10-29", "trip": null, "note": "Free ($1 Buy Now). Makes a strange noise, not used for 2 years, rust. Sold as parts only. Pick up Blockhouse Bay" },
 
     { "id": "keter-shed", "name": "Keter shed 1150L", "status": "kept", "cost": 100.99, "boughtWeek": null, "paidFrom": "cash", "note": "" },
