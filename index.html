@@ -832,6 +832,20 @@ fetch('data.json', {cache: 'no-store'}).then(r => { if (!r.ok) throw r.status; r
   .catch(e => $('#app').innerHTML = `<div class="loading">Couldn't load data.json (${esc(e)}).</div>`);
 fetch('deals.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null)
   .then(x => { DEALS = x; if (C && state.tab === 'deals') showView(); }).catch(() => {});
+/* a home-screen app is rarely reloaded, so pick up new data and deals whenever it comes back into view */
+let lastCheck = Date.now();
+function refresh() {
+  if (Date.now() - lastCheck < 60000) return;
+  lastCheck = Date.now();
+  fetch('data.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(d => {
+    if (d && JSON.stringify(d) !== JSON.stringify(D)) { D = d; C = calc(d); render(); }
+  }).catch(() => {});
+  fetch('deals.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(x => {
+    if (x && JSON.stringify(x) !== JSON.stringify(DEALS)) { DEALS = x; if (C && state.tab === 'deals') showView(); }
+  }).catch(() => {});
+}
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') refresh(); });
+setInterval(() => { if (document.visibilityState === 'visible') refresh(); }, 10 * 60000);
 })();
 </script>
 </body>
