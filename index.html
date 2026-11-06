@@ -277,6 +277,13 @@ a.rowp{color:inherit;text-decoration:none}
 .deal{align-items:flex-start}
 .dnote{font-size:12px;color:var(--mut);margin-top:7px;line-height:1.45}
 .dfoot{font-size:12px;color:var(--mut);margin-top:8px;line-height:1.45}
+.seen{margin-top:8px}
+.seen summary{list-style:none;cursor:pointer;font-size:13px;color:var(--mut);padding:10px 14px;border:1px dashed var(--line2);border-radius:14px;min-height:44px;display:flex;align-items:center;justify-content:space-between}
+.seen summary::-webkit-details-marker{display:none}
+.seen summary::after{content:'Show';color:var(--lime);font-weight:500}
+.seen[open] summary::after{content:'Hide'}
+.seen .rowp{opacity:.6}
+.newtag{font:600 10px Inter;letter-spacing:.12em;color:var(--bg);background:var(--lime);border-radius:99px;padding:3px 7px;margin-right:6px}
 
 /* item sheet */
 .sw{position:fixed;inset:0;z-index:30;max-width:480px;margin:0 auto;display:flex;flex-direction:column;justify-content:flex-end}
@@ -685,22 +692,39 @@ function itemList() {
 }
 
 /* deals: deals.json is rewritten every morning by the Trade Me check */
+/* deals already seen on this phone are folded away; the list only changes when a new deals check lands */
+function seenDeals() {
+  let st = {};
+  try { st = JSON.parse(localStorage.getItem('fl-seen-deals') || '{}') || {}; } catch {}
+  const all = Array.isArray(st.seen) ? st.seen : [];
+  if (st.viewing !== DEALS.updated) { st.base = all; st.viewing = DEALS.updated; }
+  const base = new Set(Array.isArray(st.base) ? st.base : []);
+  const now = DEALS.sections.flatMap(x => Array.isArray(x.items) ? x.items.map(i => i.url) : []).filter(Boolean);
+  st.seen = [...new Set([...all, ...now])].slice(-2000);
+  try { localStorage.setItem('fl-seen-deals', JSON.stringify(st)); } catch {}
+  return base;
+}
 function dealsView() {
   const head = `<div class="ptitle"><h1 class="serif">Deals to <i>buy</i></h1><p>${DEALS && DEALS.updated ? 'Checked ' + esc(DEALS.updated) + '. ' : ''}Used, Auckland, Buy Now or offers.</p></div>`;
   if (!DEALS || !Array.isArray(DEALS.sections)) return head + '<div class="empty">No deals yet. The morning Trade Me check adds them at about 8:42am.</div>';
   const V = { good: ['good deal', 'green'], watch: ['watch', 'amber'], skip: ['skip', 'grey'] };
   let n = 0;
-  return head + DEALS.sections.map(s => {
-    const items = Array.isArray(s.items) ? s.items : [];
-    const rows = items.length ? items.map(it => {
+  const base = seenDeals(), first = base.size === 0;
+  const row = it => {
       const v = vis({ name: String(it.title || '') }), [tag, cls] = V[it.verdict] || ['', 'grey'];
       const url = /^https:\/\/www\.trademe\.co\.nz\//.test(String(it.url || '')) ? it.url : '';
       const sub = [it.location, it.closes ? 'closes ' + it.closes : ''].filter(Boolean).join(' · '), note = [it.ptype, it.note].filter(Boolean).join('. ');
+      const isNew = !first && !base.has(it.url);
       return `<a class="rowp deal it" style="animation-delay:${delay(n++)}ms"${url ? ` href="${esc(url)}" target="_blank" rel="noopener"` : ''}>${icoTile(v, 1)}
-        <div class="grow"><div class="card-top"><div class="nm">${esc(it.title)}</div><div class="num p">${esc(it.price)}</div></div>
+        <div class="grow"><div class="card-top"><div class="nm">${isNew ? '<span class="newtag">NEW</span>' : ''}${esc(it.title)}</div><div class="num p">${esc(it.price)}</div></div>
         <div class="card-mid">${tag ? chip(tag, cls) : ''}<span class="sub ell">${esc(sub)}</span></div>
         ${note ? `<div class="dnote">${esc(note)}</div>` : ''}</div></a>`;
-    }).join('') : `<div class="empty">${esc(s.empty || 'Nothing today')}</div>`;
+  };
+  return head + DEALS.sections.map(s => {
+    const items = Array.isArray(s.items) ? s.items : [];
+    const fresh = items.filter(it => !base.has(it.url)), old = items.filter(it => base.has(it.url));
+    const rows = (fresh.length ? fresh.map(row).join('') : `<div class="empty">${esc(items.length ? 'Nothing new since you last looked.' : (s.empty || 'Nothing today'))}</div>`)
+      + (old.length ? `<details class="seen"><summary>${old.length} already seen</summary>${old.map(row).join('')}</details>` : '');
     return `<div class="sh" style="margin-top:22px"><span class="num h">${esc(s.name)}</span><span class="k">${esc(s.rule || '')}</span></div>${rows}${s.footnote ? `<p class="dfoot">${esc(s.footnote)}</p>` : ''}`;
   }).join('');
 }
