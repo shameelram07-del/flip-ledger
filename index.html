@@ -342,7 +342,7 @@ footer{padding:26px 22px 0;font-size:11px;color:var(--grey);text-align:center}
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const num = n => Number.isInteger(Math.round(n * 100) / 100) ? Math.round(n).toLocaleString('en-NZ') : n.toLocaleString('en-NZ', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const num = n => Math.round(n).toLocaleString('en-NZ');   // whole dollars everywhere; cents (e.g. $0.99 fees) stay in data.json
 const $m = n => (n < 0 ? '−$' : '$') + num(Math.abs(n));
 const $s = n => (n < 0 ? '−$' : '+$') + num(Math.abs(n));
 const sum = (a, f) => a.reduce((s, x) => s + (Number(f(x)) || 0), 0);
