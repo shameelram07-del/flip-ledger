@@ -27,21 +27,21 @@
 
     { "id": "gearup-compressor", "name": "GearUp 12V tyre compressor", "status": "stock", "listed": false, "cost": 0, "list": 40, "accept": 30, "worst": 20, "own": true, "boughtWeek": null, "bought": null, "trip": null, "note": "Untested" },
     { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "stock", "collected": true, "listed": true, "cost": 500, "list": 900, "accept": 800, "worst": 550, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "paidFrom": "joint", "note": "Trade Me auction, started $500, reserve met, bid $550. Closes Sun 8 Nov 8:30pm. $1,494 new at Bunnings" },
-    { "id": "ryobi-blower-vac", "name": "Ryobi 18V brushless blower vac (skin only)", "status": "stock", "collected": true, "listed": false, "cost": 55, "list": 110, "accept": 90, "worst": 75, "own": false, "boughtWeek": 4, "bought": "2026-11-06", "trip": null, "paidFrom": "cash", "note": "No battery. Near-new. Might keep if the planer sells well" },
-    { "id": "bd-18v-kit", "name": "Black+Decker 18V kit: brushless drill, jigsaw, circular saw, 2x 4Ah batteries, charger", "status": "stock", "collected": true, "listed": true, "cost": 50.99, "list": 130, "accept": 110, "worst": 90, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": null, "paidFrom": "cash", "note": "Won on Trade Me (auction). Drill has some paint marks. Could sell tools separately if the kit is slow" },
+    { "id": "ryobi-blower-vac", "name": "Ryobi 18V brushless blower vac (skin only)", "status": "stock", "collected": true, "listed": false, "cost": 55, "list": 110, "accept": 90, "worst": 75, "own": false, "boughtWeek": 4, "bought": "2026-11-06", "trip": 3, "paidFrom": "cash", "note": "No battery. Near-new. Might keep if the planer sells well" },
+    { "id": "bd-18v-kit", "name": "Black+Decker 18V kit: brushless drill, jigsaw, circular saw, 2x 4Ah batteries, charger", "status": "stock", "collected": true, "listed": true, "cost": 50.99, "list": 130, "accept": 110, "worst": 90, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": 3, "paidFrom": "cash", "note": "Won on Trade Me (auction). Drill has some paint marks. Could sell tools separately if the kit is slow" },
     { "id": "workbench-pegboard", "name": "Workbench with pegboard + drawer (1220mm)", "status": "stock", "collected": true, "listed": false, "cost": 10, "list": 110, "accept": 90, "worst": 70, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": null, "paidFrom": "cash", "note": "Same seller as the other two, one pick-up. Flat-packs. $179 new at Tradetested" },
     { "id": "ryobi-workbench", "name": "Ryobi folding workbench", "status": "stock", "collected": true, "listed": true, "cost": 10, "list": 30, "accept": 25, "worst": 20, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": null, "paidFrom": "cash", "note": "Same seller as the other two, one pick-up. Good condition" },
     { "id": "wheelbarrow", "name": "Wheelbarrow (red tray)", "status": "stock", "collected": true, "listed": false, "cost": 5, "list": 40, "accept": 30, "worst": 20, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": null, "paidFrom": "cash", "note": "Same seller as the other two, one pick-up. Wheel not in photo, check it has one" },
     { "id": "ryobi-water-blaster", "name": "Ryobi 1800PSI water blaster (listed as Karcher)", "status": "stock", "collected": true, "listed": false, "cost": 15, "list": 80, "accept": 65, "worst": 45, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": null, "paidFrom": "cash", "note": "Same seller as the workbenches. Adjustable wand + patio cleaning head. Seller says works great" },
     { "id": "ryobi-drill-press", "name": "Ryobi 5-speed bench drill press", "status": "stock", "collected": true, "listed": false, "cost": 1, "list": 70, "accept": 50, "worst": 30, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": null, "paidFrom": "cash", "note": "Very rusty, untested. Clean, wire-brush and test before listing" },
-    { "id": "ozito-drop-saw", "name": "Ozito sliding drop saw", "status": "stock", "collected": true, "listed": true, "cost": 1, "list": 10, "accept": 10, "worst": 5, "own": false, "boughtWeek": 2, "bought": "2026-10-29", "trip": null, "note": "Listed for parts or repair. Free ($1 Buy Now). Makes a strange noise, not used for 2 years, rust. Sold as parts only. Pick up Blockhouse Bay" },
+    { "id": "ozito-drop-saw", "name": "Ozito sliding drop saw", "status": "stock", "collected": true, "listed": true, "cost": 1, "list": 10, "accept": 10, "worst": 5, "own": false, "boughtWeek": 2, "bought": "2026-10-29", "trip": 3, "note": "Listed for parts or repair. Free ($1 Buy Now). Makes a strange noise, not used for 2 years, rust. Sold as parts only. Pick up Blockhouse Bay" },
 
     { "id": "keter-shed", "name": "Keter shed 1150L", "status": "kept", "cost": 100.99, "boughtWeek": null, "paidFrom": "cash", "note": "" },
     { "id": "bosch-mitre", "name": "Bosch sliding mitre saw + stand", "status": "kept", "cost": 61, "boughtWeek": null, "paidFrom": "cash", "note": "" },
     { "id": "pullup-bar", "name": "Pull-up bar", "status": "kept", "cost": 50.99, "boughtWeek": null, "paidFrom": "cash", "note": "" },
     { "id": "toolpro-sockets", "name": "ToolPro socket set", "status": "kept", "cost": 30.99, "boughtWeek": 2, "paidFrom": "cash", "note": "" },
     { "id": "window-locks", "name": "Window locks", "status": "kept", "cost": 5.5, "boughtWeek": null, "paidFrom": "cash", "note": "" },
-    { "id": "ryobi-batteries", "name": "Ryobi One+ batteries (5.0Ah + 2× 1.4Ah), charger and bag", "status": "kept", "cost": 45.99, "boughtWeek": 3, "paidFrom": "cash", "note": "Might sell later" },
+    { "id": "ryobi-batteries", "name": "Ryobi One+ batteries (5.0Ah + 2× 1.4Ah), charger and bag", "status": "kept", "cost": 45.99, "boughtWeek": 3, "paidFrom": "cash", "note": "Might sell later", "trip": 3 },
     { "id": "kincrome-knife", "name": "Kincrome knife", "status": "kept", "cost": 8.5, "boughtWeek": 3, "bought": "2026-11-01", "paidFrom": "cash" },
     { "id": "garden-lights", "name": "Garden lights kit", "status": "kept", "cost": 35, "boughtWeek": 3, "bought": "2026-10-31", "paidFrom": "cash", "note": "$20 + $15 shipping" },
     { "id": "walking-pad", "name": "Treadmill / walking pad", "status": "kept", "cost": 50.99, "boughtWeek": 3, "bought": "2026-10-31", "paidFrom": "cash" },
@@ -54,6 +54,7 @@
   ],
   "trips": [
     { "id": 1, "week": 1, "km": 216, "fuel": 59, "label": "Trip 1" },
-    { "id": 2, "week": 3, "km": 113, "fuel": 31, "label": "Trip 2" }
+    { "id": 2, "week": 3, "km": 113, "fuel": 31, "label": "Trip 2" },
+    { "id": 3, "week": 4, "km": 103, "fuel": 28, "label": "Trip 3" }
   ]
 }
