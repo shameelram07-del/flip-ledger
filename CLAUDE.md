@@ -80,7 +80,7 @@ Add an item with `status: "stock"`, `cost`, `boughtWeek`, `collected: false` if 
 **Listed it** → `listed: true`.
 **Sold it** → `status: "sold"`, add `sold` and `soldWeek`, set `paid: false` unless he says the money is in. Remove `list` / `accept` / `worst` / `listed` / `collected`.
 **Money came in** → `paid: true`.
-**Fuel / pick-up trip** → add to `trips` with `km` and `fuel` (dollars, positive number; the page shows it as negative). Fuel ≈ km × 8 / 100 × 3.41.
+**Fuel / pick-up trip** → add to `trips` with `km` and `fuel` (dollars, positive number; the page shows it as negative). Fuel ≈ km × 8 / 100 × fuelPrice.
 **Keeping something** → `status: "kept"`, `cost` only.
 **Paid from the joint account** → add "paidFrom": "joint" to the item.
 **Paid the joint account back** → add { "date": "YYYY-MM-DD", "amount": N } to a top-level "repaid" list.
@@ -96,6 +96,6 @@ A scheduled Trade Me check runs hourly at :38 (8:38am–10:38pm NZ); at :25 past
 ## Reference
 
 - Car: 2025 Mitsubishi Outlander 2.0L, ~8 L/100 km. Boot ~110 cm wide × 80 cm high.
-- Fuel $3.41/L.
+- Fuel $3.49/L (from 8 Nov 2026; trips 1–2 used $3.41).
 - Trade Me no longer charges casual sellers a success fee.
 - Good used tools sell for about 55–60% of new price.

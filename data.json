@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-08",
   "goal": 5000,
-  "fuelPrice": 3.41,
+  "fuelPrice": 3.49,
   "litresPer100km": 8,
   "weeks": [
     { "n": 1, "label": "19–26 Oct", "start": "2026-10-19" },
@@ -55,6 +55,6 @@
   "trips": [
     { "id": 1, "week": 1, "km": 216, "fuel": 59, "label": "Trip 1" },
     { "id": 2, "week": 3, "km": 113, "fuel": 31, "label": "Trip 2" },
-    { "id": 3, "week": 4, "km": 103, "fuel": 28, "label": "Trip 3" }
+    { "id": 3, "week": 4, "km": 103, "fuel": 29, "label": "Trip 3" }
   ]
 }
