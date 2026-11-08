@@ -50,7 +50,7 @@
     { "id": "lenovo-led", "name": "Lenovo LED lights 10M", "status": "kept", "cost": 26.5, "boughtWeek": 1, "bought": "2026-10-23", "paidFrom": "cash" },
     { "id": "garage-remotes", "name": "Garage door remotes x4", "status": "kept", "cost": 29.51, "boughtWeek": 1, "bought": "2026-10-22", "paidFrom": "cash", "note": "$23.96 + $5.55 shipping" },
     { "id": "gate-remote", "name": "Gate remote", "status": "kept", "cost": 12.3, "boughtWeek": 1, "bought": "2026-10-20", "paidFrom": "cash", "note": "$5.50 + $6.80 shipping" },
-    { "id": "hand-tool-set", "name": "Hand tool set", "status": "kept", "cost": 20, "boughtWeek": 3, "bought": "2026-11-04", "paidFrom": "cash" }
+    { "id": "hand-tool-set", "name": "Bosch hand tool set", "status": "kept", "cost": 20, "boughtWeek": 3, "bought": "2026-11-04", "paidFrom": "cash", "trip": 3 }
   ],
   "trips": [
     { "id": 1, "week": 1, "km": 216, "fuel": 59, "label": "Trip 1" },
