@@ -715,6 +715,13 @@
           "note": "Untested."
         }
       ]
+    },
+    {
+      "id": "water-blasters",
+      "name": "Water blasters",
+      "rule": "Used · Auckland · Buy Now or offers",
+      "items": [],
+      "empty": "First check runs at the next :38."
     }
   ]
 }
