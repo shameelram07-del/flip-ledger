@@ -369,6 +369,8 @@ function calc(d) {
   t.account = t.cashIn - t.spent;
   t.joint = sum(d.items.filter(i => i.paidFrom === 'joint' && (i.status === 'sold' || i.status === 'stock')), i => i.cost) - sum(d.repaid || [], x => x.amount);
   /* money made: paid sales minus everything bought to flip (sold or not) and fuel; kept items left out */
+  /* in the bank: paid sales minus everything paid from my own accounts (flip buys, fuel, kept items, personal spending) and joint repayments */
+  t.bank = t.cashIn - sum(d.items.filter(i => !i.own && i.paidFrom !== 'joint' && ['sold', 'stock', 'kept'].includes(i.status)), i => i.cost) - fuel - sum(d.personal || [], x => x.amount) - sum(d.repaid || [], x => x.amount);
   t.flipCash = t.cashIn - sum(d.items.filter(i => !i.own && (i.status === 'sold' || i.status === 'stock')), i => i.cost) - fuel;
   t.weeksDone = Math.max(0, ...sold.map(i => i.soldWeek || 0), ...d.trips.map(x => x.week || 0));
   t.pace = t.weeksDone ? t.profit / t.weeksDone : 0;
@@ -454,10 +456,10 @@ function render() {
   <section class="hero" id="hero"><div class="hstage">
     <div class="hglow"></div><div class="hrays"></div>
     <div class="hin" id="hin">
-      <div class="up">Money made so far</div>
+      <div class="up">In the bank now</div>
       <div class="num bigv" id="bigv">$0</div>
       <div class="serif tag">Buy it cheap.<br><i>Sell it fast.</i></div>
-      <div class="gline"><div class="gl"><b style="width:${goalPct.toFixed(1)}%"></b></div><span>${goalPct.toFixed(0)}% of the ${$m(D.goal)} car goal · sales minus everything bought and fuel</span></div>
+      <div class="gline"><div class="gl"><b style="width:${goalPct.toFixed(1)}%"></b></div><span>${$m(t.flipCash)} made from flipping · ${goalPct.toFixed(0)}% of the ${$m(D.goal)} car goal</span></div>
     </div>
     <div class="cue" id="cue">Scroll<i></i></div>
   </div></section>
@@ -469,9 +471,9 @@ function render() {
   </section>
   <main id="view"></main>
   <footer>Every number is worked out from data.json</footer>`;
-  $('#bar').innerHTML = `<span>Money made</span><b class="num">${$m(t.flipCash)}</b>`;
+  $('#bar').innerHTML = `<span>In the bank</span><b class="num">${$m(t.bank)}</b>`;
   showView();
-  countUp($('#bigv'), t.flipCash); countUp($('#profv'), t.profit);
+  countUp($('#bigv'), t.bank); countUp($('#profv'), t.profit);
 }
 
 function showView() {

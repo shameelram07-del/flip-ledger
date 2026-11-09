@@ -53,6 +53,10 @@
     { "id": "hand-tool-set", "name": "Bosch hand tool set", "status": "kept", "cost": 20, "boughtWeek": 3, "bought": "2026-11-04", "paidFrom": "cash", "trip": 3 },
     { "id": "bumblebee-speaker", "name": "Bumblebee Bluetooth speaker", "status": "kept", "cost": 6, "boughtWeek": 3, "bought": "2026-11-05", "paidFrom": "cash", "trip": 3 }
   ],
+  "personal": [
+    { "date": "2026-11-03", "amount": 105, "note": "Reno shop" },
+    { "date": "2026-11-03", "amount": 66.05, "note": "Untracked spending (worked out 3 Nov)" }
+  ],
   "trips": [
     { "id": 1, "week": 1, "km": 216, "fuel": 59, "label": "Trip 1" },
     { "id": 2, "week": 3, "km": 113, "fuel": 31, "label": "Trip 2" },
