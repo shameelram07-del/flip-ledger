@@ -64,6 +64,6 @@
   "trips": [
     { "id": 1, "week": 1, "km": 216, "fuel": 59, "label": "Trip 1" },
     { "id": 2, "week": 3, "km": 113, "fuel": 31, "label": "Trip 2" },
-    { "id": 3, "week": 4, "km": 103, "fuel": 29, "label": "Trip 3" }
+    { "id": 3, "week": 4, "km": 103, "fuel": 27, "label": "Trip 3" }
   ]
 }
