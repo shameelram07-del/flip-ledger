@@ -97,6 +97,6 @@ A scheduled Trade Me check runs hourly at :38 (8:38am–10:38pm NZ); at :25 past
 ## Reference
 
 - Car: 2025 Mitsubishi Outlander 2.0L, ~8 L/100 km. Boot ~110 cm wide × 80 cm high.
-- Fuel $3.49/L (from 8 Nov 2026; trips 1–2 used $3.41).
+- Fuel $3.29/L (from 10 Nov 2026; trip 3 used $3.49, trips 1–2 used $3.41).
 - Trade Me no longer charges casual sellers a success fee.
 - Good used tools sell for about 55–60% of new price.
