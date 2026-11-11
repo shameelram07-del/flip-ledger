@@ -874,6 +874,27 @@
       "rule": "Auckland · Buy Now or offers · up to $100 each",
       "items": [],
       "empty": "No Enphase micro inverters in Auckland today."
+    },
+    {
+      "id": "free-1",
+      "name": "Free & $1 finds",
+      "rule": "Auckland · $0–1 or $1 no reserve",
+      "items": [],
+      "empty": "First check runs at the next :38."
+    },
+    {
+      "id": "shop-vacs",
+      "name": "Shop vacs",
+      "rule": "Used · Auckland · Buy Now or offers",
+      "items": [],
+      "empty": "First check runs at the next :38."
+    },
+    {
+      "id": "workbenches",
+      "name": "Workbenches & tool chests",
+      "rule": "Used · Auckland · Buy Now or offers",
+      "items": [],
+      "empty": "First check runs at the next :38."
     }
   ]
 }
