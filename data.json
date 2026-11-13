@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "goal": 5000,
   "fuelPrice": 3.29,
   "litresPer100km": 8,
@@ -28,7 +28,7 @@
     { "id": "gearup-compressor", "name": "GearUp 12V tyre compressor", "status": "stock", "listed": false, "cost": 0, "list": 40, "accept": 30, "worst": 20, "own": true, "boughtWeek": null, "bought": null, "trip": null, "note": "Untested" },
     { "id": "dewalt-dw735", "name": "DeWalt DW735 thickness planer", "status": "sold", "sold": 786.69, "paid": true, "soldWeek": 4, "soldDate": "2026-11-08", "cost": 500, "own": false, "boughtWeek": 3, "bought": "2026-10-30", "trip": null, "paidFrom": "joint", "note": "Trade Me auction, started $500, sold $786.69. $1,494 new at Bunnings" },
     { "id": "ryobi-blower-vac", "name": "Ryobi 18V brushless blower vac (skin only)", "status": "kept", "cost": 55, "own": false, "boughtWeek": 4, "bought": "2026-11-06", "trip": 3, "paidFrom": "cash", "note": "Kept" },
-    { "id": "bd-18v-kit", "name": "Black+Decker 18V kit: brushless drill, jigsaw, circular saw, 2x 4Ah batteries, charger", "status": "stock", "collected": true, "listed": true, "cost": 50.99, "list": 130, "accept": 110, "worst": 90, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": 3, "paidFrom": "cash", "note": "Won on Trade Me (auction). Drill has some paint marks. Could sell tools separately if the kit is slow" },
+    { "id": "bd-18v-kit", "name": "Black+Decker 18V kit: brushless drill, jigsaw, circular saw, 2x 4Ah batteries, charger", "status": "sold", "sold": 100, "paid": false, "soldWeek": 4, "soldDate": "2026-11-13", "cost": 50.99, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": 3, "paidFrom": "cash", "note": "Won on Trade Me (auction). Drill has some paint marks. Could sell tools separately if the kit is slow" },
     { "id": "workbench-pegboard", "name": "Workbench with pegboard + drawer (1220mm)", "status": "sold", "sold": 100, "paid": true, "soldWeek": 4, "soldDate": "2026-11-08", "cost": 10, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": null, "paidFrom": "cash", "note": "Same seller as the other two, one pick-up. Flat-packs. $179 new at Tradetested" },
     { "id": "ryobi-workbench", "name": "Ryobi folding workbench", "status": "sold", "sold": 30, "paid": true, "soldWeek": 4, "soldDate": "2026-11-10", "cost": 10, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": null, "paidFrom": "cash", "note": "Paid, buyer still to collect" },
     { "id": "wheelbarrow", "name": "Wheelbarrow (red tray)", "status": "kept", "cost": 5, "own": false, "boughtWeek": 4, "bought": "2026-11-07", "trip": null, "paidFrom": "cash", "note": "Kept, legs very rusty" },
