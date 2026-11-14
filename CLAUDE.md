@@ -81,7 +81,7 @@ Add an item with `status: "stock"`, `cost`, `boughtWeek`, `collected: false` if 
 **Sold it** → `status: "sold"`, add `sold` and `soldWeek`, set `paid: false` unless he says the money is in. Remove `list` / `accept` / `worst` / `listed` / `collected`.
 **Money came in** → `paid: true`.
 **Fuel / pick-up trip** → add to `trips` with `km` and `fuel` (dollars, positive number; the page shows it as negative). Fuel ≈ km × 8 / 100 × fuelPrice.
-**Keeping something** → `status: "kept"`, `cost` only.
+**Keeping something** → `status: "kept"`, `cost` only. From 14 Nov 2026 kept items are paid from his own money: add `"paidFrom": "own"` so they are not taken out of the flip money (In the bank) or counted in what the flips owe the Visa.
 **Paid from the joint account** → add "paidFrom": "joint" to the item.
 **Spent flip money on himself (not a Trade Me buy)** → add `{ "date", "amount", "note" }` to top-level `personal`.
 **Paid the joint account back** → add { "date": "YYYY-MM-DD", "amount": N } to a top-level "repaid" list.

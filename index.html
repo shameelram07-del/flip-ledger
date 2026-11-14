@@ -370,7 +370,7 @@ function calc(d) {
   t.joint = sum(d.items.filter(i => i.paidFrom === 'joint' && (i.status === 'sold' || i.status === 'stock')), i => i.cost) - sum(d.repaid || [], x => x.amount);
   /* money made: paid sales minus everything bought to flip (sold or not) and fuel; kept items left out */
   /* in the bank: paid sales minus everything paid from my own accounts (flip buys, fuel, kept items, personal spending) and joint repayments */
-  t.bank = t.cashIn - sum(d.items.filter(i => !i.own && i.paidFrom !== 'joint' && ['sold', 'stock', 'kept'].includes(i.status)), i => i.cost) - fuel - sum(d.personal || [], x => x.amount) - sum(d.repaid || [], x => x.amount);
+  t.bank = t.cashIn - sum(d.items.filter(i => !i.own && i.paidFrom !== 'joint' && i.paidFrom !== 'own' && ['sold', 'stock', 'kept'].includes(i.status)), i => i.cost) - fuel - sum(d.personal || [], x => x.amount) - sum(d.repaid || [], x => x.amount);
   t.flipCash = t.cashIn - sum(d.items.filter(i => !i.own && (i.status === 'sold' || i.status === 'stock')), i => i.cost) - fuel;
   t.weeksDone = Math.max(0, ...sold.map(i => i.soldWeek || 0), ...d.trips.map(x => x.week || 0));
   t.pace = t.weeksDone ? t.profit / t.weeksDone : 0;
