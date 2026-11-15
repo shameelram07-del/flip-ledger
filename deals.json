@@ -40,7 +40,7 @@
     },
     {
       "id": "mitre-saws",
-      "name": "Mitre saws",
+      "name": "Drop saws & other saws",
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
@@ -86,85 +86,8 @@
       ]
     },
     {
-      "id": "nail-guns",
-      "name": "Nail guns",
-      "rule": "Used · Auckland · Buy Now or offers",
-      "items": [
-        {
-          "title": "DeWalt FlexVolt 18V/54V cordless framing gun, almost new, soft bag",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6230033174",
-          "price": "$1",
-          "ptype": "Auction + offers",
-          "location": "Penrose",
-          "closes": "Thu 19 Nov",
-          "verdict": "good",
-          "note": "Cordless, no battery or charger mentioned"
-        },
-        {
-          "title": "Paslode cordless gas framing gun",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231134725",
-          "price": "$1",
-          "ptype": "Auction + offers",
-          "location": "Manukau",
-          "closes": "Sun 22 Nov",
-          "verdict": "good",
-          "note": "Fired a nail when tested; aftermarket battery, no charger or case"
-        },
-        {
-          "title": "Air brad nailer, excellent working condition",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6224359835",
-          "price": "$20",
-          "ptype": "Auction + offers",
-          "location": "North Shore",
-          "closes": "Wed 18 Nov",
-          "verdict": "good",
-          "note": "Needs a compressor"
-        },
-        {
-          "title": "DeWalt D51822 air framing gun",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6225869461",
-          "price": "$30",
-          "ptype": "Auction + offers",
-          "location": "Manukau City",
-          "closes": "Thu 19 Nov",
-          "verdict": "watch",
-          "note": "Needs seals; needs a compressor"
-        },
-        {
-          "title": "Ryobi Airwave wide crown stapler, nearly new",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6228571516",
-          "price": "$50",
-          "ptype": "Auction + offers",
-          "location": "Millwater",
-          "closes": "Fri 20 Nov",
-          "verdict": "watch",
-          "note": "Stapler not nailer; needs a compressor"
-        },
-        {
-          "title": "Paslode Impulse cordless framing nailer 50–90mm, skin and case",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6224374275",
-          "price": "$150",
-          "ptype": "Buy Now",
-          "location": "Papakura (shop)",
-          "closes": "Wed 18 Nov",
-          "verdict": "good",
-          "note": "Over the limit, too good to skip: working Paslodes listed at $230–$450 this week. No battery or charger, test in store"
-        },
-        {
-          "title": "Paslode IM350 framing nailer with case, works great",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6230984788",
-          "price": "$200",
-          "ptype": "Open to offers",
-          "location": "Albany",
-          "closes": "Sun 22 Nov",
-          "verdict": "watch",
-          "note": "Over the limit, too good to skip: no battery or charger; good if an offer near $150 is accepted"
-        }
-      ]
-    },
-    {
       "id": "power-tools",
-      "name": "Power tools",
+      "name": "Cordless & power tools",
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
@@ -276,6 +199,168 @@
           "closes": "Sat 21 Nov",
           "verdict": "watch",
           "note": "Old corded saw, seller has not used it"
+        }
+      ]
+    },
+    {
+      "id": "garden-tools",
+      "name": "Garden tools",
+      "rule": "Used · Auckland · Buy Now or offers",
+      "items": [],
+      "empty": "First hourly check runs at 8:08am."
+    },
+    {
+      "id": "water-blasters",
+      "name": "Water blasters",
+      "rule": "Used · Auckland · Buy Now or offers",
+      "items": [
+        {
+          "title": "Homelite HPW100 electric, 100 bar, working, plus a second unit free",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6229734990",
+          "price": "$39.99",
+          "ptype": "Buy Now",
+          "location": "Papakura",
+          "closes": "Sat 21 Nov",
+          "verdict": "good",
+          "note": "Two units to flip (second has no hose or wand)"
+        },
+        {
+          "title": "Nilfisk C120.2 electric",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6220967793",
+          "price": "$80",
+          "ptype": "Open to offers",
+          "location": "Waimauku",
+          "closes": "Mon 16 Nov",
+          "verdict": "good",
+          "note": "Seller offers money back if it breaks within a year"
+        },
+        {
+          "title": "Remington RA-HPW1650 electric",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6221138934",
+          "price": "$45",
+          "ptype": "Buy Now",
+          "location": "Remuera (shop)",
+          "closes": "Mon 16 Nov",
+          "verdict": "good",
+          "note": "30-day warranty"
+        },
+        {
+          "title": "Electric water blaster, brand not stated, works",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6230160849",
+          "price": "$15",
+          "ptype": "Open to offers",
+          "location": "Papakura",
+          "closes": "Sat 21 Nov",
+          "verdict": "watch",
+          "note": "Needs a new hose"
+        },
+        {
+          "title": "Ryobi electric, 150 bar, working well",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6226945278",
+          "price": "$100",
+          "ptype": "Buy Now",
+          "location": "Botany Downs",
+          "closes": "Thu 19 Nov",
+          "verdict": "watch",
+          "note": "Fair price, small margin"
+        },
+        {
+          "title": "Bosch AQT 40-13 electric, 130 bar, newish hose",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6227024013",
+          "price": "$99",
+          "ptype": "Auction + offers",
+          "location": "Silverdale",
+          "closes": "Thu 19 Nov",
+          "verdict": "watch",
+          "note": ""
+        },
+        {
+          "title": "Briggs & Stratton petrol blaster",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6222656829",
+          "price": "$50",
+          "ptype": "Auction + offers",
+          "location": "North Shore",
+          "closes": "Tue 17 Nov",
+          "verdict": "watch",
+          "note": "Turns over but won't start"
+        }
+      ],
+      "footnote": "Nothing amazing out of town today."
+    },
+    {
+      "id": "nail-guns",
+      "name": "Nail guns",
+      "rule": "Used · Auckland · Buy Now or offers",
+      "items": [
+        {
+          "title": "DeWalt FlexVolt 18V/54V cordless framing gun, almost new, soft bag",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6230033174",
+          "price": "$1",
+          "ptype": "Auction + offers",
+          "location": "Penrose",
+          "closes": "Thu 19 Nov",
+          "verdict": "good",
+          "note": "Cordless, no battery or charger mentioned"
+        },
+        {
+          "title": "Paslode cordless gas framing gun",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231134725",
+          "price": "$1",
+          "ptype": "Auction + offers",
+          "location": "Manukau",
+          "closes": "Sun 22 Nov",
+          "verdict": "good",
+          "note": "Fired a nail when tested; aftermarket battery, no charger or case"
+        },
+        {
+          "title": "Air brad nailer, excellent working condition",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6224359835",
+          "price": "$20",
+          "ptype": "Auction + offers",
+          "location": "North Shore",
+          "closes": "Wed 18 Nov",
+          "verdict": "good",
+          "note": "Needs a compressor"
+        },
+        {
+          "title": "DeWalt D51822 air framing gun",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6225869461",
+          "price": "$30",
+          "ptype": "Auction + offers",
+          "location": "Manukau City",
+          "closes": "Thu 19 Nov",
+          "verdict": "watch",
+          "note": "Needs seals; needs a compressor"
+        },
+        {
+          "title": "Ryobi Airwave wide crown stapler, nearly new",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6228571516",
+          "price": "$50",
+          "ptype": "Auction + offers",
+          "location": "Millwater",
+          "closes": "Fri 20 Nov",
+          "verdict": "watch",
+          "note": "Stapler not nailer; needs a compressor"
+        },
+        {
+          "title": "Paslode Impulse cordless framing nailer 50–90mm, skin and case",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6224374275",
+          "price": "$150",
+          "ptype": "Buy Now",
+          "location": "Papakura (shop)",
+          "closes": "Wed 18 Nov",
+          "verdict": "good",
+          "note": "Over the limit, too good to skip: working Paslodes listed at $230–$450 this week. No battery or charger, test in store"
+        },
+        {
+          "title": "Paslode IM350 framing nailer with case, works great",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6230984788",
+          "price": "$200",
+          "ptype": "Open to offers",
+          "location": "Albany",
+          "closes": "Sun 22 Nov",
+          "verdict": "watch",
+          "note": "Over the limit, too good to skip: no battery or charger; good if an offer near $150 is accepted"
         }
       ]
     },
@@ -797,84 +882,6 @@
           "note": "Type not stated, probably needs a compressor"
         }
       ]
-    },
-    {
-      "id": "water-blasters",
-      "name": "Water blasters",
-      "rule": "Used · Auckland · Buy Now or offers",
-      "items": [
-        {
-          "title": "Homelite HPW100 electric, 100 bar, working, plus a second unit free",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6229734990",
-          "price": "$39.99",
-          "ptype": "Buy Now",
-          "location": "Papakura",
-          "closes": "Sat 21 Nov",
-          "verdict": "good",
-          "note": "Two units to flip (second has no hose or wand)"
-        },
-        {
-          "title": "Nilfisk C120.2 electric",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6220967793",
-          "price": "$80",
-          "ptype": "Open to offers",
-          "location": "Waimauku",
-          "closes": "Mon 16 Nov",
-          "verdict": "good",
-          "note": "Seller offers money back if it breaks within a year"
-        },
-        {
-          "title": "Remington RA-HPW1650 electric",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6221138934",
-          "price": "$45",
-          "ptype": "Buy Now",
-          "location": "Remuera (shop)",
-          "closes": "Mon 16 Nov",
-          "verdict": "good",
-          "note": "30-day warranty"
-        },
-        {
-          "title": "Electric water blaster, brand not stated, works",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6230160849",
-          "price": "$15",
-          "ptype": "Open to offers",
-          "location": "Papakura",
-          "closes": "Sat 21 Nov",
-          "verdict": "watch",
-          "note": "Needs a new hose"
-        },
-        {
-          "title": "Ryobi electric, 150 bar, working well",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6226945278",
-          "price": "$100",
-          "ptype": "Buy Now",
-          "location": "Botany Downs",
-          "closes": "Thu 19 Nov",
-          "verdict": "watch",
-          "note": "Fair price, small margin"
-        },
-        {
-          "title": "Bosch AQT 40-13 electric, 130 bar, newish hose",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6227024013",
-          "price": "$99",
-          "ptype": "Auction + offers",
-          "location": "Silverdale",
-          "closes": "Thu 19 Nov",
-          "verdict": "watch",
-          "note": ""
-        },
-        {
-          "title": "Briggs & Stratton petrol blaster",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6222656829",
-          "price": "$50",
-          "ptype": "Auction + offers",
-          "location": "North Shore",
-          "closes": "Tue 17 Nov",
-          "verdict": "watch",
-          "note": "Turns over but won't start"
-        }
-      ],
-      "footnote": "Nothing amazing out of town today."
     },
     {
       "id": "soldering-irons",
