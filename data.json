@@ -28,10 +28,15 @@
       "n": 5,
       "label": "13–19 Nov",
       "start": "2026-11-13"
+    },
+    {
+      "n": 6,
+      "label": "20–26 Nov",
+      "start": "2026-11-20"
     }
   ],
   "estimate": {
-    "week": 5,
+    "week": 6,
     "fuel": 40
   },
   "items": [
@@ -379,7 +384,7 @@
       "own": false,
       "boughtWeek": 4,
       "bought": "2026-11-12",
-      "trip": null,
+      "trip": 5,
       "paidFrom": "cash",
       "note": "Bought as a pair for $30.99. Eden Terrace pick-up. Fair condition, still usable"
     },
@@ -396,7 +401,7 @@
       "own": false,
       "boughtWeek": 4,
       "bought": "2026-11-12",
-      "trip": null,
+      "trip": 5,
       "paidFrom": "cash",
       "note": "Bought as a pair for $30.99. Eden Terrace pick-up. Fair condition, still usable"
     },
@@ -520,7 +525,7 @@
       "own": false,
       "boughtWeek": 4,
       "bought": "2026-11-14",
-      "trip": null,
+      "trip": 5,
       "paidFrom": "cash",
       "note": "Trade Me KP-2631910. Seller says old but good. Check blade, guard and that it runs"
     },
@@ -537,7 +542,7 @@
       "own": false,
       "boughtWeek": 5,
       "bought": "2026-11-15",
-      "trip": null,
+      "trip": 5,
       "paidFrom": "cash",
       "note": "Trade Me KP-2640994. Last B+D table saw sold for $150. Check blade, fence and guard"
     },
@@ -554,7 +559,7 @@
       "own": false,
       "boughtWeek": 5,
       "bought": "2026-11-15",
-      "trip": null,
+      "trip": 5,
       "paidFrom": "cash",
       "note": "Trade Me KP-2642008. Won $50, no fee. Stand comes with it. Test it runs, check blade and slide"
     },
@@ -775,6 +780,13 @@
       "km": 170,
       "fuel": 44,
       "label": "Trip 4"
+    },
+    {
+      "id": 5,
+      "week": 6,
+      "km": 72,
+      "fuel": 18,
+      "label": "Trip 5"
     }
   ]
 }
