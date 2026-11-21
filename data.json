@@ -532,19 +532,18 @@
     {
       "id": "bd-table-saw-1800",
       "name": "Black+Decker 1800W 254mm table saw + stand",
-      "status": "stock",
-      "collected": true,
-      "listed": true,
+      "status": "sold",
       "cost": 80.99,
-      "list": 150,
-      "accept": 130,
-      "worst": 110,
       "own": false,
       "boughtWeek": 5,
       "bought": "2026-11-15",
       "trip": 5,
       "paidFrom": "cash",
-      "note": "Trade Me KP-2640994. Last B+D table saw sold for $150. Check blade, fence and guard"
+      "note": "Trade Me KP-2640994. Last B+D table saw sold for $150. Check blade, fence and guard",
+      "sold": 150,
+      "soldWeek": 6,
+      "soldDate": "2026-11-21",
+      "paid": true
     },
     {
       "id": "ryobi-sliding-saw-stand",
