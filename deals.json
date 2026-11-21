@@ -1,11 +1,21 @@
 {
-  "updated": "Saturday 21 November 2026, 8:08pm",
+  "updated": "Saturday 21 November 2026, 9:08pm",
   "sections": [
     {
       "id": "table-saws",
       "name": "Table saws",
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
+        {
+          "title": "Ryobi HBT250 254mm table saw",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6233190753",
+          "price": "$100",
+          "ptype": "Buy Now",
+          "location": "Snells Beach",
+          "closes": "Mon 23 Nov 8:43pm",
+          "verdict": "good",
+          "note": "Good working order; stand bolts not included"
+        },
         {
           "title": "Mako bench saw, new blade, tidy",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6231272641",
@@ -14,17 +24,7 @@
           "location": "Waitakere",
           "closes": "Sun 22 Nov 3:29pm",
           "verdict": "good",
-          "note": "Cheap flip"
-        },
-        {
-          "title": "Ryobi HBT250 254mm table saw",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6233190753",
-          "price": "$100",
-          "ptype": "Buy Now",
-          "location": "Snells Beach",
-          "closes": "Mon 23 Nov 8:43pm",
-          "verdict": "watch",
-          "note": "Good saw but far north"
+          "note": "Cheap flip, closing soon"
         },
         {
           "title": "Portable bench saw, near new, dust collector, fence",
@@ -37,44 +37,24 @@
           "note": "Brand not stated"
         },
         {
-          "title": "Tanner buzzer + circular saw on bench trolley, ¾HP",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6236645701",
-          "price": "$100",
+          "title": "Saw bench with blades",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6236101617",
+          "price": "$75",
           "ptype": "Auction + offers",
-          "location": "Titirangi",
-          "closes": "Wed 25 Nov 8:41pm",
+          "location": "Manurewa",
+          "closes": "Wed 25 Nov 2:44pm",
           "verdict": "watch",
-          "note": "Old but solid"
+          "note": "No brand"
         },
         {
-          "title": "Vintage cabinet table saw, restoration project",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237799778",
-          "price": "$50",
-          "ptype": "Open to offers",
-          "location": "Franklin",
-          "closes": "Thu 26 Nov 1:38pm",
-          "verdict": "watch",
-          "note": "Project"
-        },
-        {
-          "title": "Saw bench (old, blade sharp)",
+          "title": "Saw bench, sharp blade",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6234593097",
           "price": "$50",
           "ptype": "Auction + offers",
           "location": "Pakuranga Heights",
           "closes": "Tue 24 Nov 5:42pm",
-          "verdict": "skip",
-          "note": "Unbranded"
-        },
-        {
-          "title": "Milwaukee M18 FTS210 cordless table saw, skin only",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6234050639",
-          "price": "$300",
-          "ptype": "Buy Now",
-          "location": "Papakura",
-          "closes": "Tue 24 Nov 8:30pm",
-          "verdict": "good",
-          "note": "Over the limit, too good to skip: a new one is well over $600 (auction starts $50)"
+          "verdict": "watch",
+          "note": "Firewood-type bench"
         }
       ]
     },
@@ -84,30 +64,20 @@
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
-          "title": "Makita LS1013 sliding mitre saw, made in Japan",
+          "title": "Makita LS1013 sliding mitre saw, seller's daily saw",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241506607",
           "price": "$100",
           "ptype": "Auction + offers",
           "location": "Albany",
           "closes": "Sat 28 Nov 2:02pm",
           "verdict": "good",
-          "note": "Far above $100 resale"
+          "note": "Top pick, far below its value"
         },
         {
-          "title": "Bosch PCM 1800 SD drop saw, laser",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241917213",
-          "price": "$70",
-          "ptype": "Auction + offers",
-          "location": "Rodney",
-          "closes": "Sat 28 Nov 7:38pm",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "Hitachi C10FA 255mm mitre saw, made in Japan",
+          "title": "Hitachi C10FA 255mm drop saw, made in Japan",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241573871",
           "price": "$100",
-          "ptype": "Auction + offers",
+          "ptype": "Open to offers",
           "location": "Manukau",
           "closes": "Sat 28 Nov 2:56pm",
           "verdict": "good",
@@ -121,14 +91,44 @@
           "location": "Hibiscus Coast",
           "closes": "Sun 22 Nov 4:12pm",
           "verdict": "good",
+          "note": "Closing soon"
+        },
+        {
+          "title": "Bosch PCM 1800 SD drop saw",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241917213",
+          "price": "$70",
+          "ptype": "Auction + offers",
+          "location": "Hatfields Beach",
+          "closes": "Sat 28 Nov 7:38pm",
+          "verdict": "good",
+          "note": "Laser is weak, otherwise cuts well"
+        },
+        {
+          "title": "Ryobi 240mm drop saw, very good condition",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239627426",
+          "price": "$95",
+          "ptype": "Auction + offers",
+          "location": "Hibiscus Coast",
+          "closes": "Fri 27 Nov 12:09pm",
+          "verdict": "good",
           "note": ""
+        },
+        {
+          "title": "Makita 5008MGK 210mm circular saw",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6235939846",
+          "price": "$100",
+          "ptype": "Buy Now",
+          "location": "Papatoetoe",
+          "closes": "Wed 25 Nov 12:24pm",
+          "verdict": "good",
+          "note": "Local pick-up"
         },
         {
           "title": "Makita 5008B 210mm circular saw (worn, surface rust, works)",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241864163",
           "price": "$50",
           "ptype": "Auction + offers",
-          "location": "Auckland City",
+          "location": "Waitakere",
           "closes": "Sat 28 Nov 6:57pm",
           "verdict": "good",
           "note": ""
@@ -138,9 +138,9 @@
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6234856380",
           "price": "$70",
           "ptype": "Buy Now",
-          "location": "Auckland City",
+          "location": "Waterview",
           "closes": "Tue 24 Nov 8:39pm",
-          "verdict": "watch",
+          "verdict": "good",
           "note": "Needs a new plug"
         },
         {
@@ -154,104 +154,54 @@
           "note": ""
         },
         {
-          "title": "Makita HS7600 185mm circular saw",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237847448",
-          "price": "$79",
-          "ptype": "Buy Now",
-          "location": "Henderson",
-          "closes": "Thu 26 Nov 2:13pm",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "DeWalt DCS380 18V sabre saw, skin only, no blade",
+          "title": "DeWalt DCS380 18V recip saw, bare tool, no blade",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6240045865",
           "price": "$98",
           "ptype": "Buy Now",
           "location": "Waitakere",
           "closes": "Fri 27 Nov 5:37pm",
           "verdict": "good",
-          "note": "Listed RRP $290"
-        },
-        {
-          "title": "Milwaukee M18 CSX reciprocating saw",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231193436",
-          "price": "$99",
-          "ptype": "Buy Now",
-          "location": "Henderson",
-          "closes": "Sun 22 Nov 2:07pm",
-          "verdict": "good",
           "note": ""
         },
         {
-          "title": "Milwaukee M12 BRS compact saw",
+          "title": "Milwaukee M12 BRS compact band saw, skin only",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6231188937",
           "price": "$99",
           "ptype": "Buy Now",
           "location": "Henderson",
           "closes": "Sun 22 Nov 2:03pm",
-          "verdict": "watch",
-          "note": "M12 is small"
-        },
-        {
-          "title": "Makita JR3060T reciprocating saw",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6234326001",
-          "price": "$71",
-          "ptype": "Buy Now",
-          "location": "Manukau",
-          "closes": "Tue 24 Nov 2:12pm",
           "verdict": "good",
-          "note": ""
+          "note": "Closing soon"
         },
         {
-          "title": "Ryobi 240mm tradesman drop saw",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239627426",
-          "price": "$95",
-          "ptype": "Auction + offers",
-          "location": "Hibiscus Coast",
-          "closes": "Fri 27 Nov 12:09pm",
+          "title": "Makita JR3050T recip saw, working",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6236472868",
+          "price": "$100",
+          "ptype": "Buy Now",
+          "location": "Auckland City",
+          "closes": "Wed 25 Nov 6:57pm",
           "verdict": "watch",
           "note": ""
         },
         {
-          "title": "Hitachi 355mm cut-off saw",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6236318552",
-          "price": "$50",
-          "ptype": "Auction + offers",
-          "location": "Rodney",
-          "closes": "Wed 25 Nov 5:14pm",
-          "verdict": "watch",
-          "note": "Old, heavy"
-        },
-        {
-          "title": "Ozito 210mm mitre saw (surface rust on sliders)",
+          "title": "Ozito 210mm 1600W mitre saw",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6238491371",
           "price": "$45",
           "ptype": "Auction + offers",
-          "location": "Auckland City",
+          "location": "St Heliers",
           "closes": "Thu 26 Nov 9:02pm",
           "verdict": "watch",
-          "note": ""
+          "note": "Unlock lever broken (fixable), surface rust on sliders"
         },
         {
-          "title": "DeWalt DW939 18V circular saw, skin only",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6234173352",
-          "price": "$79",
-          "ptype": "Buy Now",
-          "location": "Botany Downs",
-          "closes": "Tue 24 Nov 11:58am",
-          "verdict": "watch",
-          "note": ""
-        },
-        {
-          "title": "Bosch GSA 1100 reciprocating saw (fair, rust on tip)",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6233641788",
-          "price": "$70",
-          "ptype": "Buy Now",
-          "location": "Papakura",
-          "closes": "Tue 24 Nov 2:23am",
-          "verdict": "watch",
-          "note": ""
+          "title": "Makita DJR187 18V brushless recip saw, skin, tested",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241584909",
+          "price": "$145",
+          "ptype": "Open to offers",
+          "location": "Mt Albert",
+          "closes": "Sat 28 Nov 3:08pm",
+          "verdict": "good",
+          "note": "Over the limit, too good to skip: new is about $330"
         }
       ]
     },
@@ -261,44 +211,14 @@
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
-          "title": "DeWalt DCF887-XE impact driver, skin only",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240793080",
-          "price": "$80",
+          "title": "DeWalt DCD795 18V brushless hammer drill",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241500761",
+          "price": "$44",
           "ptype": "Buy Now",
-          "location": "Papakura",
-          "closes": "Sat 28 Nov 2:25am",
+          "location": "Remuera",
+          "closes": "Sat 28 Nov 1:57pm",
           "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "DeWalt DCD795 brushless hammer drill, skin only",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6238684743",
-          "price": "$79",
-          "ptype": "Buy Now",
-          "location": "Manukau",
-          "closes": "Thu 26 Nov 10:55pm",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "DeWalt DCD709 brushless drill + 2.0Ah battery",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237078617",
-          "price": "$90",
-          "ptype": "Buy Now",
-          "location": "Manukau",
-          "closes": "Thu 26 Nov 2:15am",
-          "verdict": "good",
-          "note": "Battery included"
-        },
-        {
-          "title": "DeWalt DCF787N brushless impact driver, skin only",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240045903",
-          "price": "$79",
-          "ptype": "Buy Now",
-          "location": "Waitakere",
-          "closes": "Fri 27 Nov 5:37pm",
-          "verdict": "good",
-          "note": ""
+          "note": "Top pick, very cheap. Battery/charger not mentioned"
         },
         {
           "title": "Milwaukee M18 Fuel ¼\" impact driver",
@@ -331,47 +251,27 @@
           "note": ""
         },
         {
+          "title": "DeWalt DCD796 18V brushless hammer drill, skin only",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240783369",
+          "price": "$80",
+          "ptype": "Buy Now",
+          "location": "Manukau",
+          "closes": "Sat 28 Nov 2:17am",
+          "verdict": "good",
+          "note": ""
+        },
+        {
           "title": "Makita BTD140 18V impact driver, skin, looks old but works",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6237707779",
           "price": "$30",
           "ptype": "Buy Now",
-          "location": "Waitakere",
+          "location": "Glen Eden",
           "closes": "Thu 26 Nov 12:35pm",
           "verdict": "good",
-          "note": "Cheap"
-        },
-        {
-          "title": "Makita DHP483 18V brushless hammer drill",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237644873",
-          "price": "$99",
-          "ptype": "Buy Now",
-          "location": "Manukau",
-          "closes": "Thu 26 Nov 11:40am",
-          "verdict": "good",
           "note": ""
         },
         {
-          "title": "Makita HR2230 rotary hammer drill, corded",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237826662",
-          "price": "$99",
-          "ptype": "Buy Now",
-          "location": "Remuera",
-          "closes": "Thu 26 Nov 1:58pm",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "Bosch plunge router, 1200W",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240045816",
-          "price": "$89",
-          "ptype": "Buy Now",
-          "location": "Waitakere",
-          "closes": "Fri 27 Nov 5:37pm",
-          "verdict": "good",
-          "note": "RRP $198"
-        },
-        {
-          "title": "Bosch GSB 180-Li hammer drill, bare tool",
+          "title": "Bosch GSB 180-Li hammer drill, bare tool, hardly used",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6240045841",
           "price": "$69",
           "ptype": "Buy Now",
@@ -381,24 +281,64 @@
           "note": ""
         },
         {
-          "title": "Ozito PXDDS-180 drill kit, charger + 2.5Ah battery",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6232626162",
-          "price": "$69",
+          "title": "Ryobi R18DD4 drill + 2Ah battery + charger",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240787784",
+          "price": "$70",
           "ptype": "Buy Now",
-          "location": "New Lynn",
-          "closes": "",
-          "verdict": "watch",
+          "location": "Papakura",
+          "closes": "Sat 28 Nov 2:21am",
+          "verdict": "good",
+          "note": "Has battery and charger"
+        },
+        {
+          "title": "Makita DGA504 18V cordless angle grinder",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6238940606",
+          "price": "$89",
+          "ptype": "Buy Now",
+          "location": "Remuera",
+          "closes": "Fri 27 Nov 2:00am",
+          "verdict": "good",
           "note": ""
         },
         {
-          "title": "Black+Decker BDCDC18-XE drill kit, 2 batteries + charger",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6234280988",
-          "price": "$79",
+          "title": "Makita 1923H 82mm corded planer",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240043184",
+          "price": "$85",
           "ptype": "Buy Now",
-          "location": "New Lynn",
-          "closes": "",
-          "verdict": "watch",
+          "location": "Waitakere",
+          "closes": "Fri 27 Nov 5:35pm",
+          "verdict": "good",
           "note": ""
+        },
+        {
+          "title": "Ryobi ONE+ 18V planer, skin only",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237574431",
+          "price": "$50",
+          "ptype": "Buy Now",
+          "location": "Botany Downs",
+          "closes": "Sun 22 Nov ~10:40am",
+          "verdict": "good",
+          "note": "Closing soon"
+        },
+        {
+          "title": "Ryobi R502 corded router, tested, no bits or case",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241880229",
+          "price": "$50",
+          "ptype": "Auction + offers",
+          "location": "Waitakere",
+          "closes": "Sat 28 Nov 7:10pm",
+          "verdict": "good",
+          "note": ""
+        },
+        {
+          "title": "Milwaukee M18FPD3 hammer drill, 30-day warranty",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241505225",
+          "price": "$134",
+          "ptype": "Buy Now",
+          "location": "Remuera",
+          "closes": "Sat 28 Nov 2:01pm",
+          "verdict": "good",
+          "note": "Over the limit, too good to skip: new skin is about $350"
         }
       ]
     },
@@ -415,50 +355,90 @@
           "location": "Conifer Grove, Papakura",
           "closes": "Sat 28 Nov 11:40am",
           "verdict": "good",
-          "note": "Best flip here. Used 6 years, wear and tear"
+          "note": "Top pick. About 6 years old, some wear"
         },
         {
-          "title": "Masport alloy mower, 148cc B&S, serviced, catcher",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231626963",
-          "price": "$35",
+          "title": "Electric garden tool bundle: mower, water blaster, chainsaw and more",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241864551",
+          "price": "$1",
           "ptype": "Auction + offers",
-          "location": "North Shore",
-          "closes": "Sun 22 Nov 8:29pm",
+          "location": "Auckland City",
+          "closes": "Sat 28 Nov 6:57pm",
+          "verdict": "good",
+          "note": "Brands not stated, check them"
+        },
+        {
+          "title": "Briggs & Stratton 450 Series 148cc petrol mower",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6242022190",
+          "price": "$75",
+          "ptype": "Open to offers",
+          "location": "Auckland City",
+          "closes": "Sat 28 Nov 8:45pm",
           "verdict": "good",
           "note": ""
         },
         {
-          "title": "Masport alloy mower, 125cc B&S, serviced, catcher",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231636226",
-          "price": "$32",
-          "ptype": "Auction + offers",
-          "location": "North Shore",
-          "closes": "Sun 22 Nov 8:36pm",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "Masport 635 mower, 3.5hp B&S, won't start",
+          "title": "Masport alloy mower, 3.5hp Briggs, won't start",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6232258841",
           "price": "$70",
           "ptype": "Auction + offers",
-          "location": "Auckland City",
+          "location": "Mt Albert",
           "closes": "Mon 23 Nov 8:21pm",
-          "verdict": "watch",
-          "note": "Fixer: probably needs a carb service"
+          "verdict": "good",
+          "note": "Fouls plug, probably needs a carb service"
         },
         {
-          "title": "Bosch ALB 18 LI cordless leaf blower + 2.5Ah battery (no charger)",
+          "title": "Victa Vantage 150cc mower + catcher, won't start",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241948449",
+          "price": "$80",
+          "ptype": "Open to offers",
+          "location": "Auckland City",
+          "closes": "Sat 28 Nov 8:02pm",
+          "verdict": "good",
+          "note": "Likely a service fix"
+        },
+        {
+          "title": "Makita RST250 petrol weed eater, goes well",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241898218",
+          "price": "$50",
+          "ptype": "Auction + offers",
+          "location": "Kumeu",
+          "closes": "Sat 28 Nov 7:23pm",
+          "verdict": "good",
+          "note": "Primer bulb leaks, needs a new one"
+        },
+        {
+          "title": "Makita DUR181 cordless weed eater, no battery",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6238286644",
+          "price": "$50",
+          "ptype": "Auction + offers",
+          "location": "Wattle Downs",
+          "closes": "Wed 25 Nov 7:13pm",
+          "verdict": "good",
+          "note": "Cracked guard"
+        },
+        {
+          "title": "Bosch ALB 18 LI cordless blower + 2.5Ah battery (no charger)",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6239447153",
           "price": "$25",
           "ptype": "Auction + offers",
-          "location": "Auckland City",
+          "location": "Freemans Bay",
           "closes": "Wed 25 Nov 9:35am",
+          "verdict": "good",
+          "note": "Cheap"
+        },
+        {
+          "title": "Ryobi 36V 60cm hedge trimmer, skin only, works well",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239643292",
+          "price": "$50",
+          "ptype": "Open to offers",
+          "location": "Whangaparaoa",
+          "closes": "Thu 26 Nov 12:25pm",
           "verdict": "good",
           "note": ""
         },
         {
-          "title": "Honda 3-in-1 easy start mower, runs well",
+          "title": "Honda 3-in-1 easy-start mower, works",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241387173",
           "price": "$100",
           "ptype": "Auction + offers",
@@ -468,47 +448,7 @@
           "note": "Frame rusted and cracked"
         },
         {
-          "title": "Victa 300 125cc petrol mower + catcher",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6235990847",
-          "price": "$99",
-          "ptype": "Buy Now",
-          "location": "New Lynn",
-          "closes": "Wed 25 Nov 1:12pm",
-          "verdict": "watch",
-          "note": "Ignition line damaged, needs a repair"
-        },
-        {
-          "title": "Ryobi R18HTR130 18V hedge cutter",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6238938832",
-          "price": "$79",
-          "ptype": "Buy Now",
-          "location": "Remuera",
-          "closes": "Fri 27 Nov 1:58am",
-          "verdict": "watch",
-          "note": "No battery mentioned"
-        },
-        {
-          "title": "Ryobi One+ OLT1832 18V line trimmer, skin only",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6234124173",
-          "price": "$99",
-          "ptype": "Buy Now",
-          "location": "Manukau",
-          "closes": "Tue 24 Nov 11:18am",
-          "verdict": "watch",
-          "note": ""
-        },
-        {
-          "title": "Ryobi 36V 60cm hedge trimmer, skin only, works well",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239643292",
-          "price": "$50",
-          "ptype": "Open to offers",
-          "location": "Whangaparaoa",
-          "closes": "Thu 26 Nov 12:25pm",
-          "verdict": "watch",
-          "note": ""
-        },
-        {
-          "title": "Homelite 18\" 42cc petrol chainsaw, works well",
+          "title": "Homelite 18\" 42cc chainsaw, works well",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6240214863",
           "price": "$75",
           "ptype": "Auction + offers",
@@ -516,16 +456,6 @@
           "closes": "Fri 27 Nov 7:25pm",
           "verdict": "watch",
           "note": ""
-        },
-        {
-          "title": "DeWalt DCM565 18V chainsaw + charger + 2 batteries, used 3–4 times",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240118920",
-          "price": "$300",
-          "ptype": "Auction + offers",
-          "location": "North Shore",
-          "closes": "Fri 27 Nov 6:21pm",
-          "verdict": "good",
-          "note": "Over the limit, too good to skip: near-new kit, well under 55–60% of new"
         }
       ]
     },
@@ -534,36 +464,6 @@
       "name": "Water blasters",
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
-        {
-          "title": "Karcher K3 water blaster, bought 2021, great condition",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241331714",
-          "price": "$50",
-          "ptype": "Auction + offers",
-          "location": "Conifer Grove, Papakura",
-          "closes": "Sat 28 Nov 11:21am",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "Karcher K3 deck combo, used under 10 times, all accessories",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241551806",
-          "price": "$100",
-          "ptype": "Auction + offers",
-          "location": "Albany",
-          "closes": "Sat 28 Nov 2:37pm",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "Ryobi water blaster, 150 bar, working well",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239222431",
-          "price": "$100",
-          "ptype": "Buy Now",
-          "location": "Manukau",
-          "closes": "Fri 27 Nov 6:02am",
-          "verdict": "good",
-          "note": ""
-        },
         {
           "title": "Nilfisk C120.2 water blaster, money-back within a year",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6237759049",
@@ -575,14 +475,34 @@
           "note": ""
         },
         {
+          "title": "Ryobi water blaster, 150 bar, working well",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239222431",
+          "price": "$100",
+          "ptype": "Buy Now",
+          "location": "Botany Downs",
+          "closes": "Fri 27 Nov 6:02am",
+          "verdict": "good",
+          "note": ""
+        },
+        {
+          "title": "Homelite HPW100 water blaster + second unit free",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241561460",
+          "price": "$39",
+          "ptype": "Buy Now",
+          "location": "Papakura",
+          "closes": "Sat 28 Nov 2:45pm",
+          "verdict": "good",
+          "note": "Two units; the free one has no hose or gun"
+        },
+        {
           "title": "Nilfisk C120.6 water blaster, 120 bar",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6234782545",
-          "price": "$45",
-          "ptype": "Auction + offers",
+          "price": "$50",
+          "ptype": "Open to offers",
           "location": "North Shore",
           "closes": "Tue 24 Nov 7:55pm",
           "verdict": "watch",
-          "note": "Fault: pressure fluctuating"
+          "note": "Pressure fluctuates, still cleans"
         },
         {
           "title": "Remington RA-HPW1650 pressure washer",
@@ -592,7 +512,7 @@
           "location": "Remuera",
           "closes": "Tue 24 Nov 1:47am",
           "verdict": "watch",
-          "note": "Budget brand"
+          "note": ""
         }
       ]
     },
@@ -602,64 +522,74 @@
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
-          "title": "Makita 18V framing nailer",
+          "title": "Expandet EGF40 gas nail gun, 2 batteries, charger, case",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239533451",
+          "price": "$100",
+          "ptype": "Buy Now",
+          "location": "Henderson (Dollar Dealers)",
+          "closes": "Thu 26 Nov",
+          "verdict": "good",
+          "note": "Full cordless kit"
+        },
+        {
+          "title": "Makita 18V framing nailer, skin only, mint, boxed",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241161786",
           "price": "$100",
           "ptype": "Auction + offers",
           "location": "Albany",
           "closes": "Fri 27 Nov",
           "verdict": "good",
-          "note": "Bare tool, mint. Buy Now $400."
+          "note": "Buy Now $400; try an offer near $150–200"
         },
         {
-          "title": "Paslode gas nail gun + 2 batteries",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240363921",
-          "price": "$10",
-          "ptype": "Auction + offers",
-          "location": "North Shore",
-          "closes": "Fri 27 Nov 8:41pm",
-          "verdict": "good",
-          "note": "Fires sometimes."
-        },
-        {
-          "title": "14 gauge air nail gun",
+          "title": "14 gauge air nail gun, needs a compressor",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6231494520",
           "price": "$99",
           "ptype": "Open to offers",
           "location": "Stanmore Bay",
           "closes": "Sun 22 Nov 6:50pm",
           "verdict": "watch",
-          "note": "Offer ~$60."
+          "note": "No brand given"
         },
         {
-          "title": "Ramset Spitfire P390 nail gun",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239627305",
-          "price": "$100",
-          "ptype": "Auction + offers",
-          "location": "Albany",
-          "closes": "Thu 26 Nov",
-          "verdict": "watch",
-          "note": "Buy Now $300."
-        },
-        {
-          "title": "DeWalt D51822 air framing gun",
+          "title": "DeWalt D51822 framing gun, air",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6237578231",
           "price": "$30",
           "ptype": "Auction + offers",
           "location": "Whenuapai",
           "closes": "Wed 25 Nov",
           "verdict": "watch",
-          "note": "Needs seals."
+          "note": "Needs seals; cheap fix-and-flip"
         },
         {
-          "title": "Paslode Impulse framing nailer + case",
+          "title": "Senco FinishPro 35 finish nailer, air",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6232411513",
+          "price": "$30",
+          "ptype": "Buy Now",
+          "location": "Hibiscus Coast",
+          "closes": "Sun 22 Nov",
+          "verdict": "watch",
+          "note": "Broken tip, needs repair"
+        },
+        {
+          "title": "Paslode cordless nail gun, 2 batteries",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240363921",
+          "price": "$10",
+          "ptype": "Auction + offers",
+          "location": "Birkdale",
+          "closes": "Fri 27 Nov 8:41pm",
+          "verdict": "watch",
+          "note": "Works on and off; parts or repair"
+        },
+        {
+          "title": "Paslode Impulse cordless gas framing nailer, skin + case",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6235942574",
           "price": "$150",
           "ptype": "Buy Now",
           "location": "Papakura",
           "closes": "Tue 24 Nov",
-          "verdict": "good",
-          "note": "Over the limit, too good to skip: usually resells well above."
+          "verdict": "watch",
+          "note": "Over the limit, too good to skip: Paslode framers resell well even as skins"
         }
       ]
     },
@@ -669,84 +599,74 @@
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
-          "title": "Trades Pro 149-piece tool kit",
+          "title": "Trades Pro 149-piece tool kit in case, excellent",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241757669",
           "price": "$75",
           "ptype": "Auction + offers",
           "location": "Warkworth",
           "closes": "Sat 28 Nov",
           "verdict": "good",
-          "note": "Buy Now $119."
+          "note": "Buy Now $119; big kit, well under new"
         },
         {
-          "title": "Socket set + ratchet + case",
+          "title": "Koken 10-piece socket set, made in Japan",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241903132",
+          "price": "$85",
+          "ptype": "Open to offers",
+          "location": "Papakura",
+          "closes": "Sat 28 Nov",
+          "verdict": "good",
+          "note": "Quality brand"
+        },
+        {
+          "title": "DeWalt socket set, 30-day warranty",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231183696",
+          "price": "$79",
+          "ptype": "Buy Now",
+          "location": "Henderson (Dollar Dealers)",
+          "closes": "Sun 22 Nov 1:57pm",
+          "verdict": "watch",
+          "note": "Fair price"
+        },
+        {
+          "title": "Socket set with ratchet and carry case",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241697855",
           "price": "$25",
           "ptype": "Open to offers",
           "location": "Auckland City",
           "closes": "Sat 28 Nov",
           "verdict": "good",
-          "note": "Seller moving overseas."
+          "note": "Cheap, seller moving overseas"
         },
         {
-          "title": "Spanner and socket set 10–22mm",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6230994544",
-          "price": "$45",
-          "ptype": "Open to offers",
-          "location": "Manukau",
-          "closes": "Sat 21 Nov 9:40pm",
-          "verdict": "good",
-          "note": "Ratchet grip missing."
-        },
-        {
-          "title": "Hand tool lot",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6230997428",
-          "price": "$30",
-          "ptype": "Open to offers",
-          "location": "Manukau",
-          "closes": "Sat 21 Nov 9:47pm",
-          "verdict": "good",
-          "note": "Split and resell."
-        },
-        {
-          "title": "Screwdriver set + precision bits",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231515192",
-          "price": "$15",
-          "ptype": "Auction + offers",
-          "location": "Auckland City",
-          "closes": "Sun 22 Nov",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "Repco RTK2545 spanner set",
+          "title": "Repco RTK2545 spanner set, likely unused",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6239544404",
           "price": "$30",
           "ptype": "Buy Now",
-          "location": "Manukau",
+          "location": "Manukau (Dollar Dealers)",
           "closes": "Thu 26 Nov",
           "verdict": "good",
-          "note": "Hardly used."
+          "note": "Well under new"
         },
         {
-          "title": "DeWalt socket set",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231183696",
-          "price": "$79",
+          "title": "Stanley 65-005 10-piece screwdriver set",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6235269842",
+          "price": "$39",
           "ptype": "Buy Now",
-          "location": "Henderson",
-          "closes": "Sun 22 Nov 1:57pm",
+          "location": "Papakura (Dollar Dealers)",
+          "closes": "Tue 24 Nov",
           "verdict": "watch",
-          "note": ""
+          "note": "Small saving on new"
         },
         {
-          "title": "3/8\" socket set",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241354228",
-          "price": "$30",
-          "ptype": "Open to offers",
-          "location": "Manukau",
-          "closes": "Fri 27 Nov",
+          "title": "Hero socket sets (several)",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237907542",
+          "price": "$20",
+          "ptype": "Auction + offers",
+          "location": "Clevedon",
+          "closes": "Thu 26 Nov",
           "verdict": "watch",
-          "note": "Case doesn't close."
+          "note": "Budget brand"
         }
       ]
     },
@@ -756,16 +676,27 @@
       "rule": "Private sellers · Auckland",
       "items": [
         {
-          "title": "Floor Service hardwax oil 1L, unopened",
+          "title": "Tung oil, 4L tins (4 available), private seller",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239524215",
+          "price": "$99",
+          "ptype": "Open to offers",
+          "location": "Albany",
+          "closes": "Thu 26 Nov",
+          "verdict": "watch",
+          "note": "About $24.75/L; offer lower for 2+ tins"
+        },
+        {
+          "title": "Floor Service hardwax wood oil, 1L, Ypsos, unopened",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241353100",
           "price": "$15",
           "ptype": "Buy Now",
           "location": "North Shore",
           "closes": "Mon 30 Nov",
           "verdict": "good",
-          "note": "$15/L."
+          "note": "$15/L"
         }
-      ]
+      ],
+      "footnote": "Only two private listings today."
     },
     {
       "id": "sewing-machines",
@@ -773,14 +704,14 @@
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
-          "title": "Brother JS1410, like new",
+          "title": "Brother JS1410, like new, used a few times",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6236511363",
           "price": "$180",
           "ptype": "Auction + offers",
           "location": "Te Atatu South",
           "closes": "Wed 25 Nov 7:20pm",
           "verdict": "watch",
-          "note": "Over the limit, too good to skip: no reserve; offer ~$110–120."
+          "note": "Over the limit, too good to skip: modern Brother; try an offer around $100–120"
         }
       ]
     },
@@ -790,42 +721,42 @@
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
-          "title": "Weight set 36kg + 4 dumbbell bars",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241478276",
+          "title": "Upright magnetic exercise bike (Active Fitness)",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241334007",
+          "price": "$10",
+          "ptype": "Open to offers",
+          "location": "Manukau",
+          "closes": "Fri 27 Nov",
+          "verdict": "good",
+          "note": "Near-free flip"
+        },
+        {
+          "title": "Proteus PEC3425 magnetic exercise bike, works",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241576266",
           "price": "$40",
           "ptype": "Open to offers",
-          "location": "Auckland City",
-          "closes": "Sat 28 Nov 1:38pm",
-          "verdict": "good",
-          "note": "Cheap per kilo."
-        },
-        {
-          "title": "40kg dumbbell/barbell set",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241159860",
-          "price": "$100",
-          "ptype": "Open to offers",
-          "location": "Auckland City",
-          "closes": "Fri 27 Nov",
-          "verdict": "good",
-          "note": "Offer ~$80."
-        },
-        {
-          "title": "Dumbbell pair, 17.5kg plates",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241202088",
-          "price": "$30",
-          "ptype": "Open to offers",
           "location": "North Shore",
-          "closes": "Fri 27 Nov",
+          "closes": "Sat 28 Nov",
           "verdict": "good",
           "note": ""
         },
         {
-          "title": "Weider bench + barbell + plates",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6238150618",
+          "title": "Weight set: 36kg plates + 4 dumbbell bars",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241478276",
+          "price": "$40",
+          "ptype": "Open to offers",
+          "location": "Mt Eden",
+          "closes": "Sat 28 Nov 1:38pm",
+          "verdict": "good",
+          "note": ""
+        },
+        {
+          "title": "30kg dumbbell set + resistance bands",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6235950402",
           "price": "$50",
-          "ptype": "Auction + offers",
-          "location": "Auckland City",
-          "closes": "Sun 22 Nov 5:48pm",
+          "ptype": "Open to offers",
+          "location": "Northcote",
+          "closes": "Tue 24 Nov",
           "verdict": "good",
           "note": ""
         },
@@ -840,34 +771,34 @@
           "note": ""
         },
         {
-          "title": "LeMond ReMaster spin bike",
+          "title": "Weider bench (3 inclines), barbell, 20kg plates",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6238150618",
+          "price": "$50",
+          "ptype": "Auction + offers",
+          "location": "Avondale",
+          "closes": "Sun 22 Nov 5:48pm",
+          "verdict": "watch",
+          "note": "Bar is rusty"
+        },
+        {
+          "title": "LeMond ReMaster spin bike, heavy duty",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241413211",
           "price": "$75",
           "ptype": "Open to offers",
+          "location": "Mt Eden",
+          "closes": "Fri 27 Nov",
+          "verdict": "watch",
+          "note": ""
+        },
+        {
+          "title": "40kg dumbbell/barbell set, like new",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241159860",
+          "price": "$100",
+          "ptype": "Open to offers",
           "location": "Auckland City",
           "closes": "Fri 27 Nov",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "Proteus PEC3425 exercise bike",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241576266",
-          "price": "$40",
-          "ptype": "Open to offers",
-          "location": "North Shore",
-          "closes": "Sat 28 Nov",
-          "verdict": "good",
-          "note": ""
-        },
-        {
-          "title": "Home gym bench",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241835257",
-          "price": "$80",
-          "ptype": "Buy Now",
-          "location": "North Shore",
-          "closes": "Sat 28 Nov",
           "verdict": "watch",
-          "note": "Hardly used."
+          "note": ""
         }
       ]
     },
@@ -877,54 +808,64 @@
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
-          "title": "Proteus MTM-5600",
+          "title": "Elite treadmill, works, folds",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6238171040",
+          "price": "$1",
+          "ptype": "Auction + offers",
+          "location": "Henderson",
+          "closes": "Thu 26 Nov 6:01pm",
+          "verdict": "good",
+          "note": "Cracked cover; reserve not met"
+        },
+        {
+          "title": "Proteus MTM-5600, folds, working",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6238469275",
           "price": "$79",
           "ptype": "Auction + offers",
           "location": "Onehunga",
           "closes": "Thu 26 Nov 8:51pm",
           "verdict": "good",
-          "note": "Folds. Buy Now $175."
+          "note": "One plastic part damaged; Buy Now $175"
         },
         {
-          "title": "Apestyle FX200",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241763316",
-          "price": "$100",
+          "title": "Treadmill, runs",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231182050",
+          "price": "$1",
           "ptype": "Open to offers",
           "location": "Auckland City",
-          "closes": "Sat 28 Nov",
-          "verdict": "good",
-          "note": "Excellent condition."
+          "closes": "Sun 22 Nov",
+          "verdict": "watch",
+          "note": "Belt needs replacing"
         },
         {
-          "title": "Bowflex TreadClimber",
+          "title": "Bowflex Treadclimber, working, compact",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241328729",
           "price": "$80",
           "ptype": "Auction + offers",
           "location": "Auckland City",
           "closes": "Fri 27 Nov",
           "verdict": "watch",
-          "note": "Doesn't fold."
+          "note": ""
         },
         {
-          "title": "Sky-Trac treadmill",
+          "title": "Apestyle FX200, excellent, fixed incline",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241763316",
+          "price": "$100",
+          "ptype": "Open to offers",
+          "location": "Auckland City",
+          "closes": "Sat 28 Nov",
+          "verdict": "watch",
+          "note": "Folding not stated"
+        },
+        {
+          "title": "Sky-Trac, powered incline, working, older",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6234209531",
           "price": "$100",
           "ptype": "Auction + offers",
           "location": "Hibiscus Coast",
           "closes": "Mon 23 Nov",
           "verdict": "watch",
-          "note": ""
-        },
-        {
-          "title": "Professor Runner treadmill",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6234449663",
-          "price": "$125",
-          "ptype": "Open to offers",
-          "location": "Papatoetoe",
-          "closes": "Tue 24 Nov",
-          "verdict": "watch",
-          "note": "Over the limit, too good to skip: your suburb; offer under $100."
+          "note": "Folding not stated"
         }
       ],
       "footnote": "All heavy: need a trailer or van."
@@ -935,64 +876,64 @@
       "rule": "Used · Auckland · under $50",
       "items": [
         {
-          "title": "AquaOne Ecostyle 47, filter + LED + heater",
+          "title": "AquaOne EcoStyle 47, filter, LED light, heater",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241406146",
           "price": "$37",
           "ptype": "Auction + offers",
-          "location": "Torbay",
+          "location": "North Shore",
           "closes": "Fri 27 Nov",
           "verdict": "good",
-          "note": "Filter and light."
+          "note": "Has filter and light; reserve not met"
         },
         {
-          "title": "Hexagon tank + filters and pump",
+          "title": "Aqua One tank 38×23×35cm, LED light",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240302685",
+          "price": "$5",
+          "ptype": "Auction + offers",
+          "location": "Manukau",
+          "closes": "Fri 27 Nov",
+          "verdict": "good",
+          "note": "Filter not confirmed"
+        },
+        {
+          "title": "Hexagon tank with filters and pump, no leaks",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6239906833",
           "price": "$30",
           "ptype": "Open to offers",
-          "location": "The Gardens",
+          "location": "Auckland City",
           "closes": "Fri 27 Nov 3:51pm",
           "verdict": "watch",
-          "note": "No light."
+          "note": "No light"
         },
         {
-          "title": "Small glass tank 30cm",
+          "title": "Small glass tank 30×15×22cm",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241111455",
           "price": "$20",
           "ptype": "Buy Now",
           "location": "Eastern Beach",
           "closes": "Fri 27 Nov",
           "verdict": "watch",
-          "note": "Tank only."
+          "note": "Tank only"
         },
         {
-          "title": "Small aquarium N_07",
+          "title": "Small aquarium tank N_07",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6239608331",
           "price": "$50",
           "ptype": "Buy Now",
           "location": "Bayview",
           "closes": "Thu 26 Nov",
           "verdict": "skip",
-          "note": "Tank only."
+          "note": "Tank only"
         },
         {
-          "title": "AquaOne Ecostyle 61 + filter + heater",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241423272",
-          "price": "$58",
+          "title": "Juwel Lido 120L with cabinet, LED",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6235723829",
+          "price": "$50",
           "ptype": "Auction + offers",
-          "location": "Torbay",
-          "closes": "Fri 27 Nov",
+          "location": "Waitakere",
+          "closes": "Wed 25 Nov",
           "verdict": "watch",
-          "note": "Over the limit, too good to skip: light not working."
-        },
-        {
-          "title": "AquaOne Ecostyle 37, filter + light",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6234553931",
-          "price": "$70",
-          "ptype": "Buy Now",
-          "location": "Half Moon Bay",
-          "closes": "Tue 24 Nov",
-          "verdict": "watch",
-          "note": "Over the limit, too good to skip: complete setup."
+          "note": "Over the limit, too good to skip: reserve not met (Buy Now $380); seller quotes $1099 new"
         }
       ]
     },
@@ -1006,10 +947,10 @@
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6231107741",
           "price": "$100",
           "ptype": "Auction + offers",
-          "location": "Auckland City",
-          "closes": "Sat 21 Nov 11:32pm",
+          "location": "Point England",
+          "closes": "Sun 22 Nov",
           "verdict": "watch",
-          "note": "No reserve. Closes tonight."
+          "note": "No reserve"
         }
       ]
     },
@@ -1019,54 +960,64 @@
       "rule": "Used · Auckland · Buy Now or offers · up to $150",
       "items": [
         {
-          "title": "Wagner Flexio 570 HVLP sprayer",
+          "title": "Wagner 570 Flexio HVLP, used twice, spare head, filters, both cups",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6237574148",
           "price": "$99",
           "ptype": "Open to offers",
           "location": "St Heliers",
           "closes": "Wed 25 Nov",
           "verdict": "good",
-          "note": "Best pick for you."
+          "note": "Best pick for you"
         },
         {
-          "title": "Wagner W350 HVLP sprayer",
+          "title": "Wagner W350 HVLP, 30-day warranty",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6231218194",
           "price": "$80",
           "ptype": "Buy Now",
-          "location": "Papakura",
+          "location": "Papakura (Dollar Dealers)",
           "closes": "Sun 22 Nov 2:35pm",
           "verdict": "good",
-          "note": "30-day warranty."
+          "note": "Cheap Wagner"
         },
         {
-          "title": "Ozito MPS-8000 spray system",
+          "title": "Ozito 1200W paint spray system MPS-8000 (2021)",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6232351553",
           "price": "$120",
           "ptype": "Buy Now",
           "location": "Auckland City",
           "closes": "Sun 22 Nov",
           "verdict": "watch",
-          "note": "As-is."
+          "note": "Powers on, untested, sold as is"
         },
         {
-          "title": "Gravity-feed spray gun",
+          "title": "Voodoo VX4000 spray gun kit, air, like new",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6232748442",
+          "price": "$99",
+          "ptype": "Buy Now",
+          "location": "Manukau (Dollar Dealers)",
+          "closes": "Mon 23 Nov",
+          "verdict": "watch",
+          "note": "Compressor gun only"
+        },
+        {
+          "title": "Number 8 JS-HH15A paint gun, air, boxed",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240787641",
+          "price": "$50",
+          "ptype": "Buy Now",
+          "location": "Papakura (Dollar Dealers)",
+          "closes": "Fri 27 Nov",
+          "verdict": "watch",
+          "note": "Compressor gun only"
+        },
+        {
+          "title": "Gravity-feed spray gun, air, hardly used",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6232372008",
           "price": "$30",
           "ptype": "Auction + offers",
           "location": "Albany",
           "closes": "Sun 22 Nov",
-          "verdict": "watch",
-          "note": "Needs compressor."
-        },
-        {
-          "title": "G40 air spray gun",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6232533061",
-          "price": "$1",
-          "ptype": "Auction + offers",
-          "location": "Mangere",
-          "closes": "Sun 22 Nov",
-          "verdict": "watch",
-          "note": "Needs compressor."
+          "verdict": "skip",
+          "note": "Compressor only"
         }
       ]
     },
@@ -1082,7 +1033,7 @@
       "name": "Awnings",
       "rule": "Used · Auckland · Buy Now or offers · wall-mounted",
       "items": [],
-      "empty": "Nothing under $100 today."
+      "empty": "No wall-mounted awnings under $100 today."
     },
     {
       "id": "enphase",
@@ -1097,104 +1048,94 @@
       "rule": "Auckland · $0–1 or $1 no reserve",
       "items": [
         {
-          "title": "Thrustmaster T300 racing setup + Playseat",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241848416",
-          "price": "$1",
-          "ptype": "Auction + offers",
-          "location": "Auckland City",
-          "closes": "Sat 28 Nov",
-          "verdict": "good",
-          "note": "Reserve not met. Resale $500+."
-        },
-        {
-          "title": "Hilti GX100 gas nail gun + case",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6236247067",
-          "price": "$1",
-          "ptype": "Auction, reserve met",
-          "location": "New Lynn",
-          "closes": "Wed 25 Nov",
-          "verdict": "good",
-          "note": "Resale $300+."
-        },
-        {
-          "title": "Triton Workbench Mk3",
+          "title": "Triton Workbench Mk3 saw table",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6240471288",
           "price": "$1",
           "ptype": "Auction, no reserve",
-          "location": "Bayview",
+          "location": "Glenfield",
           "closes": "Fri 27 Nov 9:51pm",
           "verdict": "good",
-          "note": "Resale $150–250."
+          "note": "Resells for about $100–150"
         },
         {
-          "title": "CUBE 27.5\" mountain bike",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241463892",
-          "price": "$1",
-          "ptype": "Auction, reserve met",
-          "location": "Remuera",
-          "closes": "Sun 29 Nov 8:00pm",
-          "verdict": "good",
-          "note": "Resale $200+."
-        },
-        {
-          "title": "Elite Polaris spin bike",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241402435",
-          "price": "$1",
-          "ptype": "Auction, reserve met",
-          "location": "Devonport",
-          "closes": "Fri 27 Nov",
-          "verdict": "good",
-          "note": "No console. Resale $150–250."
-        },
-        {
-          "title": "Logitech PS5 racing wheel",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241635284",
-          "price": "$1",
-          "ptype": "Auction, no reserve",
-          "location": "Botany Downs",
-          "closes": "Sat 28 Nov",
-          "verdict": "good",
-          "note": "Resale $150–200."
-        },
-        {
-          "title": "Elite folding treadmill",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6238171040",
+          "title": "Large custom bench/desk 2.2m × 1.05m, never used",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231292288",
           "price": "$1",
           "ptype": "Auction + offers",
-          "location": "Henderson",
-          "closes": "Thu 26 Nov 6:01pm",
-          "verdict": "watch",
-          "note": "Reserve not met. Trailer."
-        },
-        {
-          "title": "Heavy-duty steel shelving 2.4m",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6234721638",
-          "price": "$1",
-          "ptype": "Auction, reserve met",
-          "location": "North Shore",
-          "closes": "Tue 24 Nov 7:09pm",
+          "location": "Auckland City",
+          "closes": "Tue 24 Nov 3:49pm",
           "verdict": "good",
-          "note": "Needs a ute."
+          "note": "Reserve not met; about $150 as a workbench"
         },
         {
-          "title": "2.4m heavy-duty table/workbench",
+          "title": "Bailey 8-step aluminium ladder",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237887230",
+          "price": "$2.50",
+          "ptype": "Auction, reserve met",
+          "location": "Grey Lynn",
+          "closes": "Thu 26 Nov",
+          "verdict": "good",
+          "note": "2 rubber feet and a brace missing; about $100 resale"
+        },
+        {
+          "title": "2.4m heavy-duty table on steel frame",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241673660",
           "price": "$1",
           "ptype": "Auction, no reserve",
           "location": "Manukau",
           "closes": "Sat 28 Nov",
           "verdict": "good",
-          "note": "Resale $80–150."
+          "note": "Good as a workbench; about $80 resale"
         },
         {
-          "title": "Large custom bench/desk",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231292288",
+          "title": "DeWalt 20oz hammer, Stanley nips, Bahco chisels",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241446655",
+          "price": "$1",
+          "ptype": "Auction, no reserve",
+          "location": "North Shore",
+          "closes": "Sat 28 Nov",
+          "verdict": "good",
+          "note": "About $40 resale"
+        },
+        {
+          "title": "Arlec Enforcer blower vac/mulcher, tested",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240584771",
+          "price": "$1",
+          "ptype": "Auction, no reserve",
+          "location": "Rodney",
+          "closes": "Fri 27 Nov",
+          "verdict": "watch",
+          "note": "About $30–40 resale"
+        },
+        {
+          "title": "Ozito corded blower vac, tested, no bag",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6240584631",
+          "price": "$1",
+          "ptype": "Auction, no reserve",
+          "location": "Rodney",
+          "closes": "Fri 27 Nov",
+          "verdict": "watch",
+          "note": "About $30 resale"
+        },
+        {
+          "title": "Wooden shelving unit",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237885763",
+          "price": "$0",
+          "ptype": "Free",
+          "location": "Clover Park",
+          "closes": "Thu 26 Nov",
+          "verdict": "watch",
+          "note": "Near you; about $30–50 resale"
+        },
+        {
+          "title": "3-seater couch, good condition",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241891043",
           "price": "$1",
           "ptype": "Auction + offers",
-          "location": "Auckland City",
-          "closes": "Tue 24 Nov 3:49pm",
+          "location": "Papakura",
+          "closes": "Sat 28 Nov",
           "verdict": "watch",
-          "note": "Reserve not met."
+          "note": "Reserve not met; about $100 resale"
         }
       ]
     },
@@ -1204,17 +1145,17 @@
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
-          "title": "Ryobi 1400W stainless wet & dry vac",
+          "title": "Ryobi 1400W stainless wet & dry vac, tested",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6236590475",
           "price": "$60",
           "ptype": "Open to offers",
           "location": "Manukau",
           "closes": "Wed 25 Nov 8:12pm",
           "verdict": "good",
-          "note": "Strong flip."
+          "note": "Hose only; easy flip"
         },
         {
-          "title": "Karcher WD2 wet & dry vac ~12L",
+          "title": "Karcher WD2 wet & dry vac, works well",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6236405188",
           "price": "$65",
           "ptype": "Open to offers",
@@ -1224,24 +1165,24 @@
           "note": ""
         },
         {
-          "title": "Ozito 1250W 20L wet & dry vac",
+          "title": "Ozito 1250W 20L wet & dry vac, working",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6234766514",
           "price": "$50",
           "ptype": "Buy Now",
           "location": "Franklin",
           "closes": "Tue 24 Nov 7:43pm",
-          "verdict": "good",
-          "note": "Floor head missing."
+          "verdict": "watch",
+          "note": "Hose and wand but no head"
         },
         {
-          "title": "OAV dust extractor",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6231824554",
-          "price": "$100",
+          "title": "Ryobi wet & dry vac (2023), barely used",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237755857",
+          "price": "$125",
           "ptype": "Auction + offers",
-          "location": "Oratia",
-          "closes": "Sun 22 Nov",
+          "location": "Auckland City",
+          "closes": "Thu 26 Nov",
           "verdict": "watch",
-          "note": "3-phase."
+          "note": "Over the limit, too good to skip: Buy Now $145; offer around $100. Crevice tool missing"
         }
       ]
     },
@@ -1251,67 +1192,57 @@
       "rule": "Used · Auckland · Buy Now or offers",
       "items": [
         {
-          "title": "Black+Decker Workmate 600",
+          "title": "Black+Decker Workmate 600, folds flat",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6237526275",
           "price": "$45",
           "ptype": "Buy Now",
           "location": "Mt Wellington",
           "closes": "Wed 25 Nov",
           "verdict": "good",
-          "note": "Fits in a car."
+          "note": "Fits in a car; quick flip"
         },
         {
-          "title": "Stanley mobile tool chest",
+          "title": "Metal tool cabinet 80×45×102cm",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6235771866",
+          "price": "$50",
+          "ptype": "Auction + offers",
+          "location": "Papakura",
+          "closes": "Sun 22 Nov",
+          "verdict": "good",
+          "note": "Needs a ute; close to home"
+        },
+        {
+          "title": "Stanley mobile tool chest on wheels",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6237384553",
           "price": "$50",
           "ptype": "Auction + offers",
           "location": "Onehunga",
           "closes": "Wed 25 Nov",
           "verdict": "good",
-          "note": "Buy Now $60."
+          "note": "Buy Now $60"
         },
         {
-          "title": "Bolt-less steel garage shelf",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241757472",
-          "price": "$30",
-          "ptype": "Open to offers",
-          "location": "North Shore",
-          "closes": "Sat 28 Nov",
-          "verdict": "good",
-          "note": "Flat-packs."
-        },
-        {
-          "title": "Garage storage shelf",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241476214",
+          "title": "Steel storage cabinet 1640×910×420mm",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241846095",
           "price": "$20",
-          "ptype": "Open to offers",
-          "location": "Titirangi",
+          "ptype": "Auction + offers",
+          "location": "Clevedon",
           "closes": "Sat 28 Nov",
           "verdict": "good",
-          "note": ""
+          "note": "Needs a ute or trailer"
         },
         {
-          "title": "Pinnacle metal pegboard + 10 hooks",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241485932",
-          "price": "$18",
-          "ptype": "Open to offers",
+          "title": "Heavy-duty steel workshop trolley, 3 wooden trays",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241115993",
+          "price": "$76",
+          "ptype": "Auction + offers",
           "location": "Auckland City",
-          "closes": "Sat 28 Nov 1:46pm",
-          "verdict": "good",
-          "note": ""
+          "closes": "Fri 27 Nov",
+          "verdict": "watch",
+          "note": "Top missing; needs a trailer"
         },
         {
-          "title": "Solid wood bench 2.27m",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239264300",
-          "price": "$30",
-          "ptype": "Open to offers",
-          "location": "Auckland City",
-          "closes": "Thu 26 Nov",
-          "verdict": "good",
-          "note": "Needs a ute."
-        },
-        {
-          "title": "Tool drawers + cabinet on wheels",
+          "title": "Tool cabinet with drawers 62×30×61cm",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6233186822",
           "price": "$100",
           "ptype": "Open to offers",
@@ -1321,44 +1252,54 @@
           "note": ""
         },
         {
-          "title": "5 Pinnacle metal pegboards",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6232633570",
-          "price": "$100",
-          "ptype": "Open to offers",
-          "location": "Mt Wellington",
-          "closes": "Mon 23 Nov",
-          "verdict": "watch",
-          "note": ""
-        },
-        {
-          "title": "Steel workshop trolley",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241115993",
-          "price": "$76",
-          "ptype": "Auction + offers",
-          "location": "Auckland City",
-          "closes": "Fri 27 Nov",
-          "verdict": "watch",
-          "note": "Top missing."
-        },
-        {
-          "title": "IKEA Skadis pegboard",
-          "url": "https://www.trademe.co.nz/a/marketplace/listing/6239871610",
-          "price": "$35",
+          "title": "3-tier steel wire rack 85×37×100cm",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6236536999",
+          "price": "$65",
           "ptype": "Open to offers",
           "location": "Botany Downs",
-          "closes": "Fri 27 Nov",
+          "closes": "Wed 25 Nov",
           "verdict": "watch",
           "note": ""
         },
         {
-          "title": "GV Tools chest + roller cabinet",
+          "title": "Pinnacle metal pegboard 900×450mm + 10 hooks",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6241485932",
+          "price": "$18",
+          "ptype": "Open to offers",
+          "location": "Mt Eden",
+          "closes": "Sat 28 Nov 1:46pm",
+          "verdict": "good",
+          "note": ""
+        },
+        {
+          "title": "3-drawer filing cabinet with tool drawer",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6232402851",
+          "price": "$80",
+          "ptype": "Buy Now",
+          "location": "Onehunga",
+          "closes": "Sun 22 Nov",
+          "verdict": "watch",
+          "note": ""
+        },
+        {
+          "title": "GV Tools red tool chest + roller cabinet",
           "url": "https://www.trademe.co.nz/a/marketplace/listing/6241566273",
           "price": "$120",
           "ptype": "Open to offers",
           "location": "North Shore",
           "closes": "Sat 28 Nov 2:49pm",
           "verdict": "good",
-          "note": "Over the limit, too good to skip: set sells well over this."
+          "note": "Over the limit, too good to skip: chest and roller cabinet together; try $100"
+        },
+        {
+          "title": "Mako heavy-duty workbench, mint",
+          "url": "https://www.trademe.co.nz/a/marketplace/listing/6237743230",
+          "price": "$150",
+          "ptype": "Open to offers",
+          "location": "Auckland City",
+          "closes": "Thu 26 Nov",
+          "verdict": "watch",
+          "note": "Over the limit, too good to skip: an offer could bring it near $100. Needs a trailer"
         }
       ]
     }
