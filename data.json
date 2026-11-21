@@ -549,19 +549,18 @@
     {
       "id": "ryobi-sliding-saw-stand",
       "name": "Ryobi sliding compound drop saw + Ryobi mitre saw stand",
-      "status": "stock",
-      "collected": true,
-      "listed": true,
+      "status": "sold",
       "cost": 50,
-      "list": 180,
-      "accept": 160,
-      "worst": 140,
       "own": false,
       "boughtWeek": 5,
       "bought": "2026-11-15",
       "trip": 5,
       "paidFrom": "cash",
-      "note": "Trade Me KP-2642008. Won $50, no fee. Stand comes with it. Test it runs, check blade and slide"
+      "note": "Trade Me KP-2642008. Won $50, no fee. Stand comes with it. Test it runs, check blade and slide",
+      "sold": 160,
+      "soldWeek": 6,
+      "soldDate": "2026-11-21",
+      "paid": false
     },
     {
       "id": "ozito-drop-saw",
