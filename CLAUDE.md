@@ -13,6 +13,7 @@ Shameel's tool-flipping tracker. He buys used tools cheaply (mostly Trade Me), c
 - One step at a time. Concise tables when listing things.
 - Only change what he asks for. Don't expand or "improve" content unasked.
 - He mostly views the page on his iPhone.
+- Listings: give the title, then the description in one plain-text code block (dash bullets, no bold or headings) so he can copy and paste it straight into Trade Me. Price on its own line outside the block.
 
 ## Your job
 
