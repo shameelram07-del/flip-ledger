@@ -718,6 +718,22 @@
       "bought": "2026-11-05",
       "paidFrom": "cash",
       "trip": 3
+    },
+    {
+      "id": "bosch-pex12ae",
+      "name": "Bosch PEX 12 AE random orbital sander",
+      "status": "stock",
+      "collected": false,
+      "listed": false,
+      "cost": 11.5,
+      "list": 40,
+      "accept": 35,
+      "worst": 25,
+      "own": false,
+      "boughtWeek": 6,
+      "bought": "2026-11-21",
+      "trip": null,
+      "note": "Won on Trade Me auction, 23 bids. Older Swiss-made green Bosch. Nearest new model (PEX 300 AE) is $109 at Mitre 10. Test it runs and check the pad"
     }
   ],
   "repaid": [
