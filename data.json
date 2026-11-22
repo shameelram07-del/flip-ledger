@@ -435,7 +435,7 @@
       "id": "stanley-fatmax-level",
       "name": "Stanley FatMax 600mm level",
       "status": "stock",
-      "collected": false,
+      "collected": true,
       "listed": false,
       "cost": 5,
       "list": 50,
@@ -446,7 +446,7 @@
       "bought": "2026-11-13",
       "trip": null,
       "paidFrom": "cash",
-      "note": "Trade Me KP-2628878. FatMax Xtreme, check Bunnings for new price"
+      "note": "Trade Me KP-2628878. FatMax Xtreme, check Bunnings for new price. Collected. Not decided: might keep it or sell with the hand tool lot"
     },
     {
       "id": "ryobi-wet-dry-vac",
