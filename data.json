@@ -456,19 +456,18 @@
     {
       "id": "ryobi-wet-dry-vac",
       "name": "Ryobi 25L 1400W wet & dry vacuum with Power Take Off",
-      "status": "stock",
-      "collected": true,
-      "listed": true,
+      "status": "sold",
       "cost": 20,
-      "list": 60,
-      "accept": 60,
-      "worst": 60,
       "own": false,
       "boughtWeek": 4,
       "bought": "2026-11-13",
       "trip": null,
       "paidFrom": "cash",
-      "note": "Trade Me KP-2628835. Check it runs and filter is inside. $229 new at Bunnings NZ. Cleaned, tested: vac and PTO both work"
+      "note": "Trade Me KP-2628835. Check it runs and filter is inside. $229 new at Bunnings NZ. Cleaned, tested: vac and PTO both work",
+      "sold": 60,
+      "soldWeek": 6,
+      "soldDate": "2026-11-22",
+      "paid": false
     },
     {
       "id": "bosch-grl300hvg",
