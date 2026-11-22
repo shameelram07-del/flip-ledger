@@ -357,19 +357,14 @@
     {
       "id": "stanley-fatmax-bag",
       "name": "Hand tool lot: 20oz hammer, spanners, ~25 screwdrivers, pliers, hex keys",
-      "status": "stock",
-      "collected": true,
-      "listed": true,
+      "status": "kept",
       "cost": 15,
-      "list": 30,
-      "accept": 25,
-      "worst": 20,
       "own": false,
       "boughtWeek": 4,
       "bought": "2026-11-09",
       "trip": null,
       "paidFrom": "cash",
-      "note": "From the $15 Stanley FATMAX bag lot. Kept the bag and a few tools myself"
+      "note": "From the $15 Stanley FATMAX bag lot. Kept the bag and a few tools myself. Taken off sale for now, not decided whether to sell"
     },
     {
       "id": "ozito-vac-1",
