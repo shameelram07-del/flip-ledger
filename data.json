@@ -718,6 +718,22 @@
       "bought": "2026-11-05",
       "paidFrom": "cash",
       "trip": 3
+    },
+    {
+      "id": "makita-bo5030",
+      "name": "Makita BO5030 125mm orbital sander",
+      "status": "stock",
+      "collected": false,
+      "listed": false,
+      "cost": 58,
+      "list": 75,
+      "accept": 65,
+      "worst": 58,
+      "own": false,
+      "boughtWeek": 6,
+      "bought": "2026-11-22",
+      "trip": null,
+      "note": "Won on Trade Me auction from Xtracash Pawnbrokers, 37 bids. Pick-up or shipping to confirm"
     }
   ],
   "repaid": [
