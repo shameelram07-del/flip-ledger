@@ -30,6 +30,7 @@ When he says he **bought**, **sold**, **listed**, **collected**, or **got paid**
 - Fuel is always a negative line (a trip in `trips`, never an item).
 - Each stock item needs three prices: `list` (list at), `accept` (accept down to), `worst` (worst case).
 - He prefers fast turnover with good profit over big profit with slow turnover. If asked for pricing, price to sell quickly.
+- Before suggesting any price, look up the current NZ new price (Bunnings, Mitre 10, PlaceMakers etc.) and say where it came from. Never guess.
 - Mention faults honestly in `note`.
 - Anything he says is **not confirmed** goes in `unconfirmed` (`["cost"]` or `["sold"]`) and stays there until he confirms.
 - Kept items (`status: "kept"`) and disputed items (`status: "disputed"`) never count towards profit.
