@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "goal": 5000,
   "fuelPrice": 3.2,
   "litresPer100km": 8,
@@ -408,19 +408,18 @@
     {
       "id": "bd-drill-bundle",
       "name": "Black+Decker 18V BCD001 drill + 1.5Ah battery + charger",
-      "status": "stock",
-      "collected": true,
-      "listed": true,
+      "status": "sold",
       "cost": 1,
-      "list": 40,
-      "accept": 40,
-      "worst": 35,
       "own": false,
       "boughtWeek": 4,
       "bought": "2026-11-12",
       "trip": null,
       "paidFrom": "cash",
-      "note": "$1 Buy Now. Kept the DeWalt bits, Bosch drill bits and hammer. $89.99 new at Mitre 10"
+      "note": "$1 Buy Now. Kept the DeWalt bits, Bosch drill bits and hammer. $89.99 new at Mitre 10",
+      "sold": 40,
+      "soldWeek": 6,
+      "soldDate": "2026-11-22",
+      "paid": true
     },
     {
       "id": "craftright-tool-kit",
