@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "goal": 5000,
   "fuelPrice": 3.2,
   "litresPer100km": 8,
@@ -369,19 +369,18 @@
     {
       "id": "ozito-vac-1",
       "name": "Ozito 1250W 20L wet & dry vac #1",
-      "status": "stock",
-      "collected": true,
-      "listed": false,
+      "status": "sold",
       "cost": 15.5,
-      "list": 50,
-      "accept": 40,
-      "worst": 30,
       "own": false,
       "boughtWeek": 4,
       "bought": "2026-11-12",
       "trip": 5,
       "paidFrom": "cash",
-      "note": "Bought as a pair for $30.99. Eden Terrace pick-up. Fair condition, still usable"
+      "note": "Bought as a pair for $30.99. Eden Terrace pick-up. Fair condition, still usable",
+      "sold": 30,
+      "soldWeek": 6,
+      "soldDate": "2026-11-23",
+      "paid": false
     },
     {
       "id": "ozito-vac-2",
