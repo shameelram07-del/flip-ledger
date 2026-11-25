@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "goal": 5000,
   "fuelPrice": 3.2,
   "litresPer100km": 8,
@@ -732,6 +732,44 @@
       "bought": "2026-11-21",
       "trip": null,
       "note": "Won on Trade Me auction, 23 bids. Older Swiss-made green Bosch. Nearest new model (PEX 300 AE) is $109 at Mitre 10. Test it runs and check the pad. Pick-up"
+    },
+    {
+      "status": "stock",
+      "collected": true,
+      "listed": true,
+      "own": false,
+      "boughtWeek": 6,
+      "bought": null,
+      "trip": null,
+      "unconfirmed": [
+        "cost"
+      ],
+      "id": "bissell-spotclean",
+      "name": "Bissell SpotClean 36984 carpet cleaner",
+      "cost": 20,
+      "list": 130,
+      "accept": 90,
+      "worst": 50,
+      "note": "$1 reserve Trade Me auction. $254-299 new (PriceSpy, Folders). Tested and working. Cost not confirmed"
+    },
+    {
+      "status": "stock",
+      "collected": true,
+      "listed": true,
+      "own": false,
+      "boughtWeek": 6,
+      "bought": null,
+      "trip": null,
+      "unconfirmed": [
+        "cost"
+      ],
+      "id": "thrustmaster-hotas-t3pa",
+      "name": "Thrustmaster T.Flight Hotas One joystick + T3PA pedals",
+      "cost": 15,
+      "list": 160,
+      "accept": 100,
+      "worst": 50,
+      "note": "$1 reserve Trade Me auction. Joystick $199-229 new (PB Tech, Mighty Ape). Not tested. Cost not confirmed"
     }
   ],
   "repaid": [
