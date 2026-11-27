@@ -33,10 +33,15 @@
       "n": 6,
       "label": "20–26 Nov",
       "start": "2026-11-20"
+    },
+    {
+      "n": 7,
+      "label": "27 Nov–3 Dec",
+      "start": "2026-11-27"
     }
   ],
   "estimate": {
-    "week": 6,
+    "week": 7,
     "fuel": 40
   },
   "items": [
@@ -515,7 +520,7 @@
       "paidFrom": "cash",
       "note": "Trade Me KP-2631910. Seller says old but good. Check blade, guard and that it runs",
       "sold": 50,
-      "soldWeek": 6,
+      "soldWeek": 7,
       "soldDate": "2026-11-27",
       "paid": false
     },
