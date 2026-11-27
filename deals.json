@@ -647,7 +647,7 @@
           "price": "$20",
           "ptype": "Open to offers",
           "location": "Pakuranga",
-          "closes": "Sun 29 Nov 5:41:00pm",
+          "closes": "Sun 29 Nov 5:41pm",
           "verdict": "good",
           "note": ""
         },
@@ -657,7 +657,7 @@
           "price": "$30",
           "ptype": "Auction + offers",
           "location": "Whenuapai",
-          "closes": "Thu 3 Dec 11:26:00am",
+          "closes": "Thu 3 Dec 11:26am",
           "verdict": "good",
           "note": ""
         },
@@ -677,7 +677,7 @@
           "price": "$70",
           "ptype": "Buy Now",
           "location": "Glen Eden",
-          "closes": "Mon 30 Nov 10:07:00pm",
+          "closes": "Mon 30 Nov 10:07pm",
           "verdict": "watch",
           "note": ""
         },
@@ -687,7 +687,7 @@
           "price": "$99",
           "ptype": "Open to offers",
           "location": "Stanmore Bay",
-          "closes": "Mon 30 Nov 2:05:00am",
+          "closes": "Mon 30 Nov 2:05am",
           "verdict": "watch",
           "note": "Offer ~$50"
         },
@@ -697,7 +697,7 @@
           "price": "$100",
           "ptype": "Open to offers",
           "location": "Albany",
-          "closes": "Wed 2 Dec 7:58:00pm",
+          "closes": "Wed 2 Dec 7:58pm",
           "verdict": "watch",
           "note": ""
         },
@@ -707,7 +707,7 @@
           "price": "$29",
           "ptype": "Buy Now",
           "location": "West Auckland",
-          "closes": "Sat 5 Dec 2:23:00am",
+          "closes": "Sat 5 Dec 2:23am",
           "verdict": "skip",
           "note": ""
         }
@@ -734,7 +734,7 @@
           "price": "$40",
           "ptype": "Auction + offers",
           "location": "Onehunga",
-          "closes": "Fri 4 Dec 11:36:00pm",
+          "closes": "Fri 4 Dec 11:36pm",
           "verdict": "good",
           "note": ""
         },
@@ -744,7 +744,7 @@
           "price": "$35",
           "ptype": "Open to offers",
           "location": "Pukekohe",
-          "closes": "Thu 3 Dec 7:09:00pm",
+          "closes": "Thu 3 Dec 7:09pm",
           "verdict": "good",
           "note": ""
         },
@@ -764,7 +764,7 @@
           "price": "$15",
           "ptype": "Auction + offers",
           "location": "Auckland City",
-          "closes": "Fri 4 Dec 6:51:00pm",
+          "closes": "Fri 4 Dec 6:51pm",
           "verdict": "good",
           "note": ""
         },
@@ -784,7 +784,7 @@
           "price": "$79",
           "ptype": "Buy Now",
           "location": "Henderson",
-          "closes": "Mon 30 Nov 2:07:00pm",
+          "closes": "Mon 30 Nov 2:07pm",
           "verdict": "watch",
           "note": ""
         },
@@ -818,7 +818,7 @@
           "price": "$180",
           "ptype": "Auction + offers",
           "location": "Te Atatu South",
-          "closes": "Sat 5 Dec 4:04:00am",
+          "closes": "Sat 5 Dec 4:04am",
           "verdict": "good",
           "note": "Try ~$100–120"
         },
@@ -828,7 +828,7 @@
           "price": "$150",
           "ptype": "Auction + offers",
           "location": "Auckland City",
-          "closes": "Wed 2 Dec 6:20:00pm",
+          "closes": "Wed 2 Dec 6:20pm",
           "verdict": "good",
           "note": "Try ~$100"
         },
@@ -838,7 +838,7 @@
           "price": "$75",
           "ptype": "Open to offers",
           "location": "Hibiscus Coast",
-          "closes": "Tue 1 Dec 1:17:00pm",
+          "closes": "Tue 1 Dec 1:17pm",
           "verdict": "watch",
           "note": ""
         },
@@ -848,7 +848,7 @@
           "price": "$240",
           "ptype": "Open to offers",
           "location": "Browns Bay",
-          "closes": "Thu 3 Dec 1:21:00pm",
+          "closes": "Thu 3 Dec 1:21pm",
           "verdict": "watch",
           "note": ""
         },
@@ -858,7 +858,7 @@
           "price": "$150",
           "ptype": "Buy Now",
           "location": "One Tree Hill",
-          "closes": "Wed 2 Dec 10:25:00am",
+          "closes": "Wed 2 Dec 10:25am",
           "verdict": "watch",
           "note": "No offers"
         },
@@ -868,7 +868,7 @@
           "price": "$200",
           "ptype": "Buy Now",
           "location": "West Auckland",
-          "closes": "Fri 4 Dec 10:25:00pm",
+          "closes": "Fri 4 Dec 10:25pm",
           "verdict": "watch",
           "note": "Bids from $100"
         }
@@ -885,7 +885,7 @@
           "price": "$100",
           "ptype": "Auction + offers",
           "location": "Auckland City",
-          "closes": "Wed 2 Dec 11:50:00am",
+          "closes": "Wed 2 Dec 11:50am",
           "verdict": "good",
           "note": "Buy Now $350"
         },
@@ -895,7 +895,7 @@
           "price": "$10",
           "ptype": "Auction + offers",
           "location": "Papakura",
-          "closes": "Thu 3 Dec 8:02:00pm",
+          "closes": "Thu 3 Dec 8:02pm",
           "verdict": "good",
           "note": ""
         },
@@ -905,7 +905,7 @@
           "price": "$50",
           "ptype": "Auction + offers",
           "location": "Auckland City",
-          "closes": "Mon 30 Nov 4:44:00pm",
+          "closes": "Mon 30 Nov 4:44pm",
           "verdict": "good",
           "note": ""
         },
@@ -925,7 +925,7 @@
           "price": "$80",
           "ptype": "Buy Now",
           "location": "Auckland City",
-          "closes": "Thu 3 Dec 5:28:00pm",
+          "closes": "Thu 3 Dec 5:28pm",
           "verdict": "good",
           "note": "Auction from $1"
         },
@@ -935,7 +935,7 @@
           "price": "$20",
           "ptype": "Auction + offers",
           "location": "West Auckland",
-          "closes": "Thu 3 Dec 10:02:00pm",
+          "closes": "Thu 3 Dec 10:02pm",
           "verdict": "good",
           "note": ""
         },
@@ -945,7 +945,7 @@
           "price": "$79",
           "ptype": "Auction + offers",
           "location": "Manukau",
-          "closes": "Wed 2 Dec 6:35:00pm",
+          "closes": "Wed 2 Dec 6:35pm",
           "verdict": "watch",
           "note": "Buy Now $220"
         },
@@ -955,7 +955,7 @@
           "price": "$60",
           "ptype": "Open to offers",
           "location": "Botany",
-          "closes": "Wed 2 Dec 6:46:00pm",
+          "closes": "Wed 2 Dec 6:46pm",
           "verdict": "watch",
           "note": ""
         }
@@ -972,7 +972,7 @@
           "price": "$50",
           "ptype": "Auction + offers",
           "location": "Papakura",
-          "closes": "Fri 4 Dec 4:06:00pm",
+          "closes": "Fri 4 Dec 4:06pm",
           "verdict": "good",
           "note": ""
         },
@@ -982,7 +982,7 @@
           "price": "$75",
           "ptype": "Auction + offers",
           "location": "West Auckland",
-          "closes": "Wed 2 Dec 1:10:00pm",
+          "closes": "Wed 2 Dec 1:10pm",
           "verdict": "good",
           "note": ""
         },
@@ -1002,7 +1002,7 @@
           "price": "$1",
           "ptype": "Auction + offers",
           "location": "Onehunga",
-          "closes": "Sun 29 Nov 2:32:00pm",
+          "closes": "Sun 29 Nov 2:32pm",
           "verdict": "watch",
           "note": ""
         },
@@ -1012,7 +1012,7 @@
           "price": "$1",
           "ptype": "Open to offers",
           "location": "Auckland City",
-          "closes": "Sun 29 Nov 4:40:00pm",
+          "closes": "Sun 29 Nov 4:40pm",
           "verdict": "watch",
           "note": ""
         },
@@ -1022,7 +1022,7 @@
           "price": "$1",
           "ptype": "Auction + offers",
           "location": "Manukau",
-          "closes": "Fri 4 Dec 2:30:00pm",
+          "closes": "Fri 4 Dec 2:30pm",
           "verdict": "skip",
           "note": "Buy Now $30"
         }
@@ -1040,7 +1040,7 @@
           "price": "$50",
           "ptype": "Auction + offers",
           "location": "West Auckland",
-          "closes": "Tue 1 Dec 8:07:00pm",
+          "closes": "Tue 1 Dec 8:07pm",
           "verdict": "good",
           "note": ""
         },
@@ -1050,7 +1050,7 @@
           "price": "$35",
           "ptype": "Auction + offers",
           "location": "North Shore",
-          "closes": "Fri 4 Dec 7:09:00pm",
+          "closes": "Fri 4 Dec 7:09pm",
           "verdict": "good",
           "note": "No light; Buy Now $50"
         },
@@ -1060,7 +1060,7 @@
           "price": "$30",
           "ptype": "Open to offers",
           "location": "Auckland City",
-          "closes": "Fri 4 Dec 5:54:00pm",
+          "closes": "Fri 4 Dec 5:54pm",
           "verdict": "watch",
           "note": "No light"
         },
@@ -1070,7 +1070,7 @@
           "price": "$30",
           "ptype": "Open to offers",
           "location": "Auckland City",
-          "closes": "Wed 2 Dec 8:48:00pm",
+          "closes": "Wed 2 Dec 8:48pm",
           "verdict": "watch",
           "note": "No filter"
         },
@@ -1080,7 +1080,7 @@
           "price": "$25",
           "ptype": "Auction + offers",
           "location": "Papakura",
-          "closes": "Thu 3 Dec 2:43:00pm",
+          "closes": "Thu 3 Dec 2:43pm",
           "verdict": "watch",
           "note": ""
         },
@@ -1090,7 +1090,7 @@
           "price": "$30",
           "ptype": "Buy Now",
           "location": "Takanini",
-          "closes": "Fri 4 Dec 10:31:00pm",
+          "closes": "Fri 4 Dec 10:31pm",
           "verdict": "skip",
           "note": ""
         }
@@ -1107,7 +1107,7 @@
           "price": "$80",
           "ptype": "Auction + offers",
           "location": "Auckland City",
-          "closes": "Tue 1 Dec 9:13:00pm",
+          "closes": "Tue 1 Dec 9:13pm",
           "verdict": "good",
           "note": "No reserve; as new"
         },
@@ -1117,7 +1117,7 @@
           "price": "$35",
           "ptype": "Buy Now",
           "location": "Auckland City",
-          "closes": "Mon 30 Nov 8:38:00pm",
+          "closes": "Mon 30 Nov 8:38pm",
           "verdict": "watch",
           "note": ""
         }
@@ -1134,7 +1134,7 @@
           "price": "$99",
           "ptype": "Open to offers",
           "location": "St Heliers",
-          "closes": "Thu 3 Dec 2:47:00pm",
+          "closes": "Thu 3 Dec 2:47pm",
           "verdict": "good",
           "note": "Best pick; offer ~$80"
         },
@@ -1144,7 +1144,7 @@
           "price": "$80",
           "ptype": "Buy Now",
           "location": "Papakura",
-          "closes": "Mon 30 Nov 2:21:00pm",
+          "closes": "Mon 30 Nov 2:21pm",
           "verdict": "good",
           "note": ""
         },
@@ -1154,7 +1154,7 @@
           "price": "$150",
           "ptype": "Buy Now",
           "location": "Albany",
-          "closes": "Sun 29 Nov 1:47:00pm",
+          "closes": "Sun 29 Nov 1:47pm",
           "verdict": "good",
           "note": ""
         },
@@ -1164,7 +1164,7 @@
           "price": "$125",
           "ptype": "Buy Now",
           "location": "Ellerslie",
-          "closes": "Tue 1 Dec 8:46:00am",
+          "closes": "Tue 1 Dec 8:46am",
           "verdict": "watch",
           "note": ""
         },
@@ -1174,7 +1174,7 @@
           "price": "$100",
           "ptype": "Buy Now",
           "location": "Manukau",
-          "closes": "Sun 29 Nov 2:09:00pm",
+          "closes": "Sun 29 Nov 2:09pm",
           "verdict": "watch",
           "note": ""
         },
@@ -1184,7 +1184,7 @@
           "price": "$125",
           "ptype": "Buy Now",
           "location": "Manukau",
-          "closes": "Fri 4 Dec 5:39:00am",
+          "closes": "Fri 4 Dec 5:39am",
           "verdict": "watch",
           "note": ""
         },
@@ -1194,7 +1194,7 @@
           "price": "$120",
           "ptype": "Buy Now",
           "location": "Auckland City",
-          "closes": "Mon 30 Nov 10:00:00am",
+          "closes": "Mon 30 Nov 10:00am",
           "verdict": "skip",
           "note": ""
         }
@@ -1211,7 +1211,7 @@
           "price": "$9.99",
           "ptype": "Open to offers",
           "location": "Auckland City",
-          "closes": "Thu 3 Dec 8:15:00am",
+          "closes": "Thu 3 Dec 8:15am",
           "verdict": "good",
           "note": ""
         },
@@ -1221,7 +1221,7 @@
           "price": "$15",
           "ptype": "Buy Now",
           "location": "Manukau",
-          "closes": "Mon 30 Nov 3:57:00pm",
+          "closes": "Mon 30 Nov 3:57pm",
           "verdict": "watch",
           "note": ""
         }
@@ -1252,7 +1252,7 @@
           "price": "$1",
           "ptype": "Auction, reserve met",
           "location": "North Shore",
-          "closes": "Sun 29 Nov 4:19:00pm",
+          "closes": "Sun 29 Nov 4:19pm",
           "verdict": "good",
           "note": "Resale $300+"
         },
@@ -1272,7 +1272,7 @@
           "price": "$1",
           "ptype": "Auction, reserve met",
           "location": "Papakura",
-          "closes": "Tue 1 Dec 10:26:00pm",
+          "closes": "Tue 1 Dec 10:26pm",
           "verdict": "good",
           "note": "Resale $400+"
         },
@@ -1282,7 +1282,7 @@
           "price": "$2",
           "ptype": "Auction, reserve met",
           "location": "Auckland City",
-          "closes": "Wed 2 Dec 8:25:00pm",
+          "closes": "Wed 2 Dec 8:25pm",
           "verdict": "good",
           "note": "Resale ~$300; trailer"
         },
@@ -1292,7 +1292,7 @@
           "price": "$1",
           "ptype": "Auction, reserve met",
           "location": "Grey Lynn",
-          "closes": "Sun 29 Nov 11:06:00pm",
+          "closes": "Sun 29 Nov 11:06pm",
           "verdict": "good",
           "note": "Resale $100+"
         },
@@ -1302,7 +1302,7 @@
           "price": "$1",
           "ptype": "Auction, no reserve",
           "location": "Carlaw Park",
-          "closes": "Wed 2 Dec 7:39:00am",
+          "closes": "Wed 2 Dec 7:39am",
           "verdict": "good",
           "note": "Resale ~$100"
         },
@@ -1312,7 +1312,7 @@
           "price": "$1",
           "ptype": "Auction, reserve met",
           "location": "Auckland City",
-          "closes": "Wed 2 Dec 7:25:00pm",
+          "closes": "Wed 2 Dec 7:25pm",
           "verdict": "good",
           "note": "Resale ~$100"
         },
@@ -1322,7 +1322,7 @@
           "price": "$1",
           "ptype": "Auction, reserve met",
           "location": "North Shore",
-          "closes": "Sun 29 Nov 5:21:00pm",
+          "closes": "Sun 29 Nov 5:21pm",
           "verdict": "good",
           "note": "Resale ~$80"
         },
@@ -1332,7 +1332,7 @@
           "price": "$1",
           "ptype": "Auction, reserve met",
           "location": "Auckland City",
-          "closes": "Wed 2 Dec 8:34:00pm",
+          "closes": "Wed 2 Dec 8:34pm",
           "verdict": "watch",
           "note": "Resale ~$200"
         },
@@ -1342,7 +1342,7 @@
           "price": "$1",
           "ptype": "Auction, no reserve",
           "location": "Mt Eden",
-          "closes": "Sat 5 Dec 10:39:00pm",
+          "closes": "Sat 5 Dec 10:39pm",
           "verdict": "watch",
           "note": "Resale $60–100"
         }
@@ -1359,7 +1359,7 @@
           "price": "$50",
           "ptype": "Buy Now",
           "location": "Franklin",
-          "closes": "Tue 1 Dec 7:44:00pm",
+          "closes": "Tue 1 Dec 7:44pm",
           "verdict": "good",
           "note": "Bids from $20"
         },
@@ -1369,7 +1369,7 @@
           "price": "$40",
           "ptype": "Auction + offers",
           "location": "Browns Bay",
-          "closes": "Sun 29 Nov 7:30:00pm",
+          "closes": "Sun 29 Nov 7:30pm",
           "verdict": "watch",
           "note": ""
         },
@@ -1379,7 +1379,7 @@
           "price": "$100",
           "ptype": "Buy Now",
           "location": "North Shore",
-          "closes": "Fri 4 Dec 8:00:00pm",
+          "closes": "Fri 4 Dec 8:00pm",
           "verdict": "watch",
           "note": ""
         },
@@ -1389,7 +1389,7 @@
           "price": "$69",
           "ptype": "Buy Now",
           "location": "West Auckland",
-          "closes": "Mon 30 Nov 1:56:00pm",
+          "closes": "Mon 30 Nov 1:56pm",
           "verdict": "watch",
           "note": ""
         }
@@ -1406,7 +1406,7 @@
           "price": "$30",
           "ptype": "Open to offers",
           "location": "Auckland City",
-          "closes": "Fri 4 Dec 6:46:00am",
+          "closes": "Fri 4 Dec 6:46am",
           "verdict": "good",
           "note": "Bids from $20; ute"
         },
@@ -1416,7 +1416,7 @@
           "price": "$45",
           "ptype": "Open to offers",
           "location": "North Shore",
-          "closes": "Sun 29 Nov 4:09:00pm",
+          "closes": "Sun 29 Nov 4:09pm",
           "verdict": "good",
           "note": ""
         },
@@ -1426,7 +1426,7 @@
           "price": "$50",
           "ptype": "Auction + offers",
           "location": "Onehunga",
-          "closes": "Thu 3 Dec 3:11:00pm",
+          "closes": "Thu 3 Dec 3:11pm",
           "verdict": "good",
           "note": "Buy Now $60"
         },
@@ -1436,7 +1436,7 @@
           "price": "$50",
           "ptype": "Auction + offers",
           "location": "Papakura",
-          "closes": "Mon 30 Nov 1:35:00pm",
+          "closes": "Mon 30 Nov 1:35pm",
           "verdict": "good",
           "note": "Needs ute"
         },
@@ -1446,7 +1446,7 @@
           "price": "$50",
           "ptype": "Auction + offers",
           "location": "North Shore",
-          "closes": "Thu 3 Dec 10:55:00am",
+          "closes": "Thu 3 Dec 10:55am",
           "verdict": "good",
           "note": "Buy Now $100"
         },
@@ -1456,7 +1456,7 @@
           "price": "$70",
           "ptype": "Buy Now",
           "location": "Papatoetoe",
-          "closes": "Thu 3 Dec 4:10:00pm",
+          "closes": "Thu 3 Dec 4:10pm",
           "verdict": "watch",
           "note": "Near you"
         },
@@ -1466,7 +1466,7 @@
           "price": "$75",
           "ptype": "Open to offers",
           "location": "Auckland City",
-          "closes": "Mon 30 Nov 8:36:00pm",
+          "closes": "Mon 30 Nov 8:36pm",
           "verdict": "watch",
           "note": "Offer ~$50"
         },
@@ -1476,7 +1476,7 @@
           "price": "$80",
           "ptype": "Auction + offers",
           "location": "Cockle Bay",
-          "closes": "Sat 5 Dec 7:47:00am",
+          "closes": "Sat 5 Dec 7:47am",
           "verdict": "watch",
           "note": "Buy Now $120"
         },
@@ -1486,7 +1486,7 @@
           "price": "$100",
           "ptype": "Auction + offers",
           "location": "Auckland City",
-          "closes": "Thu 3 Dec 7:41:00pm",
+          "closes": "Thu 3 Dec 7:41pm",
           "verdict": "watch",
           "note": ""
         },
