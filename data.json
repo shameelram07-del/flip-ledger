@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "goal": 5000,
   "fuelPrice": 3.2,
   "litresPer100km": 8,
@@ -506,19 +506,18 @@
     {
       "id": "ryobi-drop-saw",
       "name": "Ryobi compound drop saw",
-      "status": "stock",
-      "collected": true,
-      "listed": true,
+      "status": "sold",
       "cost": 25,
-      "list": 70,
-      "accept": 70,
-      "worst": 50,
       "own": false,
       "boughtWeek": 4,
       "bought": "2026-11-14",
       "trip": 5,
       "paidFrom": "cash",
-      "note": "Trade Me KP-2631910. Seller says old but good. Check blade, guard and that it runs"
+      "note": "Trade Me KP-2631910. Seller says old but good. Check blade, guard and that it runs",
+      "sold": 50,
+      "soldWeek": 6,
+      "soldDate": "2026-11-27",
+      "paid": false
     },
     {
       "id": "bd-table-saw-1800",
