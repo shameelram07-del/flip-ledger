@@ -518,11 +518,11 @@
       "bought": "2026-11-14",
       "trip": 5,
       "paidFrom": "cash",
-      "note": "Trade Me KP-2631910. Seller says old but good. Check blade, guard and that it runs",
+      "note": "Trade Me KP-2631910. Seller says old but good. Check blade, guard and that it runs. Paid in cash",
       "sold": 50,
       "soldWeek": 7,
       "soldDate": "2026-11-27",
-      "paid": false
+      "paid": true
     },
     {
       "id": "bd-table-saw-1800",
